@@ -14,9 +14,12 @@ export function PublicApp() {
     [pages, selectedId]
   );
 
-  const surfaceClass = selectedPage && selectedPage.category === 'home-hero'
-    ? 'page-surface page-surface--hero'
-    : 'page-surface';
+  const surfaceClass = useMemo(() => {
+    if (selectedPage && selectedPage.category === 'home-hero') {
+      return 'page-surface page-surface--hero';
+    }
+    return 'page-surface';
+  }, [selectedPage]);
 
   useEffect(() => {
     setLoading(true);
