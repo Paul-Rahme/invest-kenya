@@ -14,6 +14,8 @@ export function PublicApp() {
     [pages, selectedId]
   );
 
+  const isHeroPage = selectedPage?.category === 'home-hero';
+
   useEffect(() => {
     setLoading(true);
     fetch(apiBase)
@@ -69,12 +71,8 @@ export function PublicApp() {
         {pages.length === 0 && !loading && <p className="muted">No pages available yet.</p>}
       </nav>
 
-      <main className="public-stage">
-        <div
-          className={
-            selectedPage?.category === 'home-hero' ? 'page-surface page-surface--hero' : 'page-surface'
-          }
-        >
+      <main className={isHeroPage ? 'public-stage public-stage--hero' : 'public-stage'}>
+        <div className={isHeroPage ? 'page-surface page-surface--hero' : 'page-surface'}>
           <PageView page={selectedPage} />
         </div>
       </main>
