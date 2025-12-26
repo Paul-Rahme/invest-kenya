@@ -234,6 +234,18 @@ button.danger {
 .toolbar-title {
   margin: 0.25rem 0 0;
   color: white;
+.layout--public {
+  max-width: 1200px;
+}
+
+.hero--public {
+  background: linear-gradient(120deg, #0f172a, #164e63);
+}
+
+.public-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.25rem;
 }
 
 .public-nav {
@@ -257,12 +269,17 @@ button.danger {
   border-radius: 999px;
 }
 
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
 .nav-item {
   text-align: left;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 0.85rem 0.9rem;
   background: white;
+  background: #f9fafb;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -274,11 +291,14 @@ button.danger {
 
 .nav-item:hover {
   transform: translateY(-1px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
 }
 
 .nav-item.is-active {
   border-color: #0ea5e9;
   box-shadow: 0 6px 14px rgba(14, 165, 233, 0.16);
+  box-shadow: 0 6px 14px rgba(14, 165, 233, 0.12);
 }
 
 .nav-title {
@@ -293,7 +313,6 @@ button.danger {
 .public-stage {
   background: #f5f6f8;
   padding: 0 0 3rem;
-  overflow-x: hidden;
 }
 
 .page-surface {
@@ -323,6 +342,8 @@ button.danger {
 
 .page-surface--hero .page-view {
   margin: 0;
+.public-preview {
+  min-height: 520px;
 }
 
 .link {
@@ -350,6 +371,8 @@ button.danger {
 
   .public-nav {
     flex-wrap: nowrap;
+  .public-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -14,13 +14,6 @@ export function PublicApp() {
     [pages, selectedId]
   );
 
-  const surfaceClass = useMemo(() => {
-    if (selectedPage && selectedPage.category === 'home-hero') {
-      return 'page-surface page-surface--hero';
-    }
-    return 'page-surface';
-  }, [selectedPage]);
-
   useEffect(() => {
     setLoading(true);
     fetch(apiBase)
@@ -77,10 +70,53 @@ export function PublicApp() {
       </nav>
 
       <main className="public-stage">
-        <div className={surfaceClass}>
+        <div
+          className={
+            selectedPage?.category === 'home-hero' ? 'page-surface page-surface--hero' : 'page-surface'
+          }
+        >
           <PageView page={selectedPage} />
         </div>
       </main>
+    <div className="layout layout--public">
+      <header className="hero hero--public">
+        <p className="eyebrow">Visitor site</p>
+        <h1>Explore published pages</h1>
+        <p className="lede">
+          Browse the same content the CMS manages, rendered in a full-width visitor experience.
+        </p>
+      </header>
+
+      <div className="public-grid">
+        <aside className="panel">
+          <div className="panel-header">
+            <h2>Pages</h2>
+            {loading && <span className="pill">Loading…</span>}
+          </div>
+          {error && <div className="error">{error}</div>}
+          <nav className="public-nav" aria-label="Published pages">
+            {pages.map((page) => (
+              <button
+                key={page.id}
+                className={page.id === selectedId ? 'nav-item is-active' : 'nav-item'}
+                onClick={() => setSelectedId(page.id)}
+              >
+                <span className="nav-title">{page.title}</span>
+                <span className="nav-meta">{page.category || 'page'}</span>
+              </button>
+            ))}
+            {pages.length === 0 && !loading && <p className="muted">No pages available yet.</p>}
+          </nav>
+        </aside>
+
+        <section className="panel public-preview">
+          <div className="panel-header">
+            <h2>Page</h2>
+            <a className="link" href="/cms">Go to CMS</a>
+          </div>
+          <PageView page={selectedPage} />
+        </section>
+      </div>
     </div>
   );
 }
