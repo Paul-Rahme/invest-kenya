@@ -430,12 +430,6 @@ select {
   margin: 0.5rem 0 0.35rem;
 }
 
-.hint {
-  color: #cbd5e1;
-  margin: 0.35rem 0 0;
-  font-size: 0.9rem;
-}
-
 .login-form {
   margin-top: 1rem;
 }

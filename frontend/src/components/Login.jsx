@@ -16,7 +16,7 @@ export function Login({ onSuccess, error }) {
       const response = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.trim(), password: password.trim() })
+        body: JSON.stringify({ username, password })
       });
 
       if (!response.ok) {
@@ -39,7 +39,6 @@ export function Login({ onSuccess, error }) {
         <p className="eyebrow">CMS access</p>
         <h1>Sign in to manage content</h1>
         <p className="lede">Secure the editor with shared credentials before making updates.</p>
-        <p className="hint">Default: admin / invest123</p>
 
         <form className="form login-form" onSubmit={handleSubmit}>
           <label>

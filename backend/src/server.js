@@ -24,15 +24,10 @@ const requireAuth = (req, res, next) => {
   return res.status(401).json({ message: 'Unauthorized' });
 };
 
-const normalize = (value = '') => String(value).trim();
-
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body || {};
 
-  const normalizedUser = normalize(username).toLowerCase();
-  const normalizedPassword = normalize(password);
-
-  if (normalizedUser === AUTH_USER.toLowerCase() && normalizedPassword === AUTH_PASSWORD) {
+  if (username === AUTH_USER && password === AUTH_PASSWORD) {
     return res.json({ token: AUTH_TOKEN, user: { name: 'Site Admin' } });
   }
 
