@@ -200,6 +200,74 @@ button.danger {
   border-radius: 8px;
 }
 
+.layout--public {
+  max-width: 1200px;
+}
+
+.hero--public {
+  background: linear-gradient(120deg, #0f172a, #164e63);
+}
+
+.public-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.25rem;
+}
+
+.public-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.nav-item {
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.85rem 0.9rem;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+
+.nav-item.is-active {
+  border-color: #0ea5e9;
+  box-shadow: 0 6px 14px rgba(14, 165, 233, 0.12);
+}
+
+.nav-title {
+  font-weight: 700;
+}
+
+.nav-meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.public-preview {
+  min-height: 520px;
+}
+
+.link {
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 880px) {
+  .public-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .page-view h3 {
   margin: 0.25rem 0 0.5rem;
 }
