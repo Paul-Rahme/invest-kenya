@@ -200,6 +200,158 @@ button.danger {
   border-radius: 8px;
 }
 
+.public-shell {
+  background: #0b1220;
+  min-height: 100vh;
+}
+
+.public-hero {
+  background: linear-gradient(120deg, #0f172a, #0ea5e9);
+  color: white;
+  padding: 3rem 8vw;
+}
+
+.public-hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.public-toolbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 0 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: white;
+}
+
+.toolbar-title {
+  margin: 0.25rem 0 0;
+  color: white;
+}
+
+.public-nav {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.public-nav--inline {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8vw 1.5rem;
+  overflow-x: auto;
+}
+
+.public-nav--inline::-webkit-scrollbar {
+  height: 8px;
+}
+
+.public-nav--inline::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+.nav-item {
+  text-align: left;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 0.85rem 0.9rem;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+  min-width: 180px;
+}
+
+.nav-item:hover {
+  transform: translateY(-1px);
+}
+
+.nav-item.is-active {
+  border-color: #0ea5e9;
+  box-shadow: 0 6px 14px rgba(14, 165, 233, 0.16);
+}
+
+.nav-title {
+  font-weight: 700;
+}
+
+.nav-meta {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.public-stage {
+  background: #f5f6f8;
+  padding: 0 0 3rem;
+}
+
+.page-surface {
+  width: min(1200px, calc(100vw - 8vw));
+  margin: 0 auto;
+  margin-top: -30px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 16px 34px rgba(12, 74, 110, 0.12);
+  padding: 2.25rem 2.5rem;
+}
+
+.page-surface--hero {
+  width: 100vw;
+  margin: 0;
+  padding: 0 0 2.5rem;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.page-surface--hero .hero-banner {
+  border-radius: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.page-surface--hero .page-view {
+  margin: 0;
+}
+
+.link {
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 880px) {
+  .public-hero__inner,
+  .public-toolbar,
+  .public-nav--inline {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .public-hero__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .public-nav {
+    flex-wrap: nowrap;
+  }
+}
+
 .page-view h3 {
   margin: 0.25rem 0 0.5rem;
 }
