@@ -1,0 +1,14 @@
+[
+  {
+    "id": "home",
+    "title": "Welcome to Invest Kenya",
+    "body": "Share your story, showcase opportunities, and keep investors informed with a tailored landing page.",
+    "category": "page"
+  },
+  {
+    "id": "about",
+    "title": "About our mission",
+    "body": "Use the CMS to edit this content and publish updates without redeploying your site.",
+    "category": "page"
+  }
+]
