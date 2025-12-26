@@ -3,6 +3,7 @@ import { Button } from './Button.jsx';
 
 const createEmptySlide = () => ({
   image: '',
+  imageId: '',
   titlePartOne: '',
   titlePartTwo: '',
   primaryButtonLabel: '',
@@ -13,7 +14,7 @@ const createEmptySlide = () => ({
 
 const blank = { title: '', body: '', category: 'page', heroSlides: [] };
 
-export function Editor({ page, onSave, onDelete }) {
+export function Editor({ page, onSave, onDelete, mediaItems = [] }) {
   const initialForm = useMemo(() => page || { ...blank }, [page]);
   const [form, setForm] = useState(initialForm);
 
@@ -37,7 +38,26 @@ export function Editor({ page, onSave, onDelete }) {
   const updateSlide = (index, key, value) => {
     setForm((prev) => {
       const next = prev.heroSlides ? [...prev.heroSlides] : [];
-      next[index] = { ...(next[index] || createEmptySlide()), [key]: value };
+      const nextSlide = { ...(next[index] || createEmptySlide()), [key]: value };
+
+      if (key === 'image') {
+        nextSlide.imageId = '';
+      }
+
+      next[index] = nextSlide;
+      return { ...prev, heroSlides: next };
+    });
+  };
+
+  const applyMediaToSlide = (index, mediaId) => {
+    const match = mediaItems.find((item) => item.id === mediaId);
+    setForm((prev) => {
+      const next = prev.heroSlides ? [...prev.heroSlides] : [];
+      next[index] = {
+        ...(next[index] || createEmptySlide()),
+        imageId: mediaId,
+        image: match?.url || ''
+      };
       return { ...prev, heroSlides: next };
     });
   };
@@ -102,6 +122,22 @@ export function Editor({ page, onSave, onDelete }) {
                   placeholder="https://example.com/banner.jpg"
                   required
                 />
+                {slide.imageId && <p className="muted">Linked media ID: {slide.imageId}</p>}
+              </label>
+              <label>
+                Or pick from media library
+                <select
+                  name={`media-${idx}`}
+                  value={slide.imageId || ''}
+                  onChange={(e) => applyMediaToSlide(idx, e.target.value)}
+                >
+                  <option value="">Custom URL</option>
+                  {mediaItems.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.label} ({item.id})
+                    </option>
+                  ))}
+                </select>
               </label>
               <label>
                 Title line 1

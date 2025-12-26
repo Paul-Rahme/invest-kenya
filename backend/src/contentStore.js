@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { nanoid } from 'nanoid';
+import { findMediaById } from './mediaStore.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = __filename.substring(0, __filename.lastIndexOf('/'));
@@ -15,7 +16,9 @@ const defaultContent = [
     category: 'home-hero',
     heroSlides: [
       {
-        image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80',
+        imageId: 'hero-coast',
+        image:
+          'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80',
         titlePartOne: 'Invest in Kenya',
         titlePartTwo: 'Where opportunity meets innovation',
         primaryButtonLabel: 'Explore opportunities',
@@ -24,7 +27,9 @@ const defaultContent = [
         secondaryButtonUrl: '/about'
       },
       {
-        image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80',
+        imageId: 'hero-team',
+        image:
+          'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80',
         titlePartOne: 'Build with confidence',
         titlePartTwo: 'Guided support for investors and founders',
         primaryButtonLabel: 'Meet the team',
@@ -33,7 +38,9 @@ const defaultContent = [
         secondaryButtonUrl: '/downloads/brochure.pdf'
       },
       {
-        image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80',
+        imageId: 'hero-meeting',
+        image:
+          'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80',
         titlePartOne: 'Nationwide partnerships',
         titlePartTwo: 'Connections that accelerate investment',
         primaryButtonLabel: 'Contact us',
@@ -66,19 +73,34 @@ function ensureStore() {
   }
 }
 
+function hydrateSlide(slide) {
+  if (!slide?.imageId) return slide;
+  const media = findMediaById(slide.imageId);
+  if (!media) return slide;
+  return { ...slide, image: slide.image || media.url };
+}
+
+function hydrateHeroSlides(pages) {
+  return pages.map((page) => {
+    if (page.category !== 'home-hero') return page;
+    const slides = (page.heroSlides || []).map(hydrateSlide);
+    return { ...page, heroSlides: slides };
+  });
+}
+
 export function readContent() {
   ensureStore();
   const raw = readFileSync(dataFile, 'utf-8');
   const parsed = JSON.parse(raw);
 
   const hasHero = parsed.some((entry) => entry.category === 'home-hero');
+  const seeded = hasHero ? parsed : [defaultContent[0], ...parsed];
+
   if (!hasHero) {
-    const withHero = [defaultContent[0], ...parsed];
-    saveContent(withHero);
-    return withHero;
+    saveContent(seeded);
   }
 
-  return parsed;
+  return hydrateHeroSlides(seeded);
 }
 
 export function saveContent(pages) {
