@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { Button } from './Button.jsx';
 
 const createEmptySlide = () => ({
   image: '',
@@ -87,9 +88,9 @@ export function Editor({ page, onSave, onDelete }) {
               <div className="slide-card__header">
                 <h4>Slide {idx + 1}</h4>
                 {form.heroSlides.length > 1 && (
-                  <button type="button" className="danger" onClick={() => removeSlide(idx)}>
+                  <Button type="button" variant="danger" size="sm" onClick={() => removeSlide(idx)}>
                     Remove
-                  </button>
+                  </Button>
                 )}
               </div>
               <label>
@@ -158,20 +159,20 @@ export function Editor({ page, onSave, onDelete }) {
               </div>
             </div>
           ))}
-          <button type="button" className="primary" onClick={addSlide}>
+          <Button type="button" variant="brand" onClick={addSlide}>
             Add slide
-          </button>
+          </Button>
         </div>
       )}
 
       <div className="actions">
-        <button type="submit" className="primary">
+        <Button type="submit" variant="brand">
           {page ? 'Update page' : 'Create page'}
-        </button>
+        </Button>
         {onDelete && (
-          <button type="button" className="danger" onClick={onDelete}>
+          <Button type="button" variant="danger" onClick={onDelete}>
             Delete
-          </button>
+          </Button>
         )}
       </div>
     </form>
