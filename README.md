@@ -20,10 +20,13 @@ A monorepo scaffold for an informational site and lightweight CMS built with a N
    npm run dev
    ```
    The dev server proxies API requests to `localhost:4000`.
+4. Open the UI
+   - CMS editor: http://localhost:5173/cms
+   - Public site: http://localhost:5173/
 
 ## Folder structure
 - `backend/`: Express server with JSON file storage for page content.
-- `frontend/`: Vite React app with a split view (content list, editor, live preview).
+- `frontend/`: Vite React app with separate routes for the CMS (`/cms`) and the public site (`/`).
 
 API endpoints:
 - `GET /api/pages` – list all pages
