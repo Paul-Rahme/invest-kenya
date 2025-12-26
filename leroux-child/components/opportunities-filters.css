@@ -1,0 +1,166 @@
+/* ===============================
+   GLOBAL FONT
+=============================== */
+.opportunities-filters-wrapper *,
+.opportunities-filters *,
+.efilter-select *,
+.efilter-list * {
+    font-family: "DM Sans", sans-serif !important;
+}
+
+/* ===============================
+   WRAPPER
+=============================== */
+.opportunities-filters-wrapper {
+    max-width: 1530px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.opportunities-filters {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+/* ===============================
+   BASE FILTER BOX
+=============================== */
+.efilter-select {
+    position: relative;
+    width: 260px;
+    height: 46px;
+    padding: 0 40px 0 16px;
+    border: 1.3px solid #D7D7D7;
+    border-radius: 14px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.efilter-select:hover {
+    border-color: #0C3B29;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.efilter-select.has-value {
+    border-color: #0C3B29;
+}
+
+/* ===============================
+   TEXT
+=============================== */
+.efilter-selected,
+.efilter-select input {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+.efilter-selected:not(.has-value) {
+    color: #B6B6B6;
+    font-weight: 400;
+}
+
+/* ===============================
+   CLEAR BUTTON
+=============================== */
+.efilter-clear {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: #EEEEEE;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: bold;
+    color: #777;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+}
+
+.efilter-select.has-value .efilter-clear {
+    display: flex;
+}
+
+/* ===============================
+   ARROW
+=============================== */
+.efilter-arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #444;
+    border-bottom: 2px solid #444;
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 0.5;
+}
+
+/* ===============================
+   DROPDOWN LIST
+=============================== */
+.efilter-list {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #E3E3E3;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    padding: 8px 0;
+    display: none;
+    z-index: 9999;
+}
+
+.efilter-dropdown.open .efilter-list {
+    display: block;
+}
+
+.efilter-list div {
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.efilter-list div:hover {
+    background: #F5F5F5;
+}
+
+/* Scrollable dropdown when many items */
+.efilter-list {
+    max-height: 240px; /* ~6 items */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Optional: nicer scrollbar */
+.efilter-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.efilter-list::-webkit-scrollbar-thumb {
+    background: #CFCFCF;
+    border-radius: 6px;
+}
+
+
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+    .efilter-select {
+        width: 100%;
+    }
+}

@@ -1,0 +1,278 @@
+/* ============================================ SAFE AREA + WRAPPER ============================================ */
+.kenya-event-slider {
+	position: relative;
+	width: 100%;
+	max-width: 1530px;
+	/* SAFE AREA LIMIT */
+	margin: 40px auto;
+	padding-left: 40px;
+	padding-right: 40px;
+	box-sizing: border-box;
+	font-family: "DM Sans", sans-serif;
+}
+
+/* Tablet & Mobile padding */
+@media (max-width: 1024px) {
+	.kenya-event-slider {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+/* ============================================ SLIDE STATE (FADE) ============================================ */
+.ev-slide {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.8s ease;
+}
+
+.ev-slide.active {
+	display: block;
+	opacity: 1;
+}
+
+/* ============================================ MAIN TWO-COLUMN LAYOUT ============================================ */
+.event-featured {
+	display: flex;
+	gap: 40px;
+	align-items: stretch;
+}
+
+/* ============================================ LEFT COLUMN — IMAGE (fix height rectangle) ============================================ */
+.event-featured-image {
+	position: relative;
+	flex: 0 0 50%;
+	height: 380px !important;
+	overflow: hidden;
+}
+
+.event-featured-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+	display: block;
+}
+
+/* ============================================ RIGHT COLUMN — CONTENT ============================================ */
+.event-featured-content {
+	flex: 0 0 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	/* start from top */
+}
+
+/* META ROW */
+.event-meta {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	color: #666;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.event-meta span {
+	white-space: nowrap;
+}
+
+.event-meta span:first-child {
+	white-space: normal;
+}
+
+/* TITLE */
+.event-title {
+	font-size: 28px;
+	font-weight: 600;
+	margin: 24px 0 15px;
+	line-height: 1.25;
+}
+
+/* DESCRIPTION */
+.event-desc {
+	font-size: 20px;
+	font-weight: 400;
+	color: #333;
+	margin-bottom: 18px;
+	line-height: 1.55;
+}
+
+/* META SEPARATOR */
+.event-separator {
+	display: inline-block;
+	width: 1px;
+	height: 18px;
+	background: #E5E5E5;
+	margin: 0 14px;
+	/* spacing from text */
+}
+
+/* META ITEMS WITH ICON */
+.event-meta-item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	/* spacing between icon + text */
+	font-size: 14px;
+	/* new */
+	font-weight: 600;
+	/* new */
+	color: #292A29;
+	/* new */
+}
+
+.event-meta-icon {
+	width: 18px;
+	height: 18px;
+	object-fit: contain;
+	display: block;
+	margin-top: -1px;
+	/* small vertical alignment tweak */
+}
+
+/* ============================================ READ MORE — DIRECTLY UNDER DESCRIPTION ============================================ */
+.ev-readmore-wrapper {
+	margin-bottom: 25px;
+}
+
+.kns-readmore {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 6px;
+	position: relative;
+	padding-bottom: 4px;
+	font-size: 17px;
+	font-weight: 500;
+	color: #DB2129 !important;
+	text-decoration: none !important;
+}
+
+/* underline */
+.kns-readmore::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	background: #DB2129;
+	transition: 0.25s ease;
+}
+
+/* icon wrapper */
+.kns-arrow-wrapper {
+	position: relative;
+	width: 20px;
+	height: 20px;
+}
+
+.kns-arrow {
+	position: absolute;
+	inset: 0;
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+	transition: opacity .25s ease;
+}
+
+.default-arrow {
+	opacity: 1;
+}
+
+.hover-arrow {
+	opacity: 0;
+}
+
+.kns-readmore:hover .default-arrow {
+	opacity: 0 !important;
+}
+
+.kns-readmore:hover .hover-arrow {
+	opacity: 1 !important;
+}
+
+.kns-readmore:hover {
+	color: #292A29 !important;
+}
+
+.kns-readmore:hover::before {
+	background: #292A29;
+}
+
+/* ============================================ ARROWS FIXED AT THE BOTTOM OF RIGHT COLUMN ============================================ */
+.ev-nav-bottom {
+	margin-top: auto;
+	/* pushes arrows to the bottom */
+	display: flex;
+	gap: 18px;
+	padding-top: 25px;
+}
+
+.ev-nav-bottom button {
+	background: transparent !important;
+	border: 2px solid #111;
+	width: 75px;
+	height: 40px;
+	border-radius: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: .2s ease;
+}
+
+.ev-nav-bottom button:hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.ev-nav-bottom img {
+	width: 26px;
+	height: 26px;
+}
+
+/* ============================================ RESPONSIVE ============================================ */
+@media (max-width: 768px) {
+	.event-meta {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+	}
+
+	.event-separator {
+		display: none;
+	}
+}
+
+@media (max-width:1024px) {
+	.event-featured {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.event-featured-image {
+		height: auto;
+		/* remove fixed height */
+		aspect-ratio: 16/9;
+	}
+
+	.ev-nav-bottom {
+		margin-top: 10px;
+		/* no need to force bottom on mobile */
+	}
+}
+
+@media (max-width:768px) {
+	.event-title {
+		font-size: 24px;
+	}
+
+	.event-desc {
+		font-size: 14px;
+	}
+
+	.ev-nav-bottom button {
+		width: 50px;
+		height: 35px;
+	}
+}

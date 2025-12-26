@@ -1,0 +1,255 @@
+/* ============================================
+   SAFE AREA + WRAPPER
+============================================ */
+.kenya-news-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1530px;      /* SAFE AREA LIMIT */
+    margin: 40px auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* Tablet & Mobile padding */
+@media (max-width: 1024px) {
+    .kenya-news-slider {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* ============================================
+   SLIDE STATE (FADE)
+============================================ */
+.kns-slide-news {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.kns-slide-news.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ============================================
+   MAIN TWO-COLUMN LAYOUT
+============================================ */
+.news-featured {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* ============================================
+   LEFT COLUMN — IMAGE
+============================================ */
+.news-featured-image {
+    position: relative;
+    flex: 0 0 50%;
+    height: 380px !important;
+    overflow: hidden;
+}
+
+.news-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* ============================================
+   RIGHT COLUMN — CONTENT
+============================================ */
+.news-featured-content {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* TAG CHIPS ROW (REPLACES LOCATION + DATE RANGE) */
+.news-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.news-tag-chip {
+    background: #D0DAD4;
+    padding: 8px 12px;         /* smaller */
+    border-radius: 14px;       /* smaller rounding */
+    font-size: 14px;           /* slightly smaller text */
+    font-weight: 500;
+    color: #565A56;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;            /* makes chip height tighter */
+}
+
+
+/* PUBLISHED DATE UNDER CHIPS */
+.news-meta-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+    margin-bottom: 12px;
+}
+
+/* TITLE */
+.news-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 1px 0 15px;
+    line-height: 1.25;
+}
+
+/* DESCRIPTION */
+.news-desc {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 18px;
+    line-height: 1.55;
+}
+
+/* ============================================
+   READ MORE — UNDER DESCRIPTION
+============================================ */
+.news-readmore-wrapper {
+    margin-bottom: 25px;
+}
+
+.kns-readmore-news {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #DB2129 !important;
+    text-decoration: none !important;
+}
+
+/* underline */
+.kns-readmore-news::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #DB2129;
+    transition: 0.25s ease;
+}
+
+/* icon wrapper */
+.kns-arrow-wrapper-news {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.kns-arrow-news {
+    position: absolute;
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: opacity 0.25s ease;
+}
+
+.default-arrow-news {
+    opacity: 1;
+}
+
+.hover-arrow-news {
+    opacity: 0;
+}
+
+.kns-readmore-news:hover .default-arrow-news {
+    opacity: 0 !important;
+}
+
+.kns-readmore-news:hover .hover-arrow-news {
+    opacity: 1 !important;
+}
+
+.kns-readmore-news:hover {
+    color: #292A29 !important;
+}
+
+.kns-readmore-news:hover::before {
+    background: #292A29;
+}
+
+/* ============================================
+   ARROWS FIXED AT THE BOTTOM OF RIGHT COLUMN
+============================================ */
+.news-nav-bottom {
+    margin-top: auto; /* pushes arrows to bottom */
+    display: flex;
+    gap: 18px;
+    padding-top: 0px;
+}
+
+.news-nav-bottom button {
+    background: transparent !important;
+    border: 2px solid #111;
+    width: 75px;
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.news-nav-bottom button:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.news-nav-bottom img {
+    width: 26px;
+    height: 26px;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 768px) {
+    .news-title {
+        font-size: 24px;
+    }
+
+    .news-desc {
+        font-size: 14px;
+    }
+
+    .news-nav-bottom button {
+        width: 50px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .news-featured {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .news-featured-image {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .news-nav-bottom {
+        margin-top: 10px; /* no need to force bottom on mobile */
+    }
+}

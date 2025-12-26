@@ -1,0 +1,260 @@
+/* Apply DM Sans to entire component */
+.rpc-safe-area,
+.rpc-safe-area *,
+.rpc-row-grid,
+.rpc-row-grid * {
+    font-family: "DM Sans", sans-serif !important;
+}
+
+/* ============================================================
+   SAFE AREA (GRID VARIANT)
+============================================================ */
+.rpc-safe-area {
+    max-width: 1530px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* TABLET & MOBILE */
+@media (max-width: 1024px) {
+    .rpc-safe-area {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* ============================================================
+   GRID (4 COLUMNS)
+============================================================ */
+.rpc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* 1150px → 2 columns */
+@media (max-width: 1150px) {
+    .rpc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 650px → 1 column */
+@media (max-width: 650px) {
+    .rpc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   ROW VARIANT (FULL WIDTH)
+   >1920px → 5 columns
+   1920px to 1530px → 4 columns
+   <1530px, <1150px, <650px remain unchanged
+============================================================ */
+.rpc-row-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* default: 4 columns */
+    gap: 40px;
+    padding: 0 !important;
+}
+
+/* ABOVE 1920px → 5 columns */
+@media (min-width: 1921px) {
+    .rpc-row-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* 1530px → 4 columns (NO CHANGE, already default) */
+
+/* 1150px → 2 columns */
+@media (max-width: 1150px) {
+    .rpc-row-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 650px → 1 column */
+@media (max-width: 650px) {
+    .rpc-row-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ============================================================
+   CARD
+============================================================ */
+.rpc-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* IMAGE HEIGHT: 355px */
+.rpc-image img {
+    width: 100%;
+    height: 355px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ============================================================
+   TITLE
+============================================================ */
+.rpc-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #101110;
+    margin: 12px 0 0 0 !important;
+    line-height: 1.3;
+}
+
+/* ============================================================
+   ACTIONS (DOWNLOAD + READ MORE)
+============================================================ */
+.rpc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* DOWNLOAD BUTTON */
+.rpc-download-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 14px;
+    gap: 6px;
+    background: #DB2129;
+    border-radius: 1000px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.rpc-download-btn .rpc-download-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.rpc-download-btn:hover {
+    background-color: #292A29 !important;
+    color: #ffffff !important;
+}
+
+/* ============================================================
+   READ MORE — EXACT SAME STYLING YOU GAVE ME
+============================================================ */
+.rpc-readmore {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #DB2129 !important;
+    text-decoration: none !important;
+    width: fit-content;
+    margin-left: 0;
+}
+
+/* underline */
+.rpc-readmore::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 1px);
+    height: 1px;
+    background: #DB2129 !important;
+    transition: background 0.25s ease;
+}
+
+/* arrow wrapper */
+.rpc-arrow-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+/* two arrow layers */
+.rpc-arrow {
+    position: absolute;
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: opacity .25s ease;
+}
+
+.rpc-arrow-default {
+    opacity: 1;
+}
+
+.rpc-arrow-hover {
+    opacity: 0;
+}
+
+/* hover effects */
+.rpc-readmore:hover .rpc-arrow-default {
+    opacity: 0 !important;
+}
+
+.rpc-readmore:hover .rpc-arrow-hover {
+    opacity: 1 !important;
+}
+
+.rpc-readmore:hover {
+    color: #292A29 !important;
+}
+
+.rpc-readmore:hover::before {
+    background: #292A29 !important;
+}
+
+
+.rpc-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* ensures equal height */
+}
+
+.resource-content-wrapper {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* ============================================================
+   DOWNLOAD BUTTON — SHORTCODE ONLY
+============================================================ */
+.rpc-download-shortcode .rpc-download-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 150px;       /* fixed width */
+	padding: 12px 14px;
+}
+.rpc-download-btn .rpc-download-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+

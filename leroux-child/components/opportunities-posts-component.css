@@ -1,0 +1,264 @@
+/* ============================================================
+   FONT
+============================================================ */
+.opc-safe-area,
+.opc-safe-area * {
+    font-family: "DM Sans", sans-serif !important;
+}
+
+/* ============================================================
+   SAFE AREA
+============================================================ */
+.opc-safe-area {
+    max-width: 1530px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .opc-safe-area {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* ============================================================
+   GRID (3 COLUMNS)
+============================================================ */
+.opc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 1150px) {
+    .opc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .opc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   ROW VARIANT — FULL WIDTH
+============================================================ */
+.opc-row-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 0 !important;
+}
+
+@media (max-width: 1530px) {
+    .opc-row-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1150px) {
+    .opc-row-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .opc-row-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   CARD
+============================================================ */
+.opc-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opc-image img {
+    width: 100%;
+    height: 232px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ============================================================
+   TAGS
+============================================================ */
+.opc-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 6px 0 !important;
+}
+
+.opc-tag-chip {
+    font-size: 14px;
+    font-weight: 500;
+    color: #292A29;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    background: rgb(208, 218, 212);
+    padding: 8px 12px;
+    border-radius: 14px;
+}
+
+/* ============================================================
+   META ROW (NEW)
+============================================================ */
+.opc-meta-row {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin: 10px 0 6px 0;
+    flex-wrap: wrap;
+}
+
+.opc-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.opc-meta-item img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.opc-meta-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: #101110;
+}
+
+/* ============================================================
+   TYPOGRAPHY
+============================================================ */
+.opc-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #101110;
+    margin: 0 0 6px 0 !important;
+    line-height: 1.3;
+}
+
+.opc-excerpt {
+    font-size: 14px;
+    color: #101110;
+    font-weight: 400;
+    margin: 0 0 6px 0 !important;
+}
+
+/* ============================================================
+   READ MORE
+============================================================ */
+.opc-readmore {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #DB2129 !important;
+    text-decoration: none !important;
+    width: fit-content;
+    margin-top: 6px !important;
+}
+
+.opc-readmore::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 1px);
+    height: 1px;
+    background: #DB2129;
+    transition: 0.25s ease;
+}
+
+.opc-arrow-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.opc-arrow {
+    position: absolute;
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: opacity .25s ease;
+}
+
+.opc-arrow-default {
+    opacity: 1;
+}
+
+.opc-arrow-hover {
+    opacity: 0;
+}
+
+.opc-readmore:hover .opc-arrow-default {
+    opacity: 0 !important;
+}
+
+.opc-readmore:hover .opc-arrow-hover {
+    opacity: 1 !important;
+}
+
+.opc-readmore:hover {
+    color: #292A29 !important;
+}
+
+.opc-readmore:hover::before {
+    background: #292A29;
+}
+
+.opc-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.opc-card > *:last-child {
+    margin-top: auto;
+}
+
+.opc-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* FORCE SHOW OPPORTUNITIES META ICONS */
+.opc-row-grid .opc-meta-item img {
+    opacity: 1 !important;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+/* ============================================================
+   HIDE ENTIRE OPPORTUNITIES ROW CONTAINER WHEN EMPTY
+============================================================ */
+.opportunities-row:has(.opc-row-grid.no-results) {
+    display: none !important;
+}
+
+@media (max-width: 790px) {
+  .opc-meta-row {
+    gap: 5px;
+  }
+}
+

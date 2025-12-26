@@ -1,0 +1,238 @@
+/* Apply DM Sans to entire component */
+.gpc-safe-area,
+.gpc-safe-area *,
+.gpc-row-grid,
+.gpc-row-grid * {
+    font-family: "DM Sans", sans-serif !important;
+}
+
+/* ============================================================
+   SAFE AREA (GRID VARIANT)
+============================================================ */
+.gpc-safe-area {
+    max-width: 1530px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* TABLET & MOBILE */
+@media (max-width: 1024px) {
+    .gpc-safe-area {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+/* ============================================================
+   GRID (4 COLUMNS)
+============================================================ */
+.gpc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+/* 1150px → 2 columns */
+@media (max-width: 1150px) {
+    .gpc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 650px → 1 column */
+@media (max-width: 650px) {
+    .gpc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   ROW VARIANT (FULL WIDTH)
+   >1920px → 5 columns
+   1920px to 1530px → 4 columns
+   <1530px, <1150px, <650px remain unchanged
+============================================================ */
+.gpc-row-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* default: 4 columns */
+    gap: 40px;
+    padding: 0 !important;
+}
+
+/* ABOVE 1920px → 5 columns */
+@media (min-width: 1921px) {
+    .gpc-row-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* 1150px → 2 columns */
+@media (max-width: 1150px) {
+    .gpc-row-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 650px → 1 column */
+@media (max-width: 650px) {
+    .gpc-row-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================================
+   CARD
+============================================================ */
+.gpc-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* IMAGE HEIGHT */
+.gpc-image img {
+    width: 100%;
+    height: 355px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* ============================================================
+   TITLE
+============================================================ */
+.gpc-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #101110;
+    margin: 12px 0 0 0 !important;
+    line-height: 1.3;
+}
+
+/* ============================================================
+   JOB POSITION
+============================================================ */
+.gpc-job {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.gpc-job-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+	display: inline-block;
+}
+
+.gpc-job-text {
+    color: #101110;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   ACTIONS (READ BIOGRAPHY)
+============================================================ */
+.gpc-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* ============================================================
+   READ BIOGRAPHY — SAME STYLING AS RESOURCES READ MORE
+============================================================ */
+.gpc-readmore {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #DB2129 !important;
+    text-decoration: none !important;
+    width: fit-content;
+    margin-left: 0;
+}
+
+/* underline */
+.gpc-readmore::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 1px);
+    height: 1px;
+    background: #DB2129;
+    transition: background 0.25s ease;
+}
+
+/* arrow wrapper */
+.gpc-arrow-wrapper {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+/* two arrow layers */
+.gpc-arrow {
+    position: absolute;
+    inset: 0;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: opacity .25s ease;
+}
+
+.gpc-arrow-default {
+    opacity: 1;
+}
+
+.gpc-arrow-hover {
+    opacity: 0;
+}
+
+/* hover effects */
+.gpc-readmore:hover .gpc-arrow-default {
+    opacity: 0 !important;
+}
+
+.gpc-readmore:hover .gpc-arrow-hover {
+    opacity: 1 !important;
+}
+
+.gpc-readmore:hover {
+    color: #292A29 !important;
+}
+
+.gpc-readmore:hover::before {
+    background: #292A29;
+}
+
+
+/* ============================================================
+   Equal height fix for Governance cards (wrapping-only)
+============================================================ */
+
+/* This reserved space ensures all cards align evenly */
+.gpc-content-wrap {
+    min-height: 63px;      /* Adjust if needed */
+    margin-bottom: 0px;   /* Spacing before "Read biography" */
+}
+
+/* Mobile: disable equal-height spacing */
+@media (max-width: 650px) {
+    .gpc-content-wrap {
+        min-height: 0 !important;
+        margin-bottom: 10px;
+    }
+}
+
+
