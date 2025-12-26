@@ -7,12 +7,7 @@ export function PageView({ page }) {
   }
 
   if (page.category === 'home-hero') {
-    return (
-      <div className="page-view">
-        <p className="eyebrow">Homepage hero</p>
-        <HeroBanner slides={page.heroSlides || []} />
-      </div>
-    );
+    return <HeroBanner slides={page.heroSlides || []} />;
   }
 
   return (

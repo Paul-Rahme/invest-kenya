@@ -4,6 +4,27 @@ const AUTOPLAY_MS = 8000;
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80';
 
+const ArrowIcon = () => (
+  <span className="hero-banner__btn-icon" aria-hidden>
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5 12h14"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m13 6 6 6-6 6"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+);
+
 export function HeroBanner({ slides = [] }) {
   const validSlides = useMemo(
     () =>
@@ -24,6 +45,11 @@ export function HeroBanner({ slides = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const progressRef = useRef(null);
   const timerRef = useRef(null);
+
+  useEffect(() => {
+    if (!validSlides.length) return;
+    setActiveIndex((prev) => (prev >= validSlides.length ? 0 : prev));
+  }, [validSlides.length]);
 
   useEffect(() => {
     if (!validSlides.length) return undefined;
@@ -83,11 +109,13 @@ export function HeroBanner({ slides = [] }) {
                   {slide.primaryButtonLabel && (
                     <a className="btn btn-red" href={slide.primaryButtonUrl}>
                       <span>{slide.primaryButtonLabel}</span>
+                      <ArrowIcon />
                     </a>
                   )}
                   {slide.secondaryButtonLabel && (
                     <a className="btn btn-white" href={slide.secondaryButtonUrl}>
                       <span>{slide.secondaryButtonLabel}</span>
+                      <ArrowIcon />
                     </a>
                   )}
                 </div>
