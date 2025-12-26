@@ -234,6 +234,8 @@ button.danger {
 .toolbar-title {
   margin: 0.25rem 0 0;
   color: white;
+}
+
 .layout--public {
   max-width: 1200px;
 }
@@ -342,6 +344,8 @@ button.danger {
 
 .page-surface--hero .page-view {
   margin: 0;
+}
+
 .public-preview {
   min-height: 520px;
 }
@@ -371,6 +375,8 @@ button.danger {
 
   .public-nav {
     flex-wrap: nowrap;
+  }
+
   .public-grid {
     grid-template-columns: 1fr;
   }
