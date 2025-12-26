@@ -1,8 +1,18 @@
 import React from 'react';
+import { HeroBanner } from './HeroBanner.jsx';
 
 export function PageView({ page }) {
   if (!page) {
     return <p className="muted">Select or create a page to preview it here.</p>;
+  }
+
+  if (page.category === 'home-hero') {
+    return (
+      <div className="page-view">
+        <p className="eyebrow">Homepage hero</p>
+        <HeroBanner slides={page.heroSlides || []} />
+      </div>
+    );
   }
 
   return (
