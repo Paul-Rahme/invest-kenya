@@ -1,29 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowIcon, Button } from './Button.jsx';
 
 const AUTOPLAY_MS = 8000;
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80';
-
-const ArrowIcon = () => (
-  <span className="hero-banner__btn-icon" aria-hidden>
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M5 12h14"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m13 6 6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  </span>
-);
 
 export function HeroBanner({ slides = [] }) {
   const validSlides = useMemo(
@@ -75,7 +55,7 @@ export function HeroBanner({ slides = [] }) {
       progressRef.current.style.transition = `width ${AUTOPLAY_MS}ms linear`;
       progressRef.current.style.width = '100%';
     });
-  }, [activeIndex]);
+  }, [activeIndex, validSlides.length]);
 
   const handleSelect = (index) => {
     setActiveIndex(index);
@@ -107,16 +87,28 @@ export function HeroBanner({ slides = [] }) {
                 </div>
                 <div className="hero-banner__actions">
                   {slide.primaryButtonLabel && (
-                    <a className="btn btn-red" href={slide.primaryButtonUrl}>
-                      <span>{slide.primaryButtonLabel}</span>
-                      <ArrowIcon />
-                    </a>
+                    <Button
+                      as="a"
+                      href={slide.primaryButtonUrl}
+                      variant="hero-red"
+                      size="lg"
+                      icon={<ArrowIcon />}
+                      aria-label={slide.primaryButtonLabel}
+                    >
+                      {slide.primaryButtonLabel}
+                    </Button>
                   )}
                   {slide.secondaryButtonLabel && (
-                    <a className="btn btn-white" href={slide.secondaryButtonUrl}>
-                      <span>{slide.secondaryButtonLabel}</span>
-                      <ArrowIcon />
-                    </a>
+                    <Button
+                      as="a"
+                      href={slide.secondaryButtonUrl}
+                      variant="hero-light"
+                      size="lg"
+                      icon={<ArrowIcon />}
+                      aria-label={slide.secondaryButtonLabel}
+                    >
+                      {slide.secondaryButtonLabel}
+                    </Button>
                   )}
                 </div>
               </div>
