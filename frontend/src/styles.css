@@ -389,10 +389,6 @@ select {
   border-radius: 999px;
 }
 
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
 .nav-item {
   text-align: left;
   border: 1px solid #e5e7eb;
