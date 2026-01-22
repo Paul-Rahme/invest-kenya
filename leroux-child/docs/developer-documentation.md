@@ -1,6 +1,6 @@
-# Invest Kenya WordPress Site — Developer Documentation
+# Invest Kenya WordPress Site — Developer Documentation (Extended, Deep Reference)
 
-This is a **deep, practical reference** for developers maintaining the Invest Kenya WordPress child theme. It is intentionally verbose and explanatory so new developers can onboard quickly without guessing how things are wired.
+This is a **deep, practical reference** for developers maintaining the Invest Kenya WordPress child theme. It is intentionally verbose and explanatory so new developers can onboard quickly **without guessing** how things are wired.
 
 ---
 
@@ -11,6 +11,12 @@ This is a **deep, practical reference** for developers maintaining the Invest Ke
 - **Custom components:** `leroux-child/components/`
 - **Helper utilities:** `leroux-child/helpers/`
 - **Primary entry point:** `leroux-child/functions.php`
+
+### ✅ Why this structure matters
+The child theme is intentionally segmented so that **components can be reused as shortcodes** and **kept independent** of page templates. This makes it easier to:
+- Update one section without affecting the rest
+- Maintain a stable Elementor layout
+- Keep ACF field groups consistent
 
 ### ✅ What `functions.php` does (important)
 `functions.php` is the **central loader** for the theme. It:
@@ -36,6 +42,8 @@ This approach allows:
 - Designers to preserve consistent layouts.
 - Developers to add new sections without rewriting templates.
 
+**Practical effect:** Content and layout are loosely coupled — you can update ACF field groups without touching layout templates, and vice versa.
+
 ---
 
 ## 3) Data Sources (ACF + Post Meta)
@@ -46,6 +54,8 @@ ACF fields drive almost every landing page section. Examples:
 - **Why Kenya** sections use ACF for icons, stats, and tabbed image grids.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】
 - **Get Started** and **How we support investors** are ACF‑driven, including icons and button links.【F:leroux-child/components/get-started-home-page.php†L8-L64】【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】
 
+**Pattern:** Most ACF blocks follow a “title + sub‑title + repeaters” structure. When adding new sections, align with existing field naming conventions so editors can recognize patterns.
+
 ### B) Post meta (dynamic lists and details)
 Custom meta keys are required for filters and detail pages:
 - **Events:** `location`, `start_date`, `end_date` (filters + display).【F:leroux-child/functions.php†L236-L260】
@@ -53,6 +63,8 @@ Custom meta keys are required for filters and detail pages:
 - **Opportunities:** `investment_ammount`, `project_stage`, `county` (filters + cards).【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】
 - **Resources / Tenders:** `download_url` for download actions.【F:leroux-child/components/resources-filters-shortcodes.php†L84-L85】【F:leroux-child/components/tenders-posts-component.php†L21-L22】
 - **Governance:** `job_position` required for leadership listings.【F:leroux-child/components/governance-posts-component.php†L43-L44】
+
+**Operational warning:** If a meta key is missing, the filter UI may show blank options or the listing card will display incomplete data.
 
 ---
 
@@ -170,7 +182,17 @@ Each sector uses two blocks:
 
 ---
 
-## 6) Active Plugins (Operational Dependencies — Detailed)
+## 6) How Shortcodes Typically Work (Mental Model)
+Most shortcodes follow a consistent pattern:
+1. Read ACF fields (or post meta) for the current page/post.
+2. Build HTML markup with a section wrapper.
+3. Output a structured layout that Elementor positions.
+
+**Implication:** Elementor should not be responsible for core content; it is mostly a wrapper around shortcodes.
+
+---
+
+## 7) Active Plugins (Operational Dependencies — Detailed)
 These plugins are active and used in production. Removing or disabling them may break site functionality.
 
 ### Core content engine
@@ -215,15 +237,37 @@ These plugins are active and used in production. Removing or disabling them may 
 
 ---
 
-## 7) Maintenance & Best Practices
+## 8) Maintenance & Best Practices
 - **Prefer ACF fields over hardcoded values** in templates.
 - **Document new meta fields** when adding filters or list‑based features.
 - **Register new components in `functions.php`** so they load correctly in production.【F:leroux-child/functions.php†L285-L339】
 - **Keep Elementor templates consistent** by duplicating existing posts rather than starting from scratch.
+- **Keep shortcode output predictable** (consistent class names, section wrappers) to avoid breaking CSS.
 
 ---
 
-If needed, we can also produce:
+## 9) Troubleshooting (Common Scenarios)
+
+### A) A shortcode does not render
+- Confirm the component file is **required in `functions.php`**.
+- Confirm the shortcode name matches the one placed in Elementor.
+- Confirm ACF fields exist and are not empty.
+
+### B) Filters show blank options
+- Check the post meta keys (e.g., `investment_ammount`, `project_stage`, `county`).【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】
+- Confirm posts have the required meta filled.
+
+### C) Governance listing shows missing titles
+- Verify `job_position` is set on each Governance post.【F:leroux-child/components/governance-posts-component.php†L43-L44】
+
+---
+
+## 10) Optional Enhancements (If Requested)
+If the team asks for deeper documentation or automation, consider:
 - A **diagram** of page → shortcode → data flow
-- A **field inventory spreadsheet** for content editors
-- A **short training video** for internal staff
+- A **field inventory spreadsheet** for editors
+- A **short training walkthrough** for internal staff
+
+---
+
+If you need more context, check the component files directly and trace the ACF field names used inside each shortcode. This will give you the most accurate map of the data model.

@@ -1,135 +1,221 @@
-# Invest Kenya Website — Authoring Guide
+# Invest Kenya Website — Authoring Guide (Editor-Focused, Step-by-Step)
 
-This is the official, **hands‑on authoring guide** for editors. It follows the exact workflows used on the Invest Kenya site and is intentionally detailed so it can be followed step‑by‑step without technical knowledge.
+This is the official **hands-on authoring guide** for editors. It follows the exact workflows used on the Invest Kenya site and is intentionally **very detailed** so you can follow it step‑by‑step without technical knowledge. If you are unsure, this guide tells you **exactly where to click** and **what not to touch**.
+
+> **Core rule:** The site is intentionally structured so that **most visible text and images come from custom fields**, not from code. That means you can update content safely without breaking layout.
+
+---
+
+## 0) Before You Start (Editor Checklist)
+Use this quick checklist before every session so you do not miss anything.
+
+1. **Make sure you are on the correct site:**
+   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+2. **Have your content ready** in a separate document:
+   - Titles, subtitles, body text
+   - Links and URLs
+   - Image files (properly named)
+3. **Know the section you are updating:**
+   - News, Events, Publications, Governance, or a Page
+4. **Decide whether you need a draft or a publish:**
+   - Draft if content needs review
+   - Publish if approved
+5. **Never experiment on a live post:**
+   - Duplicate a sample post or save a draft first
 
 ---
 
 ## 1) How To Login To WordPress Dashboard
-1. Visit the WordPress dashboard:
+1. Open your browser.
+2. Go to the WordPress admin login:
    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Use your credentials and log in.
-3. You will be redirected to the WordPress dashboard.
+3. Enter your **username** and **password**.
+4. Click **Log In**.
+5. You will land on the **Dashboard**.
+
+**Tip:** If you cannot log in, ask the admin to reset your password. Do not create extra accounts without approval.
 
 ---
 
 ## 2) How To Preview Any Page or Post
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. On the left menu, you will see **Pages** and **Posts**.
-   - **Pages** = main website pages (home, about, why kenya, etc.).
-   - **Posts** = articles like News, Events, Publications, Governance.
-3. Open **Pages** or **Posts**, then search for the item you want.
-4. Hover over the item and click **View** to preview it.
+Previewing lets you check how a page looks without changing anything.
+
+1. Log in to WordPress.
+2. In the left menu, click **Pages** or **Posts**.
+   - **Pages** = main website pages (Home, About, Why Kenya, etc.)
+   - **Posts** = News, Events, Publications, Governance
+3. Find the item in the list.
+4. Hover over the title.
+5. Click **View**.
+6. The front-end preview opens in a new tab.
+
+**Pro tip:** Keep the preview open and refresh it after you update content so you see changes instantly.
 
 ---
 
-## 3) News Authoring (Step‑by‑Step)
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Click **Posts** on the left.
-3. Search for the post: **“News Sample -> duplicate this”**.
-4. Hover over it and click **Duplicate** (this creates a clean template copy).
-5. Hover over the new duplicate and click **Quick Edit**.
-6. Fill the **Title**, then copy it and paste it into the **Slug** (exact same text).
-7. If you want tags, update the **Tags** field (example: `Danger, Critical`).
-8. **Do not change anything else.** Click **Update**.
-9. Hover over the new post again and click **Edit** (not Elementor).
-10. On the right under **Post** you’ll see the **Featured Image**.
-    - Hover → **Replace**.
-    - Upload or select from media.
-11. Scroll down in the editor. You must adjust:
-    - **Display In Slider:** Yes / No (controls if it appears in the news slider).
-    - **Blog List Image:** select the same image you used as featured image.
-12. Click **Save Draft** (top right).
+## 3) News Authoring (Step‑by‑Step — Exact Workflow)
+News posts should always be duplicated from a clean template to keep layout consistent.
+
+1. Log in to WordPress.
+2. Click **Posts** (left menu).
+3. Use search and find the post named:
+   - **“News Sample -> duplicate this”**
+4. Hover over it, then click **Duplicate**.
+5. Hover over the **new duplicated post**, click **Quick Edit**.
+6. In Quick Edit, update:
+   - **Title** (the headline)
+   - **Slug** (copy/paste the same title; remove special characters if needed)
+   - **Tags** (optional; add comma‑separated keywords like `Investment, Policy, Growth`)
+7. **Do not change categories or layout settings.**
+8. Click **Update**.
+9. Hover again → click **Edit** (not Elementor yet).
+10. On the right side under **Post**, set the **Featured Image**:
+    - Click **Set Featured Image** or **Replace**.
+    - Upload or select from Media Library.
+11. Scroll down to the **custom fields** area and confirm:
+    - **Display In Slider:** Yes/No
+    - **Blog List Image:** select the same image as featured image
+12. Click **Save Draft**.
 13. Go back to **Posts**, find your draft.
 14. Hover and click **Edit with Elementor**.
-15. If the Elementor panel is not visible, click the small icon between **Search** and the **Eye** (near the Publish button).
-16. In Elementor you are responsible **only for the first two sections**.
-    - Expand the first section → column → update the image and two text editors.
-17. You can **Publish** immediately, or click the arrow next to **Publish** and choose **Save Draft**.
-18. If saved as draft: go back to Posts → Quick Edit → change status to **Published** → Update.
+15. If Elementor panel is hidden, click the small icon between **Search** and the **Eye** (near Publish).
+16. In Elementor, only update the **first two sections**:
+    - Section 1: Image + text
+    - Section 2: Text content
+17. Click **Publish** or the arrow → **Save Draft**.
+18. If you saved a draft, return to **Posts → Quick Edit → Status = Published → Update**.
+
+**Final check:** Preview the post and confirm the featured image, title, and slider option are correct.
 
 ---
 
 ## 4) Events Authoring (Step‑by‑Step)
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Click **Posts** on the left.
-3. Search for: **“Event Sample -> duplicate this”**.
-4. Follow the same steps as News (duplicate → quick edit → update title/slug → save).
-5. **Extra fields you must fill:**
-   - **Start Date**
-   - **End Date**
-   - **Location**
-6. If the event is one day only: fill **Start Date** only.
-7. In Elementor you only update the **first section**.
-   - You will see **three text editors**, **one image**, and an **HTML widget**.
-   - **Do not touch the HTML widget.**
-8. Publish or save draft, same as News.
+Events are almost identical to News, but require event dates and location.
+
+1. Log in → **Posts**.
+2. Search for:
+   - **“Event Sample -> duplicate this”**
+3. Duplicate the sample post.
+4. Quick Edit the duplicate:
+   - Update **Title** and **Slug**
+   - Leave categories untouched
+5. Click **Update**.
+6. Click **Edit** (WordPress editor).
+7. Set the **Featured Image**.
+8. In custom fields, fill:
+   - **Start Date** (required)
+   - **End Date** (only if multi-day)
+   - **Location** (city, venue, or region)
+9. Click **Save Draft**.
+10. Open **Edit with Elementor**.
+11. Update only the **first section**:
+    - 3 text editors
+    - 1 image
+    - 1 HTML widget (do **not** touch)
+12. Publish or save as draft.
+
+**Important rule:** If it is a one‑day event, leave **End Date** empty.
 
 ---
 
 ## 5) Publication Authoring (Resources)
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Click **Posts** on the left.
-3. Search for: **“Publication Sample -> duplicate this”**.
-4. Follow the same steps as News.
-5. **Extra field:** **Download Link** (paste the file URL).
-6. In Elementor you only update the **first container** (it contains two inner containers).
-   - You will see **two text editors**, **one image**, and a **Button**.
-   - **Do not touch the Button widget.**
-7. Save or publish.
+Publications are posts that include a file download link.
+
+1. Go to **Posts** → search:
+   - **“Publication Sample -> duplicate this”**
+2. Duplicate it.
+3. Quick Edit:
+   - Update **Title**
+   - Update **Slug**
+4. Click **Update**.
+5. Edit the post.
+6. Set the **Featured Image**.
+7. In custom fields, fill:
+   - **Download Link** (paste the URL of the PDF or file)
+8. Save Draft.
+9. Edit with Elementor.
+10. Update only the **first container** (two inner containers):
+    - 2 text editors
+    - 1 image
+    - 1 button (do **not** edit the button settings)
+11. Publish or save draft.
+
+**Tip:** Test the download link in preview before publishing.
 
 ---
 
 ## 6) Governance Authoring (Board / Senior Management)
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Click **Posts** on the left.
-3. Search for: **“Governance Sample -> duplicate this”**.
-4. Follow the same steps as News.
-5. In **Quick Edit**, change the **Category**:
-   - For Senior Management: check **Senior Management** and uncheck **Board Members**.
-6. **Extra field:** **Job Position** (fill it).
-7. In Elementor:
-   - Update the first main container (two inner containers).
-   - Update the extra container inside the second container for job position.
-   - You will see **three text editors**, **one image**, and an **Icon**.
-   - **Do not touch the Icon widget.**
-8. Save or publish.
+Governance posts represent people and require a title and job position.
+
+1. Go to **Posts** → search:
+   - **“Governance Sample -> duplicate this”**
+2. Duplicate it.
+3. Quick Edit:
+   - Update **Title** (person’s full name)
+   - Update **Slug**
+   - **Category:**
+     - Board Members = checked for board profiles
+     - Senior Management = checked for management profiles
+4. Click **Update**.
+5. Edit the post.
+6. Set the **Featured Image** (portrait photo).
+7. Fill **Job Position** in custom fields.
+8. Save draft.
+9. Edit with Elementor.
+10. Update the first main container:
+    - 3 text editors
+    - 1 image
+    - 1 icon (do **not** change the icon widget)
+11. Publish or save draft.
+
+**Note:** If the job position is missing, the profile may display incorrectly on listings.
 
 ---
 
 ## 7) How To Add a New Tag
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Hover over **Posts** and click **Tags**.
-3. Enter the **Tag Name**.
+1. Log in.
+2. Hover **Posts** → click **Tags**.
+3. Enter **Tag Name**.
 4. Click **Add New Tag**.
-5. To edit or delete existing tags: hover the tag → **Quick Edit** or **Delete**.
+5. To edit or delete tags: hover a tag → **Quick Edit** or **Delete**.
+
+**Tip:** Keep tags short and consistent (e.g., “Investment”, “Policy”, “Trade”).
 
 ---
 
-## 8) How To Add a Media Element
-1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
-2. Click **Media** on the left.
-3. You can:
-   - Upload new media
-   - Edit existing images (alt text, title, delete)
-4. Click **Add New Media** to upload new files.
-5. To edit an existing image, click it in the media library and update its details.
+## 8) How To Add or Update Media (Images & Files)
+1. Log in.
+2. Click **Media** in the left menu.
+3. To upload new files:
+   - Click **Add New Media** → upload files
+4. To edit a file:
+   - Click the image/file
+   - Update **Title**, **Alt Text**, or **Description**
+5. To delete a file:
+   - Click file → **Delete Permanently** (only if you are sure)
+
+**Best practice:** Always add **Alt Text** for accessibility and SEO.
 
 ---
 
 ## 9) Final Quality Checklist (Before Publishing)
+Use this checklist for every post or update.
+
 ✅ Title is clear and matches the slug
-✅ Featured image is set
+✅ Featured image is set and correct
 ✅ Required custom fields are filled
-✅ Elementor sections updated (only where instructed)
-✅ Draft or Publish status set correctly
+✅ Elementor sections updated only where allowed
+✅ Draft or Publish status is correct
+✅ Preview checked in a new tab
 
 ---
 
-If you want, we can also add page‑specific checklists for each main section (Why Kenya, Incentives, Laws, etc.).
+## 10) Troubleshooting (Quick Fixes)
+- **I cannot see Elementor widgets:** Click the small panel icon near Publish.
+- **The post looks wrong:** You likely edited the wrong section. Re‑duplicate the template.
+- **The slider is not showing:** Ensure **Display In Slider = Yes**.
+- **The download button does nothing:** Confirm the **Download Link** custom field.
+
+---
+
+If you need, we can also build **page‑specific mini‑checklists** for each major section (Why Kenya, Incentives, Laws, etc.).
