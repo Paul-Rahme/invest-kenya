@@ -6,7 +6,7 @@ This is the official, **hands‑on authoring guide** for editors. It follows the
 
 ## 1) How To Login To WordPress Dashboard
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Use your credentials and log in.
 3. You will be redirected to the WordPress dashboard.
 
@@ -14,10 +14,10 @@ This is the official, **hands‑on authoring guide** for editors. It follows the
 
 ## 2) How To Preview Any Page or Post
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. On the left menu, you will see **Pages** and **Posts**.
-   - **Pages** = main website pages (home, about, why kenya, etc.).
-   - **Posts** = articles like News, Events, Publications, Governance.
+    - **Pages** = main website pages (home, about, why kenya, etc.).
+    - **Posts** = articles like News, Events, Publications, Governance.
 3. Open **Pages** or **Posts**, then search for the item you want.
 4. Hover over the item and click **View** to preview it.
 
@@ -25,7 +25,7 @@ This is the official, **hands‑on authoring guide** for editors. It follows the
 
 ## 3) News Authoring (Step‑by‑Step)
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Click **Posts** on the left.
 3. Search for the post: **“News Sample -> duplicate this”**.
 4. Hover over it and click **Duplicate** (this creates a clean template copy).
@@ -53,57 +53,57 @@ This is the official, **hands‑on authoring guide** for editors. It follows the
 
 ## 4) Events Authoring (Step‑by‑Step)
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Click **Posts** on the left.
 3. Search for: **“Event Sample -> duplicate this”**.
 4. Follow the same steps as News (duplicate → quick edit → update title/slug → save).
 5. **Extra fields you must fill:**
-   - **Start Date**
-   - **End Date**
-   - **Location**
+    - **Start Date**
+    - **End Date**
+    - **Location**
 6. If the event is one day only: fill **Start Date** only.
 7. In Elementor you only update the **first section**.
-   - You will see **three text editors**, **one image**, and an **HTML widget**.
-   - **Do not touch the HTML widget.**
+    - You will see **three text editors**, **one image**, and an **HTML widget**.
+    - **Do not touch the HTML widget.**
 8. Publish or save draft, same as News.
 
 ---
 
 ## 5) Publication Authoring (Resources)
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Click **Posts** on the left.
 3. Search for: **“Publication Sample -> duplicate this”**.
 4. Follow the same steps as News.
 5. **Extra field:** **Download Link** (paste the file URL).
 6. In Elementor you only update the **first container** (it contains two inner containers).
-   - You will see **two text editors**, **one image**, and a **Button**.
-   - **Do not touch the Button widget.**
+    - You will see **two text editors**, **one image**, and a **Button**.
+    - **Do not touch the Button widget.**
 7. Save or publish.
 
 ---
 
 ## 6) Governance Authoring (Board / Senior Management)
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Click **Posts** on the left.
 3. Search for: **“Governance Sample -> duplicate this”**.
 4. Follow the same steps as News.
 5. In **Quick Edit**, change the **Category**:
-   - For Senior Management: check **Senior Management** and uncheck **Board Members**.
+    - For Senior Management: check **Senior Management** and uncheck **Board Members**.
 6. **Extra field:** **Job Position** (fill it).
 7. In Elementor:
-   - Update the first main container (two inner containers).
-   - Update the extra container inside the second container for job position.
-   - You will see **three text editors**, **one image**, and an **Icon**.
-   - **Do not touch the Icon widget.**
+    - Update the first main container (two inner containers).
+    - Update the extra container inside the second container for job position.
+    - You will see **three text editors**, **one image**, and an **Icon**.
+    - **Do not touch the Icon widget.**
 8. Save or publish.
 
 ---
 
 ## 7) How To Add a New Tag
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Hover over **Posts** and click **Tags**.
 3. Enter the **Tag Name**.
 4. Click **Add New Tag**.
@@ -113,11 +113,11 @@ This is the official, **hands‑on authoring guide** for editors. It follows the
 
 ## 8) How To Add a Media Element
 1. Visit the WordPress dashboard:
-   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
+    - **https://beta.investkenya.go.ke/wordpress/wp-admin/**
 2. Click **Media** on the left.
 3. You can:
-   - Upload new media
-   - Edit existing images (alt text, title, delete)
+    - Upload new media
+    - Edit existing images (alt text, title, delete)
 4. Click **Add New Media** to upload new files.
 5. To edit an existing image, click it in the media library and update its details.
 
