@@ -1,60 +1,98 @@
 # Invest Kenya WordPress Site — Developer Documentation
 
-This document is a **developer-facing, detailed reference** for the Invest Kenya WordPress child theme. It aims to be more readable and less “code-like” while still giving you everything you need to maintain or extend the site.
+This is a **deep, practical reference** for developers maintaining the Invest Kenya WordPress child theme. It is intentionally verbose and explanatory so new developers can onboard quickly without guessing how things are wired.
 
 ---
 
-## 1) Architecture Overview (How the site is built)
+## 1) How the Theme is Organized
 
-### ✅ Theme structure
-- **Child theme:** `leroux-child`
-- **Custom components:** stored in `leroux-child/components/`
-- **Entry point:** `leroux-child/functions.php` loads most custom blocks and registers shortcodes.【F:leroux-child/functions.php†L1-L23】【F:leroux-child/functions.php†L285-L339】
+### ✅ Folder structure (what matters most)
+- **Child theme root:** `leroux-child/`
+- **Custom components:** `leroux-child/components/`
+- **Helper utilities:** `leroux-child/helpers/`
+- **Primary entry point:** `leroux-child/functions.php`
 
-### ✅ Content philosophy
-Most of the site is **not hardcoded**. Instead:
-- Every major section pulls data from **ACF custom fields**.
-- Post lists (News, Events, Opportunities, etc.) use **post meta** for filtering and detail display.
-- Elementor is mostly used as a **layout wrapper**, while custom shortcodes generate the HTML.
+### ✅ What `functions.php` does (important)
+`functions.php` is the **central loader** for the theme. It:
+- Enqueues the child theme stylesheet.
+- Adds multiple **shortcodes** that are used inside Elementor sections.
+- Defines custom helper behavior (e.g., related news placement, post meta display helpers).
+- Loads all component files from `components/` using `require_once` so shortcodes are available site‑wide.
+- Adds a redirect for 404 pages to a custom not‑found page.
 
----
-
-## 2) How Content is Wired (Data Sources)
-
-### A) ACF Fields (page-level content)
-These fields power almost all landing-page content. Examples:
-- **Page banners** (title lines, buttons, slider images) are pulled from ACF fields when used on the homepage.【F:leroux-child/components/page-banner-block.php†L8-L52】
-- **Why Kenya** blocks use ACF to render icons, stats, multi-column text, and tabbed image galleries.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】
-- **Get Started** and **How we support investors** are also fully ACF-driven.【F:leroux-child/components/get-started-home-page.php†L8-L64】【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】
-
-### B) Post Meta (dynamic lists + details)
-Custom meta keys are required for filters and detail sections:
-- **Events:** `location`, `start_date`, `end_date` drive filters and metadata output.【F:leroux-child/functions.php†L236-L260】
-- **Careers:** `job_classification`, `location` for job detail display.【F:leroux-child/functions.php†L186-L203】
-- **Opportunities:** `investment_ammount`, `project_stage`, `county` for filters and cards.【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】
-- **Resources/Tenders:** `download_url` for download actions.【F:leroux-child/components/resources-filters-shortcodes.php†L84-L85】【F:leroux-child/components/tenders-posts-component.php†L21-L22】
-- **Governance:** `job_position` is required for leadership listings.【F:leroux-child/components/governance-posts-component.php†L43-L44】
+If a new component is added and **not required in `functions.php`**, it will not load in production.【F:leroux-child/functions.php†L1-L23】【F:leroux-child/functions.php†L285-L339】
 
 ---
 
-## 3) Page Map (Which shortcodes build each page)
+## 2) Content Philosophy (Why the site works this way)
 
-This section gives a practical “map” to understand which blocks build each page and what data they expect.
+This website is mostly **custom coded**, but intentionally avoids hardcoded text. Instead:
+- **ACF fields** power nearly all text, images, icons, buttons, and statistics.
+- **Post meta fields** power filters and special post‑type details.
+- **Elementor** is primarily used for layout, spacing, and placement of shortcodes.
+
+This approach allows:
+- Non‑technical editors to update content.
+- Designers to preserve consistent layouts.
+- Developers to add new sections without rewriting templates.
+
+---
+
+## 3) Data Sources (ACF + Post Meta)
+
+### A) ACF fields (page‑level content)
+ACF fields drive almost every landing page section. Examples:
+- **Page banner slider** (primarily used on the homepage) uses ACF for slide images, title parts, and buttons.【F:leroux-child/components/page-banner-block.php†L8-L52】
+- **Why Kenya** sections use ACF for icons, stats, and tabbed image grids.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】
+- **Get Started** and **How we support investors** are ACF‑driven, including icons and button links.【F:leroux-child/components/get-started-home-page.php†L8-L64】【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】
+
+### B) Post meta (dynamic lists and details)
+Custom meta keys are required for filters and detail pages:
+- **Events:** `location`, `start_date`, `end_date` (filters + display).【F:leroux-child/functions.php†L236-L260】
+- **Careers:** `job_classification`, `location` (detail metadata).【F:leroux-child/functions.php†L186-L203】
+- **Opportunities:** `investment_ammount`, `project_stage`, `county` (filters + cards).【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】
+- **Resources / Tenders:** `download_url` for download actions.【F:leroux-child/components/resources-filters-shortcodes.php†L84-L85】【F:leroux-child/components/tenders-posts-component.php†L21-L22】
+- **Governance:** `job_position` required for leadership listings.【F:leroux-child/components/governance-posts-component.php†L43-L44】
+
+---
+
+## 4) Elementor Workflow (Especially for News, Events, Resources, Governance)
+
+Many post types rely on a **consistent template layout**. The most reliable method is:
+1. Duplicate an existing post (so the layout and styling are preserved).
+2. Open the duplicate in **Elementor**.
+3. Update only the content sections or blocks if needed (most layouts stay the same).
+4. Edit the post fields (title, content, custom fields) in the WordPress editor.
+
+This ensures:
+- Layout consistency across posts
+- Filters and listing views continue working
+- Custom field sections stay wired correctly
+
+This workflow applies especially to:
+- **News posts**
+- **Event posts**
+- **Resource posts**
+- **Governance profiles**
+
+---
+
+## 5) Page Map (Which shortcodes build which pages)
 
 ### Why Kenya
 - **`[first_section_why_kenya]`** → title split + 6 icon/subtitle/text rows.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】
-- **`[second_section_block_why_kenya]`** → 3 values, mid-text, and 5 icon cards.【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】
+- **`[second_section_block_why_kenya]`** → 3 values, mid‑text, and 5 icon cards.【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】
 - **`[third_section_block_why_kenya]`** → up to 13 stat cards with icons/labels/descriptions.【F:leroux-child/components/third-section-block-why-kenya.php†L8-L112】
 - **`[fourth_section_block_why_kenya]`** → title + 2 subtitles + 3 values/labels.【F:leroux-child/components/fourth-section-block-why-kenya.php†L8-L26】
 - **`[fifth_section_block_why_kenya]`** → tabbed image gallery (up to 8 tabs).【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】
 
-> ⚠️ The **page banner slider** (`[page_banner_block]`) is primarily used on the **homepage**. It is not a default block for every page.【F:leroux-child/components/page-banner-block.php†L8-L52】
+> ⚠️ The **page banner slider** (`[page_banner_block]`) is primarily used on the **homepage** and is not default for every page.【F:leroux-child/components/page-banner-block.php†L8-L52】
 
 ---
 
 ### Incentives
 - **`[incentives_tabs_block]`** → tabbed incentive content with steps + CTA buttons.【F:leroux-child/components/tabs-block-benefits-protections-shortcodes.php†L6-L118】
-- **`[eligible_investments_block]`** → two-column list of eligible investment types.【F:leroux-child/components/second-section-block-benefits-protections.php†L7-L78】
+- **`[eligible_investments_block]`** → two‑column list of eligible investment types.【F:leroux-child/components/second-section-block-benefits-protections.php†L7-L78】
 
 ---
 
@@ -66,7 +104,7 @@ This section gives a practical “map” to understand which blocks build each p
 
 ### Investment Trends
 - **`[tabs_block_investment_trends]`** → tabbed statistics + descriptions.【F:leroux-child/components/tabs-block-investment-trends.php†L7-L28】
-- **`[second_section_investment_trends]`** → additional trend content block.【F:leroux-child/components/second-section-investment-trends.php†L9-L31】
+- **`[second_section_investment_trends]`** → supporting trend content block.【F:leroux-child/components/second-section-investment-trends.php†L9-L31】
 
 ---
 
@@ -76,22 +114,22 @@ This section gives a practical “map” to understand which blocks build each p
 ---
 
 ### Investment Opportunities (Listing)
-- **`[kenya_opportunities_filters]`** → filters (amount, project stage, county).【F:leroux-child/components/opportunities-filters-shortcodes.php†L19-L137】
-- **`[kenya_opportunities_posts]`** → opportunity grid/list output.【F:leroux-child/components/opportunities-posts-component-shortcodes.php†L11-L39】
+- **`[kenya_opportunities_filters]`** → filters (amount, stage, county).【F:leroux-child/components/opportunities-filters-shortcodes.php†L19-L137】
+- **`[kenya_opportunities_posts]`** → grid/list output.【F:leroux-child/components/opportunities-posts-component-shortcodes.php†L11-L39】
 
 ---
 
 ### Sector Pages (Agriculture, ICT, Tourism, etc.)
-Each sector uses two main components:
+Each sector uses two blocks:
 - **Overview block** — sector description, snapshot values, contact details.【F:leroux-child/components/sector-overview-block-agriculture.php†L7-L35】
 - **Tabs block** — deeper statistics, checklists, logos by tab.【F:leroux-child/components/sector-tabs-block-agriculture.php†L7-L40】
 
 ---
 
 ### Get Started
-- **`[get_started_home_page]`** → 2-column step layout + icon grid + buttons.【F:leroux-child/components/get-started-home-page.php†L8-L64】
+- **`[get_started_home_page]`** → 2‑column step layout + icon grid + buttons.【F:leroux-child/components/get-started-home-page.php†L8-L64】
 - **`[how_we_support_investors]`** + **`[how_we_support_investors_second_section]`** → support content blocks.【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】【F:leroux-child/components/second-section-block-how-we-support-investors.php†L7-L20】
-- **`[tab_block_investing_in_kenya]`** → step-by-step multi-tab guide content.【F:leroux-child/components/tab-block-investing-in-kenya.php†L8-L90】
+- **`[tab_block_investing_in_kenya]`** → step‑by‑step multi‑tab guide content.【F:leroux-child/components/tab-block-investing-in-kenya.php†L8-L90】
 
 ---
 
@@ -132,13 +170,40 @@ Each sector uses two main components:
 
 ---
 
-## 4) Maintenance Guidance (Best Practices)
-- **Use ACF for content** whenever possible; avoid hardcoding text in PHP templates.
-- **Document new meta fields** when you add filters or post-based features.
-- **Register new components** in `functions.php` to ensure they load in production.【F:leroux-child/functions.php†L285-L339】
+## 6) Active Plugins (Operational Dependencies)
+These plugins are active and used in production. Removing or disabling them may break site functionality:
+
+- **Advanced Custom Fields (ACF)** — core custom fields system.
+- **Elementor** + **Elementor Pro** — layout and page building.
+- **All‑in‑One WP Migration** + **Unlimited Extension** — backups/migrations.
+- **Migrate Guru** — site migration tool.
+- **LiteSpeed Cache** — performance and caching.
+- **GTranslate** — translation/multilingual support.
+- **Contact Form 7** — forms.
+- **MC4WP (Mailchimp for WordPress)** — newsletter signup.
+- **Duplicate Page** — duplication tool for posts/pages.
+- **Leroux Core** + **Qode Framework** — theme framework features.
+- **Qi Addons for Elementor** — extra Elementor widgets.
+- **Qi Blocks** — Gutenberg block set.
+- **QODE Optimizer** — image optimization.
+- **QODE Quick View for WooCommerce** — quick view feature (compatibility).
+- **QODE Wishlist for WooCommerce** — wishlist feature (compatibility).
+- **Classic Widgets** — old widget screen support.
+- **WP File Manager** — file management (use carefully).
+- **Envato Market** — theme/plugin updates.
+- **Ally – Web Accessibility & Usability** — accessibility tools.
 
 ---
 
-If you want, I can also provide:
+## 7) Maintenance & Best Practices
+- **Prefer ACF fields over hardcoded values** in templates.
+- **Document new meta fields** when adding filters or list‑based features.
+- **Register new components in `functions.php`** so they load correctly in production.【F:leroux-child/functions.php†L285-L339】
+- **Keep Elementor templates consistent** by duplicating existing posts rather than starting from scratch.
+
+---
+
+If needed, we can also produce:
 - A **diagram** of page → shortcode → data flow
-- A **field inventory list** (exportable checklist for editors)
+- A **field inventory spreadsheet** for content editors
+- A **short training video** for internal staff
