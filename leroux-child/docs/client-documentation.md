@@ -228,28 +228,48 @@ These fields appear on the job detail page.【F:leroux-child/functions.php†L18
 
 ---
 
-## 🧩 Plugins in Use (Active)
-These are the active plugins supporting the site. If you see any of these disabled, contact a developer before making changes:
+## 🧩 Plugins in Use (Active — Explained)
+Below is a plain‑language explanation of each active plugin and why it matters.
 
-- **Advanced Custom Fields (ACF)** — powers most editable fields.
-- **Elementor** + **Elementor Pro** — used for layout and page building.
-- **All‑in‑One WP Migration** + **Unlimited Extension** — backups and full site migration.
-- **Migrate Guru** — alternative site migration tool.
-- **LiteSpeed Cache** — performance and caching.
-- **GTranslate** — multilingual translation support.
-- **Contact Form 7** — contact forms.
-- **MC4WP (Mailchimp for WordPress)** — newsletter and signup forms.
-- **Duplicate Page** — duplicate posts/pages quickly.
-- **Leroux Core** + **Qode Framework** — theme core features.
+### ⭐ Core content system
+- **Advanced Custom Fields (ACF)** — the most important plugin on the site. It creates the extra fields you see below the editor (titles, numbers, icons, links, etc.). If ACF is disabled, most page sections will stop working. Always keep it active and updated.
+
+### ⭐ Page building & layout
+- **Elementor** — the visual page builder used for layouts and section placement.
+- **Elementor Pro** — adds advanced widgets, theme builder tools, and dynamic capabilities.
+
+### ⭐ Backups & migration
+- **All‑in‑One WP Migration** — export/import full site backups.
+- **All‑in‑One WP Migration Unlimited Extension** — removes size limits during migration.
+- **Migrate Guru** — alternative migration tool for moving the site.
+
+### ⭐ Performance & optimization
+- **LiteSpeed Cache** — speeds up the site with caching and optimization tools.
+- **QODE Optimizer** — compresses and optimizes images across the site.
+
+### ⭐ Forms & marketing
+- **Contact Form 7** — powers contact and enquiry forms.
+- **MC4WP (Mailchimp for WordPress)** — connects the site to Mailchimp for newsletter signups.
+
+### ⭐ Translation & accessibility
+- **GTranslate** — adds multilingual translation support.
+- **Ally – Web Accessibility & Usability** — provides accessibility tools (contrast, resizing, etc.).
+
+### ⭐ Theme & design utilities
+- **Leroux Core** — required for theme‑specific features (shortcodes, custom blocks).
+- **Qode Framework** — the foundation framework for the theme.
 - **Qi Addons for Elementor** — extra Elementor widgets.
-- **Qi Blocks** — Gutenberg blocks library.
-- **QODE Optimizer** — image optimization.
-- **QODE Quick View for WooCommerce** — product quick view (kept for compatibility).
-- **QODE Wishlist for WooCommerce** — wishlist feature (kept for compatibility).
-- **Classic Widgets** — classic widget editor support.
-- **WP File Manager** — file access and management.
-- **Envato Market** — plugin/theme updates via Envato.
-- **Ally – Web Accessibility & Usability** — accessibility tools.
+- **Qi Blocks** — additional Gutenberg blocks.
+
+### ⭐ Editorial workflow
+- **Duplicate Page** — duplicating pages/posts quickly (very useful for consistent layout).
+- **Classic Widgets** — keeps the classic widget screen.
+- **WP File Manager** — direct file access (use carefully; only for admins).
+- **Envato Market** — used for theme and plugin updates from Envato.
+
+### ⭐ WooCommerce compatibility (kept active)
+- **QODE Quick View for WooCommerce** — quick product preview.
+- **QODE Wishlist for WooCommerce** — wishlist feature.
 
 ---
 

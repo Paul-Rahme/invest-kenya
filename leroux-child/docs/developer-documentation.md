@@ -170,28 +170,48 @@ Each sector uses two blocks:
 
 ---
 
-## 6) Active Plugins (Operational Dependencies)
-These plugins are active and used in production. Removing or disabling them may break site functionality:
+## 6) Active Plugins (Operational Dependencies — Detailed)
+These plugins are active and used in production. Removing or disabling them may break site functionality.
 
-- **Advanced Custom Fields (ACF)** — core custom fields system.
-- **Elementor** + **Elementor Pro** — layout and page building.
-- **All‑in‑One WP Migration** + **Unlimited Extension** — backups/migrations.
-- **Migrate Guru** — site migration tool.
-- **LiteSpeed Cache** — performance and caching.
-- **GTranslate** — translation/multilingual support.
-- **Contact Form 7** — forms.
-- **MC4WP (Mailchimp for WordPress)** — newsletter signup.
-- **Duplicate Page** — duplication tool for posts/pages.
-- **Leroux Core** + **Qode Framework** — theme framework features.
-- **Qi Addons for Elementor** — extra Elementor widgets.
-- **Qi Blocks** — Gutenberg block set.
-- **QODE Optimizer** — image optimization.
-- **QODE Quick View for WooCommerce** — quick view feature (compatibility).
-- **QODE Wishlist for WooCommerce** — wishlist feature (compatibility).
-- **Classic Widgets** — old widget screen support.
-- **WP File Manager** — file management (use carefully).
-- **Envato Market** — theme/plugin updates.
-- **Ally – Web Accessibility & Usability** — accessibility tools.
+### Core content engine
+- **Advanced Custom Fields (ACF)** — the foundation of this site’s content system. ACF defines almost every field used by shortcodes (headlines, numbers, icons, links, statistics). If ACF is disabled, most custom sections will stop rendering. Keep field groups organized and use consistent naming conventions to avoid breaking template output.
+
+### Page building & layout
+- **Elementor** — primary layout tool; shortcodes are usually placed inside Elementor sections for spacing and design control.
+- **Elementor Pro** — provides advanced widgets, theme builder, and dynamic data features used by editors.
+
+### Backups & migration
+- **All‑in‑One WP Migration** — full site export/import for backups.
+- **All‑in‑One WP Migration Unlimited Extension** — removes import/export size limits.
+- **Migrate Guru** — alternate site migration tool for large sites.
+
+### Performance & optimization
+- **LiteSpeed Cache** — page caching, minification, and performance tuning.
+- **QODE Optimizer** — image compression and optimization.
+
+### Forms & marketing
+- **Contact Form 7** — contact forms and inquiry forms.
+- **MC4WP (Mailchimp for WordPress)** — newsletter and signup integration.
+
+### Translation & accessibility
+- **GTranslate** — multilingual translation support.
+- **Ally – Web Accessibility & Usability** — accessibility features (contrast, text resizing, etc.).
+
+### Theme & design utilities
+- **Leroux Core** — required plugin providing theme‑specific features.
+- **Qode Framework** — base framework for the Qode theme ecosystem.
+- **Qi Addons for Elementor** — extra Elementor widgets used in layouts.
+- **Qi Blocks** — Gutenberg block library (kept active for compatibility).
+
+### Editorial workflow utilities
+- **Duplicate Page** — efficient duplication of pages/posts for consistent layout.
+- **Classic Widgets** — legacy widget management support.
+- **WP File Manager** — direct file access (admin‑only; use carefully).
+- **Envato Market** — update management for theme and plugins via Envato.
+
+### WooCommerce compatibility (kept active)
+- **QODE Quick View for WooCommerce** — quick product previews.
+- **QODE Wishlist for WooCommerce** — wishlist functionality.
 
 ---
 
