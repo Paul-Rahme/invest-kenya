@@ -11,13 +11,43 @@ if (!defined('ABSPATH')) exit;
 function shortcode_opportunities_overview() {
 
     // ACF FIELDS
-    $desc           = get_field('sector_description');
+    $desc_1         = get_field('sector_description_1');
+    $desc_2         = get_field('sector_description_2');
+    $link_text      = get_field('link_text');
+    $link_url       = get_field('link_url');
+
     $contact_title  = get_field('contact_title');
     $contact_email  = get_field('contact_email_address');
     $button_text    = get_field('button_text');
 
+    // ICONS (USING HELPER)
+    $link_icon_default = ik_upload_url('2026/01/System-Icons.svg');
+    $link_icon_hover   = ik_upload_url('2025/11/System-Icons-2.svg');
+
     ob_start();
 ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.iko-custom-link');
+
+    links.forEach(link => {
+        const icon = link.querySelector('.iko-link-icon');
+        if (!icon) return;
+
+        const defaultSrc = icon.getAttribute('data-default');
+        const hoverSrc   = icon.getAttribute('data-hover');
+
+        link.addEventListener('mouseenter', () => {
+            icon.src = hoverSrc;
+        });
+
+        link.addEventListener('mouseleave', () => {
+            icon.src = defaultSrc;
+        });
+    });
+});
+</script>
 
 <!-- ===========================
      SECTOR OVERVIEW — OPPORTUNITIES
@@ -25,14 +55,37 @@ function shortcode_opportunities_overview() {
 <div class="iko-safe-area">
     <div class="iko-two-columns">
 
-        <!-- LEFT COLUMN (DESCRIPTION ONLY) -->
+        <!-- LEFT COLUMN -->
         <div class="iko-left">
-            <p class="iko-desc">
-                <?php echo esc_html($desc); ?>
-            </p>
+
+            <?php if ($desc_1): ?>
+                <p class="iko-desc">
+                    <?php echo esc_html($desc_1); ?>
+                </p>
+            <?php endif; ?>
+
+            <?php if ($desc_2): ?>
+                <p class="iko-desc">
+                    <?php echo esc_html($desc_2); ?>
+                </p>
+            <?php endif; ?>
+
+            <?php if ($link_text && $link_url): ?>
+                <a href="<?php echo esc_url($link_url); ?>" class="iko-custom-link">
+                    <?php echo esc_html($link_text); ?>
+                    <img 
+                        src="<?php echo esc_url($link_icon_default); ?>" 
+                        class="iko-link-icon" 
+                        data-hover="<?php echo esc_url($link_icon_hover); ?>"
+                        data-default="<?php echo esc_url($link_icon_default); ?>"
+                        alt=""
+                    >
+                </a>
+            <?php endif; ?>
+
         </div>
 
-        <!-- RIGHT COLUMN (CARD WITH TITLE + BUTTON ONLY) -->
+        <!-- RIGHT COLUMN -->
         <div class="iko-right">
             <div class="iko-contact-card">
 
@@ -44,7 +97,7 @@ function shortcode_opportunities_overview() {
 
                 <?php if ($button_text): ?>
                     <a href="mailto:<?php echo esc_attr($contact_email); ?>" class="iko-red-button">
-                        <img class="iko-mail-icon" src="<?php echo esc_url( ik_upload_url('2025/12/Path.svg') ); ?>">
+                        <img class="iko-mail-icon" src="<?php echo esc_url( ik_upload_url('2025/12/mail.svg') ); ?>">
                         <?php echo esc_html($button_text); ?>
                     </a>
                 <?php endif; ?>
@@ -63,10 +116,9 @@ function shortcode_opportunities_overview() {
     max-width: 1530px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 30px; /* desktop gutters */
+    padding: 0 30px;
     box-sizing: border-box;
 }
-
 
 /* ===========================
    TWO COLUMNS
@@ -97,7 +149,62 @@ function shortcode_opportunities_overview() {
     font-weight: 400;
     line-height: 30px;
     color: #101110;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
+}
+
+/* ===========================
+   CUSTOM LINK
+=========================== */
+.iko-custom-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #DB2129;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 6px;
+    width: fit-content;
+    margin-top: 6px;
+    transition: 0.25s ease;
+}
+
+.iko-custom-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #DB2129;
+    transition: 0.25s ease;
+}
+
+.iko-link-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transition: 0.25s ease;
+    position: relative;
+    top: 1px;
+}
+
+/* Hover */
+.iko-custom-link:hover {
+    color: #000000;
+}
+
+.iko-custom-link:hover::after {
+    background-color: #000000;
+}
+
+.iko-custom-link:hover .iko-link-icon {
+    content: attr(data-hover);
 }
 
 /* ===========================
@@ -156,16 +263,10 @@ function shortcode_opportunities_overview() {
         align-items: flex-start;
     }
 
-    .iko-left {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
+    .iko-left,
     .iko-right {
         width: 100%;
         max-width: 100%;
-        box-sizing: border-box;
     }
 
     .iko-contact-card {
@@ -187,22 +288,9 @@ function shortcode_opportunities_overview() {
     }
 }
 
-
-
-
-
 @media (max-width:767px){
     .iko-safe-area{
         padding: 0 30px !important;
-    }
-
-    .iko-left,
-    .iko-right{
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
     }
 
     .iko-contact-card {
@@ -222,9 +310,11 @@ function shortcode_opportunities_overview() {
     .iko-desc{
         font-size: 20px;
     }
+
+    .iko-custom-link{
+        font-size: 20px;
+    }
 }
-
-
 </style>
 
 <?php

@@ -13,7 +13,7 @@ function shortcode_sector_tabs_agriculture() {
 
     // ICONS
     $check_icon_url = ik_upload_url('2025/12/check-circle.svg');
-	$link_icon_url  = ik_upload_url('2025/12/System-Icons-2.svg');
+	$link_icon_url  = ik_upload_url('2026/01/System-Icons-1.svg');
 
     // UNIQUE ID
     $uid = uniqid('sector-tabs-agri-');
@@ -142,6 +142,17 @@ $second_snapshot_label_second_tab  = get_field('second_snapshot_label_second_tab
         margin-bottom: 32px;
         overflow-x: auto;
     }
+	
+	#<?php echo $uid; ?> .sector-tabs-nav {
+    overflow-x: auto;
+    overflow-y: hidden;   /* 👈 this removes the vertical scrollbar */
+    scrollbar-width: none; /* Firefox */
+}
+
+#<?php echo $uid; ?> .sector-tabs-nav::-webkit-scrollbar {
+    display: none; /* Chrome / Safari */
+}
+
 
     #<?php echo $uid; ?> .sector-tab-trigger {
         position: relative;
@@ -452,7 +463,7 @@ $second_snapshot_label_second_tab  = get_field('second_snapshot_label_second_tab
         font-size: 14px;
         line-height: 100%;
         letter-spacing: 0;
-        color: #027337;
+        color: #DB2129;
         transition: color 0.2s ease, text-decoration-color 0.2s ease, opacity 0.2s ease;
     }
 
@@ -464,7 +475,7 @@ $second_snapshot_label_second_tab  = get_field('second_snapshot_label_second_tab
 
     #<?php echo $uid; ?> .sector-link:hover {
         text-decoration: underline;
-        text-decoration-color: #027337;
+        text-decoration-color: #DB2129;
         opacity: 0.85;
     }
 

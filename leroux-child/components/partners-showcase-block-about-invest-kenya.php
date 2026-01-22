@@ -25,6 +25,9 @@ function shortcode_partners_showcase_block() {
 
     $img9  = get_field('ninth_image_section_3');
     $img10 = get_field('tenth_image_section_3');
+	$img11 = get_field('eleventh_image_section_3');
+	$img12 = get_field('twelfth_image_section_3');
+
 
     ob_start();
     ?>
@@ -57,18 +60,15 @@ function shortcode_partners_showcase_block() {
                 <?php endif; ?>
             <?php endforeach; ?>
 
-            <!-- ROW 3 (ONLY 2 IMAGES – NO EXPAND) -->
-            <?php if ($img9) : ?>
-                <div class="psb-card">
-                    <img src="<?php echo esc_url(ik_upload_url($img9)); ?>" alt="">
-                </div>
-            <?php endif; ?>
+<!-- ROW 3 (4 images – SAME STRUCTURE, NO BREAKING) -->
+<?php foreach ([$img9, $img10, $img11, $img12] as $img) : ?>
+    <?php if ($img) : ?>
+        <div class="psb-card">
+            <img src="<?php echo esc_url(ik_upload_url($img)); ?>" alt="">
+        </div>
+    <?php endif; ?>
+<?php endforeach; ?>
 
-            <?php if ($img10) : ?>
-                <div class="psb-card">
-                    <img src="<?php echo esc_url(ik_upload_url($img10)); ?>" alt="">
-                </div>
-            <?php endif; ?>
 
         </div>
 
@@ -137,6 +137,12 @@ function shortcode_partners_showcase_block() {
             .psb-grid {
                 grid-template-columns: repeat(1, 1fr);
             }
+        }
+		
+		        @media (max-width: 427px) {
+          .psb-title {
+    line-height: 35px;
+	}
         }
 
         /* ===============================================

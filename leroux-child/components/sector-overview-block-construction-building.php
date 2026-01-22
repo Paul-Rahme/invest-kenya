@@ -85,7 +85,6 @@ function shortcode_construction_building_overview() {
 
                 <!-- SNAPSHOT 4 (label above, label below, currency small) -->
                 <div class="ike2-snap ike2-snap-last">
-                    <div class="ike2-snap-label-top"><?php echo esc_html($s4_label_1); ?></div>
                     <div class="ike2-snap-number">
                         $<?php echo esc_html($s4_num); ?>
                     </div>
@@ -184,7 +183,7 @@ function shortcode_construction_building_overview() {
 .ike2-snapshot-row {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
 }
 

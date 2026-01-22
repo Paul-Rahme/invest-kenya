@@ -72,13 +72,21 @@ function shortcode_sector_tabs_environment_forestry() {
         color: #101110;
     }
 
-    .sector-tabs-nav {
-        display: flex;
-        gap: 40px;
-        border-bottom: 1px solid #E5E7EB;
-        margin-bottom: 32px;
-        overflow-x: auto;
-    }
+#<?php echo esc_attr($uid); ?> .sector-tabs-nav {
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 32px;
+
+    overflow-x: auto;
+    overflow-y: hidden;        /* 🔥 removes vertical scrollbar */
+    scrollbar-width: none;     /* Firefox */
+}
+
+#<?php echo esc_attr($uid); ?> .sector-tabs-nav::-webkit-scrollbar {
+    display: none;             /* Chrome / Safari */
+}
+
 
     .sector-tab-trigger {
         position: relative;
@@ -132,6 +140,10 @@ function shortcode_sector_tabs_environment_forestry() {
         gap: 10px;
         margin-bottom: 10px;
     }
+	#<?php echo esc_attr($uid); ?> .sector-check-item img {
+    margin-top: 2px;
+}
+
 
     .sector-check-item img {
         width: 18px;

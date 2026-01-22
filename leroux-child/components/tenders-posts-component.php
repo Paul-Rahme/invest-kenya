@@ -66,7 +66,7 @@ $query = new WP_Query([
                 Please check back soon.
             </p>
 
-            <a href="<?php echo esc_url( home_url( '/all-opportunities-2/' ) ); ?>" class="ik-no-data-btn">
+            <a href="<?php echo esc_url( home_url( '/investment-opportunities/' ) ); ?>" class="ik-no-data-btn">
                 Browse investment opportunities
                 <img 
                     src="<?php echo get_stylesheet_directory_uri(); ?>/assets/icons/System-Icons-1.svg"

@@ -4,20 +4,17 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /*
 |--------------------------------------------------------------------------
-| Shortcode: [sector_overview_public_private_partnership]
+| Shortcode: [sector_overview_other_sectors]
 |--------------------------------------------------------------------------
 */
 
-function shortcode_sector_overview_public_private_partnership() {
+function shortcode_sector_overview_other_sectors() {
 
     // ACF FIELDS
     $desc          = get_field('sector_description');
     $contact_title = get_field('contact_title');
-    $person_name   = get_field('contact_person_name');
-    $person_email  = get_field('contact_email_address');
+    $contact_email = get_field('contact_email');
     $button_text   = get_field('button_text');
-    $link_text     = get_field('link_text');
-    $link_url      = get_field('link_url');
 
     ob_start();
 ?>
@@ -40,24 +37,11 @@ function shortcode_sector_overview_public_private_partnership() {
                     <?php echo esc_html($contact_title); ?>
                 </div>
 
-                <!-- CONTACT PERSON (like mining) -->
-                <?php if ($person_name): ?>
-                <div class="ppp-contact-person">
-                    <img class="ppp-icon-person" src="<?php echo esc_url( ik_upload_url('2025/12/user-circle.svg') ); ?>">
-                    <span><?php echo esc_html($person_name); ?></span>
-                </div>
-                <?php endif; ?>
-
-                <!-- BUTTON -->
-                <a href="mailto:<?php echo esc_attr($person_email); ?>" class="ppp-red-button">
-                    <img class="ppp-mail-icon" src="<?php echo esc_url( ik_upload_url('2025/12/mail.svg') ); ?>">
+                <!-- BUTTON (EMAIL) -->
+                <?php if ($contact_email): ?>
+                <a href="mailto:<?php echo esc_attr($contact_email); ?>" class="ppp-red-button">
+                    <img class="ppp-mail-icon" src="<?php echo esc_url( ik_upload_url('2025/12/mail.svg') ); ?>" alt="Email">
                     <?php echo esc_html($button_text); ?>
-                </a>
-
-                <!-- EXTRA LINK -->
-                <?php if ($link_text && $link_url): ?>
-                <a href="<?php echo esc_url($link_url); ?>" class="ppp-extra-link">
-                    <?php echo esc_html($link_text); ?>
                 </a>
                 <?php endif; ?>
 
@@ -120,23 +104,7 @@ function shortcode_sector_overview_public_private_partnership() {
     font-size: 18px;
     font-weight: 600;
     color: #101110;
-    margin-bottom: 20px;
-}
-
-/* CONTACT PERSON (same as mining) */
-.ppp-contact-person {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: #292A29;
     margin-bottom: 25px;
-}
-
-.ppp-icon-person {
-    width: 22px;
 }
 
 /* BUTTON */
@@ -152,7 +120,6 @@ function shortcode_sector_overview_public_private_partnership() {
     height: 50px;
     border-radius: 30px;
     text-decoration: none;
-    margin-bottom: 12px;
     transition: 0.25s ease;
 }
 
@@ -164,31 +131,6 @@ function shortcode_sector_overview_public_private_partnership() {
     background: #292A29;
     color: white;
 }
-
-/* EXTRA LINK */
-.ppp-extra-link{
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    color: #DB2129;
-
-    /* force underline even if theme overrides */
-    text-decoration-line: underline !important;
-    text-decoration-style: solid;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-    text-decoration-color: currentColor !important;
-
-    transition: 0.25s ease;
-}
-
-.ppp-extra-link:hover{
-    color: #101110;
-    text-decoration-color: currentColor !important;
-}
-
 
 /* RESPONSIVE */
 @media (max-width:1405px){
@@ -215,4 +157,4 @@ function shortcode_sector_overview_public_private_partnership() {
     return ob_get_clean();
 }
 
-add_shortcode('sector_overview_public_private_partnership', 'shortcode_sector_overview_public_private_partnership');
+add_shortcode('sector_overview_other_sectors', 'shortcode_sector_overview_other_sectors');

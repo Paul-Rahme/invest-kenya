@@ -4,14 +4,16 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 /*
 |--------------------------------------------------------------------------
-| Shortcode: [sector_overview_blue_economy]
+| Shortcode: [sector_overview_infrastructure]
+| Matching Agriculture Layout – Infrastructure Version
 |--------------------------------------------------------------------------
 */
 
-function shortcode_blue_economy_overview() {
+function shortcode_infrastructure_overview() {
 
     // ACF FIELDS
-    $desc        = get_field('sector_description');
+    $desc1       = get_field('sector_description_1');
+    $desc2       = get_field('sector_description_2');
     $eyebrow     = get_field('sector_eyebrow_title');
 
     $s1_num      = get_field('snapshot_1_number');
@@ -23,20 +25,20 @@ function shortcode_blue_economy_overview() {
     $s3_num      = get_field('snapshot_3_number');
     $s3_label    = get_field('snapshot_3_label');
 
-    // NEW SNAPSHOT 4
     $s4_num      = get_field('snapshot_4_number');
     $s4_label    = get_field('snapshot_4_label');
 
-    $contact_title    = get_field('contact_title');
-    $person_name      = get_field('contact_person_name');
-    $person_email     = get_field('contact_email_address');
-    $button_text      = get_field('button_text');
+    $contact_title = get_field('contact_title');
+    $person_name   = get_field('contact_person_name');
+    $person_email  = get_field('contact_email_address');
+    $button_text   = get_field('button_text');
 
     ob_start();
 ?>
 
 <!-- ===========================
-     SECTOR OVERVIEW BLOCK — BLUE ECONOMY
+     INFRASTRUCTURE — NEW LAYOUT
+     Matching Agriculture Layout
 =========================== -->
 <div class="ike-safe-area">
     <div class="ike-two-columns">
@@ -44,67 +46,60 @@ function shortcode_blue_economy_overview() {
         <!-- LEFT COLUMN -->
         <div class="ike-left">
 
+            <!-- DESCRIPTION 1 -->
             <p class="ike-desc">
-                <?php echo esc_html($desc); ?>
+                <?php echo esc_html($desc1); ?>
             </p>
 
+            <!-- DESCRIPTION 2 -->
+            <p class="ike-desc">
+                <?php echo esc_html($desc2); ?>
+            </p>
+
+            <!-- EYEBROW -->
             <div class="ike-eyebrow">
                 <?php echo esc_html($eyebrow); ?>
             </div>
 
+            <!-- SNAPSHOTS -->
             <div class="ike-snapshot-row">
 
-                <!-- SNAPSHOT 1: ALWAYS $ -->
+                <!-- SNAPSHOT 1 -->
                 <div class="ike-snap">
-                    <div class="ike-snap-number">
-                        <?php echo esc_html($s1_num); ?><span>%</span>
-                    </div>
-                    <div class="ike-snap-label">
-                        <?php echo esc_html($s1_label); ?>
-                    </div>
+                    <div class="ike-snap-number"><?php echo esc_html($s1_num); ?></div>
+                    <div class="ike-snap-label"><?php echo esc_html($s1_label); ?></div>
                 </div>
 
                 <div class="ike-snap-divider"></div>
 
-                <!-- SNAPSHOT 2: ALWAYS % -->
+                <!-- SNAPSHOT 2 -->
                 <div class="ike-snap">
-                    <div class="ike-snap-number">
-                        <?php echo esc_html($s2_num); ?>%
-                    </div>
-                    <div class="ike-snap-label">
-                        <?php echo esc_html($s2_label); ?>
-                    </div>
+                    <div class="ike-snap-number"><?php echo esc_html($s2_num); ?></div>
+                    <div class="ike-snap-label"><?php echo esc_html($s2_label); ?></div>
                 </div>
 
                 <div class="ike-snap-divider"></div>
 
                 <!-- SNAPSHOT 3 -->
                 <div class="ike-snap">
-                    <div class="ike-snap-number">
-                        <span>$</span><?php echo esc_html($s3_num); ?>
-                    </div>
-                    <div class="ike-snap-label">
-                        <?php echo esc_html($s3_label); ?>
-                    </div>
+                    <div class="ike-snap-number"><?php echo esc_html($s3_num); ?></div>
+                    <div class="ike-snap-label"><?php echo esc_html($s3_label); ?></div>
                 </div>
 
                 <div class="ike-snap-divider"></div>
 
-                <!-- SNAPSHOT 4 — SAME AS SNAPSHOT 1 ($ prefix) -->
+                <!-- SNAPSHOT 4 (SINGLE LABEL) -->
                 <div class="ike-snap">
-                    <div class="ike-snap-number">
-                        <span>$</span><?php echo esc_html($s4_num); ?>
-                    </div>
-                    <div class="ike-snap-label">
-                        <?php echo esc_html($s4_label); ?>
-                    </div>
+                    <div class="ike-snap-number"><?php echo esc_html($s4_num); ?></div>
+                    <div class="ike-snap-label"><?php echo esc_html($s4_label); ?></div>
                 </div>
 
             </div>
         </div>
 
-        <!-- RIGHT COLUMN -->
+        <!-- RIGHT COLUMN (CONTACT CARD) -->
         <div class="ike-right">
+
             <div class="ike-contact-card">
 
                 <div class="ike-contact-title">
@@ -121,9 +116,8 @@ function shortcode_blue_economy_overview() {
                     <?php echo esc_html($button_text); ?>
                 </a>
 
-                <!-- QUOTE REMOVED -->
-
             </div>
+
         </div>
 
     </div>
@@ -171,7 +165,7 @@ function shortcode_blue_economy_overview() {
 
 /* EYEBROW */
 .ike-eyebrow {
-    font-family: 'DM Sans';
+    font-family: 'DM Sans', sans-serif;
     font-size: 12px;
     font-weight: 800;
     color: #DB2129;
@@ -181,11 +175,11 @@ function shortcode_blue_economy_overview() {
     text-transform: uppercase;
 }
 
-/* SNAPSHOT ROW */
+/* SNAPSHOTS */
 .ike-snapshot-row {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 40px;
 }
 
@@ -205,9 +199,9 @@ function shortcode_blue_economy_overview() {
 }
 
 .ike-snap-divider {
-    align-self: stretch;
     width: 1px;
     background: #A6A6A6;
+    align-self: stretch;
 }
 
 /* CONTACT CARD */
@@ -237,7 +231,9 @@ function shortcode_blue_economy_overview() {
     margin-bottom: 25px;
 }
 
-.ike-icon-person { width: 22px; }
+.ike-icon-person {
+    width: 22px;
+}
 
 /* BUTTON */
 .ike-red-button {
@@ -253,7 +249,6 @@ function shortcode_blue_economy_overview() {
     border-radius: 30px;
     text-decoration: none;
     transition: 0.25s ease;
-    margin-bottom: 0 !important; /* REMOVED SPACING */
 }
 
 .ike-red-button:hover {
@@ -261,45 +256,19 @@ function shortcode_blue_economy_overview() {
     color: white;
 }
 
-.ike-mail-icon { width: 20px; }
+.ike-mail-icon {
+    width: 20px;
+}
 
 /* RESPONSIVE */
-@media (max-width:1240px){
+@media (max-width:1260px){
     .ike-two-columns {
         flex-direction: column;
         gap: 40px;
     }
-    .ike-left {
-        width: 100%;
-    }
+    .ike-left,
     .ike-right {
         width: 100%;
-    }
-}
-	
-@media (max-width:1240px) and (min-width:768px){
-
-    /* Contact card layout */
-    .ike-contact-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    /* Person row stays horizontal */
-    .ike-contact-person {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 16px;
-    }
-
-    /* Button below, natural width, left-aligned */
-    .ike-red-button {
-        align-self: flex-start;
-        justify-content: flex-start;
-        padding: 0 24px;
-        width: auto;
     }
 }
 
@@ -320,4 +289,4 @@ function shortcode_blue_economy_overview() {
     return ob_get_clean();
 }
 
-add_shortcode('sector_overview_blue_economy', 'shortcode_blue_economy_overview');
+add_shortcode('sector_overview_infrastructure', 'shortcode_infrastructure_overview');

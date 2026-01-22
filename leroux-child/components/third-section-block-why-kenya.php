@@ -9,8 +9,12 @@ if (!defined('ABSPATH')) exit;
 | Description:
 | - Zero padding / zero background (handled by parent Elementor container)
 | - 1530px safe area with no inner left/right padding
-| - Desktop: 1st row 5 blocks, 2nd & 3rd row 4 blocks (5th slot invisible for alignment)
-| - Thin divider line between rows on desktop
+| - ONE unified grid (13 items) that wraps naturally on all breakpoints
+| - Desktop: 5 columns
+| - <1200: 3 columns
+| - <900: 2 columns
+| - <480: 1 column
+| - Separator lines auto placed between rows depending on breakpoint
 |--------------------------------------------------------------------------
 */
 
@@ -26,15 +30,14 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
 
         /* ---------------------------------------------
            BLOCKS — ORDER CONFIRMED (13 ITEMS)
+           - ONLY first block has description
         --------------------------------------------- */
 
-        // Row 1 — 5 blocks (FDI inflows, FDI outflows, GDP growth, GDP contrib services, GDP contrib industry)
-        $blocks_row1 = [
+        $blocks = [
             [
                 'icon'        => get_field('icon_first_block_third_section_'),
                 'value'       => get_field('value_first_block_third_section'),
                 'label'       => get_field('label_first_block_third_section'),
-                // ONLY this one shows description
                 'description' => get_field('description_first_block_third_section'),
             ],
             [
@@ -61,10 +64,6 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                 'label'       => get_field('label_fifth_block_third_section'),
                 'description' => '',
             ],
-        ];
-
-        // Row 2 — NOW 5 blocks (6th → 10th)
-        $blocks_row2 = [
             [
                 'icon'        => get_field('icon_sixth_block_third_section'),
                 'value'       => get_field('value_sixth_block_third_section'),
@@ -95,10 +94,6 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                 'label'       => get_field('label_tenth_block_third_section'),
                 'description' => '',
             ],
-        ];
-
-        // Row 3 — NOW last 3 blocks (11th → 13th) + 2 empty slots
-        $blocks_row3 = [
             [
                 'icon'        => get_field('icon_eleventh_block_third_section'),
                 'value'       => get_field('value_eleventh_block_third_section'),
@@ -117,28 +112,21 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                 'label'       => get_field('label_thirteenth_block_third_section'),
                 'description' => '',
             ],
-            null, // invisible placeholder to keep 5 columns and alignment
-            null, // invisible placeholder to keep 5 columns and alignment
         ];
 
         /* ---------------------------------------------
-           RENDER ONE CARD / PLACEHOLDER
+           RENDER ONE CARD
         --------------------------------------------- */
         $render_card = function ($block) {
-
-            // placeholder (for 5th slot in rows 2 & 3)
-            if ($block === null) {
-                return '<div class="ik-third-section-card ik-third-section-card--empty"></div>';
-            }
 
             $icon        = $block['icon'] ?? '';
             $value       = $block['value'] ?? '';
             $label       = $block['label'] ?? '';
             $description = $block['description'] ?? '';
 
-            // if everything empty, treat like placeholder
+            // If everything empty, render nothing (keeps grid clean)
             if (!$icon && !$value && !$label && !$description) {
-                return '<div class="ik-third-section-card ik-third-section-card--empty"></div>';
+                return '';
             }
 
             ob_start(); ?>
@@ -173,6 +161,12 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
 
         $uid = uniqid('ik-third-section-');
 
+        // Divider indices per breakpoint:
+        // Desktop (5 cols): after 5, 10
+        // <1200 (3 cols): after 3, 6, 9, 12
+        // <900  (2 cols): after 2, 4, 6, 8, 10, 12
+        $divider_after_indices = [2,3,4,5,6,8,9,10,12];
+
         ob_start(); ?>
 
         <div class="ik-third-section-wrapper" id="<?php echo esc_attr($uid); ?>">
@@ -194,30 +188,22 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                     </div>
                 <?php endif; ?>
 
-                <div class="ik-third-section-rows">
+                <!-- ONE UNIFIED GRID -->
+                <div class="ik-third-section-grid">
+                    <?php
+                    $i = 0;
+                    foreach ($blocks as $block) {
+                        $i++;
+                        echo $render_card($block);
 
-                    <!-- ROW 1 -->
-                    <div class="ik-third-row-wrapper ik-third-row-wrapper--top">
-                        <div class="ik-third-section-row ik-third-section-row--top">
-                            <?php foreach ($blocks_row1 as $block) echo $render_card($block); ?>
-                        </div>
-                    </div>
-
-                    <!-- ROW 2 -->
-                    <div class="ik-third-row-wrapper ik-third-row-wrapper--middle">
-                        <div class="ik-third-section-row ik-third-section-row--middle">
-                            <?php foreach ($blocks_row2 as $block) echo $render_card($block); ?>
-                        </div>
-                    </div>
-
-                    <!-- ROW 3 -->
-                    <div class="ik-third-row-wrapper ik-third-row-wrapper--bottom">
-                        <div class="ik-third-section-row ik-third-section-row--bottom">
-                            <?php foreach ($blocks_row3 as $block) echo $render_card($block); ?>
-                        </div>
-                    </div>
-
+                        // Insert divider placeholders in DOM; CSS will show correct ones per breakpoint
+                        if (in_array($i, $divider_after_indices, true)) {
+                            echo '<div class="ik-third-divider ik-third-divider--after-' . esc_attr($i) . '"></div>';
+                        }
+                    }
+                    ?>
                 </div>
+
             </div>
         </div>
 
@@ -264,40 +250,16 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                 letter-spacing: 0;
             }
 
-            .ik-third-section-rows {
-                width: 100%;
-            }
-
             /* -----------------------------------------
-               ROW WRAPPERS (DIVIDER LINES)
+               ONE GRID (DEFAULT DESKTOP: 5 COLUMNS)
             ----------------------------------------- */
 
-            .ik-third-row-wrapper {
-                position: relative;
-                padding-bottom: 40px;
-                margin-bottom: 40px;
-            }
-
-            .ik-third-row-wrapper:not(:last-child)::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 1px;
-                background-color: #E6E6E6; /* thin light line like screenshot */
-            }
-
-            /* -----------------------------------------
-               GRID LAYOUT — ALL ROWS 5 COLUMNS ON DESKTOP
-               => PERFECT COLUMN ALIGNMENT
-            ----------------------------------------- */
-
-            .ik-third-section-row {
+            .ik-third-section-grid {
                 display: grid;
                 grid-template-columns: repeat(5, minmax(0, 1fr));
                 column-gap: 48px;
                 row-gap: 32px;
+                width: 100%;
             }
 
             /* -----------------------------------------
@@ -353,40 +315,85 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                 letter-spacing: 0;
             }
 
-            /* Invisible placeholder card (keeps column but hides content) */
-            .ik-third-section-card--empty {
-                visibility: hidden;
+            /* -----------------------------------------
+               DIVIDERS (FULL-WIDTH GRID ITEMS)
+               - Present in DOM, but shown/hidden per breakpoint
+            ----------------------------------------- */
+
+            .ik-third-divider {
+                grid-column: 1 / -1;
+                height: 1px;
+                background-color: #E6E6E6;
+                margin: 8px 0; /* subtle breathing room between rows */
+                display: none; /* default: hidden; enabled by breakpoint rules */
             }
 
             /* -----------------------------------------
-               RESPONSIVE
+               DESKTOP (>=1200px)
+               5 columns => dividers after 5 and 10
+            ----------------------------------------- */
+
+            .ik-third-divider--after-5,
+            .ik-third-divider--after-10 {
+                display: block;
+            }
+
+            /* -----------------------------------------
+               <1200px: 3 columns => dividers after 3,6,9,12
             ----------------------------------------- */
 
             @media (max-width: 1200px) {
-                .ik-third-section-row {
+
+                .ik-third-section-grid {
                     grid-template-columns: repeat(3, minmax(0, 1fr));
                 }
 
                 .ik-third-section-card-value {
                     line-height: 1.1;
                 }
+
+                /* reset desktop dividers */
+                .ik-third-divider {
+                    display: none;
+                }
+
+                .ik-third-divider--after-3,
+                .ik-third-divider--after-6,
+                .ik-third-divider--after-9,
+                .ik-third-divider--after-12 {
+                    display: block;
+                }
             }
-			
-			@media (max-width: 1024px) {
-			.ik-third-section-safe {
+
+            @media (max-width: 1024px) {
+                .ik-third-section-safe {
                     padding-left: 30px;
                     padding-right: 30px;
                 }
             }
-			
+
+            /* -----------------------------------------
+               <900px: 2 columns => dividers after 2,4,6,8,10,12
+            ----------------------------------------- */
 
             @media (max-width: 900px) {
-                .ik-third-section-row {
+
+                .ik-third-section-grid {
                     grid-template-columns: repeat(2, minmax(0, 1fr));
                 }
 
-                .ik-third-row-wrapper::after {
-                    display: none; /* no separators on mobile/tablet */
+                /* reset previous divider set */
+                .ik-third-divider {
+                    display: none;
+                }
+
+                .ik-third-divider--after-2,
+                .ik-third-divider--after-4,
+                .ik-third-divider--after-6,
+                .ik-third-divider--after-8,
+                .ik-third-divider--after-10,
+                .ik-third-divider--after-12 {
+                    display: block;
                 }
             }
 
@@ -396,7 +403,7 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                     margin-bottom: 32px;
                 }
 
-                .ik-third-section-row {
+                .ik-third-section-grid {
                     column-gap: 24px;
                     row-gap: 24px;
                 }
@@ -415,8 +422,14 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                 }
             }
 
+            /* -----------------------------------------
+               <480px: 1 column
+               - Usually you don't need dividers; looks cleaner without lines
+            ----------------------------------------- */
+
             @media (max-width: 480px) {
-                .ik-third-section-row {
+
+                .ik-third-section-grid {
                     grid-template-columns: 1fr;
                 }
 
@@ -424,11 +437,10 @@ if (!function_exists('shortcode_third_section_block_why_kenya')) {
                     padding-left: 30px;
                     padding-right: 30px;
                 }
-				
-				.ik-third-row-wrapper {
-    				margin-bottom: 0px;
-					padding-bottom: 18px;
-				}
+
+                .ik-third-divider {
+                    display: none;
+                }
             }
         </style>
 

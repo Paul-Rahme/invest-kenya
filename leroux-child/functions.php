@@ -25,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 add_shortcode( 'footer_social_icons', function () {
 
-    // Base URL (handles subfolder installs like /beta)
-    $base_url = home_url();
+    // Always points to child theme, language-safe
+    $base_url = get_stylesheet_directory_uri();
 
     ob_start();
     ?>
@@ -45,37 +45,44 @@ add_shortcode( 'footer_social_icons', function () {
         </p>
 
         <!-- FACEBOOK -->
-        <img 
-            src="<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/facebook-icon.svg"
-            onmouseover="this.src='<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/facebook-icon-hover.svg'"
-            onmouseout="this.src='<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/facebook-icon.svg'"
-            alt="Facebook"
-            style="width:22px; height:auto; opacity:0.85; cursor:pointer; transition:0.2s;"
-        >
+        <a href="https://www.facebook.com/InvestKenya" target="_blank" rel="noopener">
+            <img 
+                src="<?php echo esc_url( $base_url ); ?>/assets/icons/facebook-icon.svg"
+                onmouseover="this.src='<?php echo esc_url( $base_url ); ?>/assets/icons/facebook-icon-hover.svg'"
+                onmouseout="this.src='<?php echo esc_url( $base_url ); ?>/assets/icons/facebook-icon.svg'"
+                alt="Facebook"
+                style="width:22px; height:auto; opacity:0.85; cursor:pointer; transition:0.2s;"
+            >
+        </a>
 
         <!-- X -->
-        <img 
-            src="<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/x-icon.svg"
-            onmouseover="this.src='<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/x-icon-hover.svg'"
-            onmouseout="this.src='<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/x-icon.svg'"
-            alt="X"
-            style="width:22px; height:auto; opacity:0.85; cursor:pointer; transition:0.2s;"
-        >
+        <a href="https://x.com/InvestKenya_" target="_blank" rel="noopener">
+            <img 
+                src="<?php echo esc_url( $base_url ); ?>/assets/icons/x-icon.svg"
+                onmouseover="this.src='<?php echo esc_url( $base_url ); ?>/assets/icons/x-icon-hover.svg'"
+                onmouseout="this.src='<?php echo esc_url( $base_url ); ?>/assets/icons/x-icon.svg'"
+                alt="X"
+                style="width:22px; height:auto; opacity:0.85; cursor:pointer; transition:0.2s;"
+            >
+        </a>
 
         <!-- LINKEDIN -->
-        <img 
-            src="<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/linkedin-icon.svg"
-            onmouseover="this.src='<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/linkedin-icon-hover.svg'"
-            onmouseout="this.src='<?php echo esc_url( $base_url ); ?>/wp-content/themes/leroux-child/assets/icons/linkedin-icon.svg'"
-            alt="LinkedIn"
-            style="width:22px; height:auto; opacity:0.85; cursor:pointer; transition:0.2s;"
-        >
+        <a href="https://ke.linkedin.com/company/investkenya" target="_blank" rel="noopener">
+            <img 
+                src="<?php echo esc_url( $base_url ); ?>/assets/icons/linkedin-icon.svg"
+                onmouseover="this.src='<?php echo esc_url( $base_url ); ?>/assets/icons/linkedin-icon-hover.svg'"
+                onmouseout="this.src='<?php echo esc_url( $base_url ); ?>/assets/icons/linkedin-icon.svg'"
+                alt="LinkedIn"
+                style="width:22px; height:auto; opacity:0.85; cursor:pointer; transition:0.2s;"
+            >
+        </a>
 
     </div>
 
     <?php
     return ob_get_clean();
 });
+
 
 
 
@@ -345,6 +352,13 @@ require_once get_stylesheet_directory() . '/components/opportunities-loader.php'
 require_once get_stylesheet_directory() . '/components/careers-first-section.php';
 require_once get_stylesheet_directory() . '/components/careers-second-section.php';
 require_once get_stylesheet_directory() . '/components/tenders-posts-component-shortcodes.php';
+require_once get_stylesheet_directory() . '/components/newsletter-subscribe.php';
+require_once get_stylesheet_directory() . '/components/sector-overview-block-infrastructure.php';
+require_once get_stylesheet_directory() . '/components/sector-tabs-block-infrastructure.php';
+require_once get_stylesheet_directory() . '/components/tabs-block-investment-trends.php';
+require_once get_stylesheet_directory() . '/components/sector-overview-block-other-sectors.php';
+require_once get_stylesheet_directory() . '/components/sector-tabs-block-other-sectors.php';
+require_once get_stylesheet_directory() . '/components/second-section-investment-trends.php';
 
 /* ============================================================
    DEBUG: SHOW ALL META FIELDS ON ANY PAGE (ADMIN ONLY)

@@ -78,6 +78,50 @@ add_shortcode('kenya_resources_row', function() {
 });
 
 /* ============================================================
+   GRID VARIANT — SECTOR PACKS ONLY
+   [kenya_resources_sector_packs]
+============================================================ */
+add_shortcode('kenya_resources_sector_packs', function() {
+
+    set_query_var('rpc_mode', 'grid');
+
+    set_query_var('rpc_custom_query', [
+        'post_type'      => 'post',
+        'posts_per_page' => -1,
+        'category_name'  => 'sector-packs', // 👈 slug of "Sector Packs"
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ]);
+
+    ob_start();
+    include get_stylesheet_directory() . '/components/resources-posts-component.php';
+    return ob_get_clean();
+});
+
+
+/* ============================================================
+   GRID VARIANT — OTHER PUBLICATIONS ONLY
+   [kenya_resources_other_publications]
+============================================================ */
+add_shortcode('kenya_resources_other_publications', function() {
+
+    set_query_var('rpc_mode', 'grid');
+
+    set_query_var('rpc_custom_query', [
+        'post_type'      => 'post',
+        'posts_per_page' => -1,
+        'category_name'  => 'other-publications', // 👈 slug of "Other Publications"
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ]);
+
+    ob_start();
+    include get_stylesheet_directory() . '/components/resources-posts-component.php';
+    return ob_get_clean();
+});
+
+
+/* ============================================================
    SHORTCODE: RESOURCE DOWNLOAD BUTTON ONLY
    Usage: [kenya_resource_download_btn]
 ============================================================ */

@@ -252,7 +252,7 @@ ol:not(.wp-block), ul:not(.wp-block) {
 
 .laws-bottom-text {
     font-family: "DM Sans", sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 100%;
     letter-spacing: 0%;
@@ -270,34 +270,60 @@ ol:not(.wp-block), ul:not(.wp-block) {
 }
 
 /* ============================================================
-   CTA BUTTON
+   CTA BUTTON — MATCH INCENTIVES EXACTLY
 ============================================================ */
 .laws-cta-button {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background-color: #DB2129;
-    padding: 14px 24px;
+    gap: 8px;
+    padding: 12px 24px;
     border-radius: 999px;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.laws-cta-text {
-    font-family: "DM Sans", sans-serif;
-    font-size: 18px;
-    font-weight: 600;
+    background-color: #DB2129;
     color: #FFFFFF;
-}
-
-.laws-cta-icon img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
+    text-decoration: none;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    border: none;
+    transition: background-color 0.2s ease;
 }
 
 .laws-cta-button:hover {
     background-color: #292A29;
 }
+
+.laws-cta-text {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    color: #FFFFFF;
+}
+
+.laws-cta-icon img {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+	
+.laws-info-text a.laws-inline-link {
+    color: #DB2129 !important;
+    font-weight: 400;
+    text-decoration: underline !important;
+    text-decoration-color: currentColor !important;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.laws-info-text a.laws-inline-link:hover {
+    color: #292A29 !important;
+    text-decoration-color: currentColor !important;
+}
+
+
+
 
 </style>

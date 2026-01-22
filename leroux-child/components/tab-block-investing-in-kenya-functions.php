@@ -41,27 +41,35 @@ function kn_split_title_investing($text) {
 | - Outputs image, underline, text
 |--------------------------------------------------------------------------
 */
-function kn_render_investing_image_card($img, $text) {
+function kn_render_investing_image_card($img, $text, $link = '') {
 
     if (!$img) return '';
+
+    $tag_open  = $link ? '<a href="' . esc_url($link) . '" class="ik-invest-img-link">' : '';
+    $tag_close = $link ? '</a>' : '';
 
     ob_start(); ?>
     
     <div class="ik-invest-img-card">
-        <div class="ik-invest-img-wrapper">
-            <img src="<?php echo esc_url( ik_upload_url( $img ) ); ?>" alt="">
-        </div>
+        <?php echo $tag_open; ?>
 
-        <div class="ik-invest-img-underline"></div>
+            <div class="ik-invest-img-wrapper">
+                <img src="<?php echo esc_url( ik_upload_url( $img ) ); ?>" alt="">
+            </div>
 
-        <?php if ($text): ?>
-            <p class="ik-invest-img-text"><?php echo esc_html($text); ?></p>
-        <?php endif; ?>
+            <div class="ik-invest-img-underline"></div>
+
+            <?php if ($text): ?>
+                <p class="ik-invest-img-text"><?php echo esc_html($text); ?></p>
+            <?php endif; ?>
+
+        <?php echo $tag_close; ?>
     </div>
 
     <?php
     return ob_get_clean();
 }
+
 
 /*
 |--------------------------------------------------------------------------
@@ -133,12 +141,18 @@ function kn_render_investing_image_grid($items = []) {
 
     <div class="ik-invest-image-grid">
         <?php foreach ($items as $item):
-            if (!$item['img']) continue;
-            echo kn_render_investing_image_card($item['img'], $item['text'] ?? '');
+            if (empty($item['img'])) continue;
+
+            echo kn_render_investing_image_card(
+                $item['img'],
+                $item['text'] ?? '',
+                $item['link'] ?? ''
+            );
         endforeach; ?>
     </div>
 
     <?php
     return ob_get_clean();
 }
+
 

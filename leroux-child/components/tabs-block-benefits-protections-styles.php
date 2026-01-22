@@ -255,10 +255,10 @@
    Button
 ============================================================ */
 #<?php echo esc_js( $uid ); ?> .incentives-button-wrapper {
-    grid-column: 1 / -1; /* full width under the two steps */
-    width: 100%;
-    margin-top: 24px;
+    width: auto;
+    margin-top: 0;
 }
+
 
 #<?php echo esc_js( $uid ); ?> .incentives-cta-button {
     display: inline-flex;
@@ -284,6 +284,38 @@
     display: block;
     width: 18px;
     height: 18px;
+}
+
+	
+	/* ============================================================
+   BOTTOM ROW — MATCH LAWS & REGULATIONS
+============================================================ */
+#<?php echo esc_js( $uid ); ?> .incentives-bottom-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+#<?php echo esc_js( $uid ); ?> .incentives-bottom-text {
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #101110;
+    max-width: none;
+}
+
+/* Responsive stacking */
+@media (max-width: 850px) {
+    #<?php echo esc_js( $uid ); ?> .incentives-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
 }
 
 /* ============================================================

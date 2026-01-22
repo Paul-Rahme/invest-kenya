@@ -1,6 +1,18 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+function ik_parse_inline_link($text) {
+    if (!$text) return '';
+
+    return preg_replace_callback('/\{([^|]+)\|([^}]+)\}/', function($matches) {
+        $label = esc_html(trim($matches[1]));
+        $url   = esc_url(trim($matches[2]));
+
+        return '<a href="' . $url . '" class="laws-inline-link" target="_blank" rel="noopener">' . $label . '</a>';
+    }, esc_html($text));
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Shortcode: [laws_regulations_tabs_block]

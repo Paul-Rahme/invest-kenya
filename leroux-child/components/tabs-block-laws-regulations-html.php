@@ -63,7 +63,7 @@
                             <?php endif; ?>
                             <?php if ( $first_information_text_first_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $first_information_text_first_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $first_information_text_first_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -78,7 +78,7 @@
                             <?php endif; ?>
                             <?php if ( $second_information_text_first_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $second_information_text_first_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $second_information_text_first_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -93,7 +93,7 @@
                             <?php endif; ?>
                             <?php if ( $third_information_text_first_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $third_information_text_first_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $third_information_text_first_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -108,7 +108,7 @@
                             <?php endif; ?>
                             <?php if ( $fourth_information_text_first_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $fourth_information_text_first_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $fourth_information_text_first_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -119,7 +119,7 @@
         <div class="laws-info-title"><?php echo esc_html( $fifth_information_title_first_tab ); ?></div>
     <?php endif; ?>
     <?php if ( $fifth_information_text_first_tab ): ?>
-        <div class="laws-info-text"><?php echo esc_html( $fifth_information_text_first_tab ); ?></div>
+        <div class="laws-info-text"><?php echo ik_parse_inline_link( $fifth_information_text_first_tab ); ?></div>
     <?php endif; ?>
 </div>
 <?php endif; ?>
@@ -130,7 +130,7 @@
         <div class="laws-info-title"><?php echo esc_html( $sixth_information_title_first_tab ); ?></div>
     <?php endif; ?>
     <?php if ( $sixth_information_text_first_tab ): ?>
-        <div class="laws-info-text"><?php echo esc_html( $sixth_information_text_first_tab ); ?></div>
+        <div class="laws-info-text"><?php echo ik_parse_inline_link( $sixth_information_text_first_tab ); ?></div>
     <?php endif; ?>
 </div>
 <?php endif; ?>
@@ -188,7 +188,7 @@
                             <?php endif; ?>
                             <?php if ( $first_information_text_second_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $first_information_text_second_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $first_information_text_second_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -203,7 +203,7 @@
                             <?php endif; ?>
                             <?php if ( $second_information_text_second_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $second_information_text_second_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $second_information_text_second_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -218,7 +218,7 @@
                             <?php endif; ?>
                             <?php if ( $third_information_text_second_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $third_information_text_second_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $third_information_text_second_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -233,7 +233,7 @@
                             <?php endif; ?>
                             <?php if ( $fourth_information_text_second_tab ): ?>
                                 <div class="laws-info-text">
-                                    <?php echo esc_html( $fourth_information_text_second_tab ); ?>
+                                    <?php echo ik_parse_inline_link( $fourth_information_text_second_tab ); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -244,7 +244,7 @@
         <div class="laws-info-title"><?php echo esc_html( $fifth_information_title_second_tab ); ?></div>
     <?php endif; ?>
     <?php if ( $fifth_information_text_second_tab ): ?>
-        <div class="laws-info-text"><?php echo esc_html( $fifth_information_text_second_tab ); ?></div>
+        <div class="laws-info-text"><?php echo ik_parse_inline_link( $fifth_information_text_second_tab ); ?></div>
     <?php endif; ?>
 </div>
 <?php endif; ?>
@@ -255,7 +255,7 @@
         <div class="laws-info-title"><?php echo esc_html( $sixth_information_title_second_tab ); ?></div>
     <?php endif; ?>
     <?php if ( $sixth_information_text_second_tab ): ?>
-        <div class="laws-info-text"><?php echo esc_html( $sixth_information_text_second_tab ); ?></div>
+        <div class="laws-info-text"><?php echo ik_parse_inline_link( $sixth_information_text_second_tab ); ?></div>
     <?php endif; ?>
 </div>
 <?php endif; ?>

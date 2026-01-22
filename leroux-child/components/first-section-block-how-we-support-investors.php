@@ -33,12 +33,15 @@ function shortcode_how_we_support_investors() {
     $second_bold = get_field('second_bold_text_first_section');
     $third_bold  = get_field('third_bold_text_first_section');
 
-    // Subtexts mapping:
     $sub1 = get_field('first_subtext_first_section');
     $sub2 = get_field('second_subtext_first_section');
     $sub3 = get_field('third_subtext_first_section');
     $sub4 = get_field('fourth_subtext_first_section');
     $sub5 = get_field('fifth_subtext_first_section');
+
+    // LINK (for column 2)
+    $link_text = get_field('link_text_first_section');
+    $link_url  = get_field('link_url_first_section');
 
     /* -----------------------------------------------------------
        PROCESS MAIN TITLE SPLIT USING //
@@ -102,6 +105,30 @@ function shortcode_how_we_support_investors() {
 
                 <p class="hs-subtext divider"><?php echo esc_html($sub3); ?></p>
                 <p class="hs-subtext"><?php echo esc_html($sub4); ?></p>
+
+                <?php if ($link_text && $link_url): ?>
+                    <div class="hs-link-wrapper">
+                        <a href="<?php echo esc_url($link_url); ?>" class="iko-custom-link">
+
+                            <span class="iko-link-text"><?php echo esc_html($link_text); ?></span>
+
+                            <!-- ICON WRAPPER -->
+                            <span class="iko-link-icon-wrap">
+                                <img 
+                                    src="<?php echo esc_url( ik_upload_url('2026/01/System-Icons.svg') ); ?>" 
+                                    class="iko-link-icon iko-icon-default" 
+                                    alt=""
+                                />
+                                <img 
+                                    src="<?php echo esc_url( ik_upload_url('2025/11/System-Icons-2.svg') ); ?>" 
+                                    class="iko-link-icon iko-icon-hover" 
+                                    alt=""
+                                />
+                            </span>
+
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
 
             <!-- COLUMN 3 -->
@@ -203,7 +230,6 @@ function shortcode_how_we_support_investors() {
             position: relative;
         }
 
-        /* VERTICAL DIVIDERS (desktop) */
         .how-support-columns .hs-col:not(:last-child)::after {
             content: "";
             position: absolute;
@@ -219,12 +245,10 @@ function shortcode_how_we_support_investors() {
                 grid-template-columns: 1fr;
             }
 
-            /* remove vertical dividers */
             .how-support-columns .hs-col:not(:last-child)::after {
                 display: none;
             }
 
-            /* ADD HORIZONTAL DIVIDERS */
             .how-support-columns .hs-col:not(:last-child)::before {
                 content: "";
                 position: absolute;
@@ -308,6 +332,81 @@ function shortcode_how_we_support_investors() {
             width: 100%;
             height: 1px;
             background: #E5E5E5;
+        }
+
+        /* ============================================
+           LINK (IKO CUSTOM LINK PATTERN WITH HOVER ICON)
+        ============================================ */
+        .hs-link-wrapper {
+            margin-top: 18px;
+        }
+
+        a.iko-custom-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: "DM Sans", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 100%;
+            color: #DB2129;
+            text-decoration: none;
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        a.iko-custom-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: currentColor;
+        }
+
+        a.iko-custom-link:hover {
+            color: #000000;
+        }
+
+        a.iko-custom-link:hover::after {
+            background: currentColor;
+        }
+
+        .iko-link-icon-wrap {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+        }
+
+        .iko-link-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: auto;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .iko-icon-default {
+            opacity: 1;
+        }
+
+        .iko-icon-hover {
+            opacity: 0;
+        }
+
+        a.iko-custom-link:hover .iko-icon-default {
+            opacity: 0;
+        }
+
+        a.iko-custom-link:hover .iko-icon-hover {
+            opacity: 1;
+        }
+
+        a.iko-custom-link:hover .iko-link-icon {
+            transform: translateX(2px);
         }
     </style>
 

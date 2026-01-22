@@ -81,19 +81,23 @@ function shortcode_tab_block_investing_in_kenya() {
         'images' => [
             [
                 'img'  => get_field('first_image_third_tab_investing_in_kenya'),
-                'text' => get_field('first_image_text_third_tab_investing_in_kenya')
+                'text' => get_field('first_image_text_third_tab_investing_in_kenya'),
+				'link' => get_field('first_card_link_third_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('second_image_third_tab_investing_in_kenya'),
-                'text' => get_field('second_image_text_third_tab_investing_in_kenya')
+                'text' => get_field('second_image_text_third_tab_investing_in_kenya'),
+				'link' => get_field('second_card_link_third_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('third_image_third_tab_investing_in_kenya'),
-                'text' => get_field('third_image_text_third_tab_investing_in_kenya')
+                'text' => get_field('third_image_text_third_tab_investing_in_kenya'),
+				'link' => get_field('third_card_link_third_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('fourth_image_third_tab_investing_in_kenya'),
-                'text' => get_field('fourth_image_text_third_tab_investing_in_kenya')
+                'text' => get_field('fourth_image_text_third_tab_investing_in_kenya'),
+				'link' => get_field('fourth_card_link_third_tab_investing_in_kenya')
             ],
         ]
     ];
@@ -112,23 +116,28 @@ function shortcode_tab_block_investing_in_kenya() {
         'first_block_images' => [
             [
                 'img'  => get_field('first_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('first_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('first_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('first_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('second_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('second_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('second_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('second_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('third_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('third_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('third_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('third_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('fourth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('fourth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('fourth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('fourth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('fifth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('fifth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('fifth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('fifth_card_link_fourth_tab_investing_in_kenya')
             ],
         ],
 
@@ -138,15 +147,18 @@ function shortcode_tab_block_investing_in_kenya() {
         'second_block_images' => [
             [
                 'img'  => get_field('sixth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('sixth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('sixth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('sixth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('seventh_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('seventh_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('seventh_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('seventh_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('eighth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('eighth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('eighth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('eighth_card_link_fourth_tab_investing_in_kenya')
             ],
         ],
 
@@ -155,15 +167,18 @@ function shortcode_tab_block_investing_in_kenya() {
         'third_block_images' => [
             [
                 'img'  => get_field('ninth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('ninth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('ninth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('ninth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('tenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('tenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('tenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('tenth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('eleventh_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('eleventh_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('eleventh_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('eleventh_card_link_fourth_tab_investing_in_kenya')
             ],
         ],
 
@@ -172,11 +187,13 @@ function shortcode_tab_block_investing_in_kenya() {
         'fourth_block_images' => [
             [
                 'img'  => get_field('twelfth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('twelfth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('twelfth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('twelfth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('thirteenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('thirteenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('thirteenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('thirteenth_card_link_fourth_tab_investing_in_kenya')
             ],
         ],
 
@@ -185,11 +202,13 @@ function shortcode_tab_block_investing_in_kenya() {
         'fifth_block_images' => [
             [
                 'img'  => get_field('fourteenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('fourteenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('fourteenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('fourteenth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('fifteenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('fifteenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('fifteenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('fifteenth_card_link_fourth_tab_investing_in_kenya')
             ],
         ],
 
@@ -198,7 +217,8 @@ function shortcode_tab_block_investing_in_kenya() {
         'sixth_block_images' => [
             [
                 'img'  => get_field('sixteenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('sixteenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('sixteenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('sixteenth_link_fourth_tab_investing_in_kenya')
             ]
         ],
 
@@ -207,15 +227,18 @@ function shortcode_tab_block_investing_in_kenya() {
         'seventh_block_images' => [
             [
                 'img'  => get_field('seventeenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('seventeenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('seventeenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('seventeenth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('eighteenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('eighteenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('eighteenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('eighteenth_card_link_fourth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('nineteenth_image_fourth_tab_investing_in_kenya'),
-                'text' => get_field('nineteenth_image_text_fourth_tab_investing_in_kenya')
+                'text' => get_field('nineteenth_image_text_fourth_tab_investing_in_kenya'),
+				'link' => get_field('nineteenth_card_link_fourth_tab_investing_in_kenya')
             ],
         ],
     ];
@@ -232,15 +255,18 @@ function shortcode_tab_block_investing_in_kenya() {
         'images' => [
             [
                 'img'  => get_field('first_image_fifth_tab_investing_in_kenya'),
-                'text' => get_field('first_image_text_fifth_tab_investing_in_kenya')
+                'text' => get_field('first_image_text_fifth_tab_investing_in_kenya'),
+				'link' => get_field('first_card_link_fifth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('second_image_fifth_tab_investing_in_kenya'),
-                'text' => get_field('second_image_text_fifth_tab_investing_in_kenya')
+                'text' => get_field('second_image_text_fifth_tab_investing_in_kenya'),
+				'link' => get_field('second_card_link_fifth_tab_investing_in_kenya')
             ],
             [
                 'img'  => get_field('third_image_fifth_tab_investing_in_kenya'),
-                'text' => get_field('third_image_text_fifth_tab_investing_in_kenya')
+                'text' => get_field('third_image_text_fifth_tab_investing_in_kenya'),
+				'link' => get_field('third_card_link_fifth_tab_investing_in_kenya')
             ],
         ]
     ];
@@ -257,6 +283,7 @@ function shortcode_tab_block_investing_in_kenya() {
         'image' => [
             'img'  => get_field('image_sixth_tab_investing_in_kenya'),
             'text' => get_field('image_text_sixth_tab_investing_in_kenya'),
+			'link' => get_field('card_link_sixth_tab_investing_in_kenya')
         ],
     ];
 

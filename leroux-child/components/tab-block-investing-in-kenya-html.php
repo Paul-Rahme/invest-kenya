@@ -320,10 +320,12 @@ function kn_render_investing_tabs_html($d) {
                     $single_image = $tab6['image'] ?? null;
                     if ($single_image && !empty($single_image['img'])): ?>
                         <div class="ik-invest-single-image-wrapper">
-                            <?php echo kn_render_investing_image_card(
-                                $single_image['img'],
-                                $single_image['text'] ?? ''
-                            ); ?>
+<?php echo kn_render_investing_image_card(
+    $single_image['img'],
+    $single_image['text'] ?? '',
+    $single_image['link'] ?? ''
+); ?>
+
                         </div>
                     <?php endif; ?>
 

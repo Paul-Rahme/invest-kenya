@@ -68,13 +68,21 @@ function shortcode_sector_tabs_construction_building() {
         color: #101110;
     }
 
-    .sector-tabs-nav {
-        display: flex;
-        gap: 40px;
-        border-bottom: 1px solid #E5E7EB;
-        margin-bottom: 32px;
-        overflow-x: auto;
-    }
+#<?php echo esc_attr($uid); ?> .sector-tabs-nav {
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 32px;
+
+    overflow-x: auto;
+    overflow-y: hidden;        /* 🔥 kills vertical scroll */
+    scrollbar-width: none;     /* Firefox */
+}
+
+#<?php echo esc_attr($uid); ?> .sector-tabs-nav::-webkit-scrollbar {
+    display: none;             /* Chrome / Safari */
+}
+
 
     .sector-tab-trigger {
         position: relative;
@@ -174,6 +182,11 @@ function shortcode_sector_tabs_construction_building() {
     max-width: 50%;
     display: block;
 }
+
+#<?php echo esc_attr($uid); ?> .sector-check-item img {
+    margin-top: 2px;
+}
+
 	
 @media (min-width: 1025px) {
     #<?php echo esc_attr($uid); ?> .sector-check-text {
@@ -250,6 +263,18 @@ function shortcode_sector_tabs_construction_building() {
     }
 }
 
+@media (max-width: 675px) {
+    #<?php echo esc_attr($uid); ?> .sector-tab-trigger {
+        white-space: nowrap;     /* prevent wrapping */
+        flex-shrink: 0;          /* prevent shrinking */
+        line-height: 1.2;        /* stable height */
+    }
+
+    #<?php echo esc_attr($uid); ?> .sector-tabs-nav {
+        overflow-x: auto;        /* allow horizontal scroll if needed */
+        overflow-y: hidden;      /* no vertical scrollbar */
+    }
+}
 
 </style>
 

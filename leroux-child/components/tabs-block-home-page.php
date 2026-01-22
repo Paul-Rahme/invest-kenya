@@ -695,7 +695,8 @@ $tab_button_icon_default  = ik_upload_url('2025/12/System-Icons-1.svg');
                 text-decoration: none;
                 cursor: pointer;
                 background: #DB2129;
-				width: 400px; /* or your preferred width */
+				    width: 100%;
+    max-width: 400px;
             }
 
             #<?php echo $uid; ?> .ik-tabs-home-panel-button-text {
@@ -746,6 +747,12 @@ $tab_button_icon_default  = ik_upload_url('2025/12/System-Icons-1.svg');
     			overflow-y: hidden; /* prevent vertical scroll */
     			white-space: nowrap; /* helps prevent vertical scroll issues */
 			}
+			
+			#<?php echo $uid; ?> .ik-tabs-home-root,
+#<?php echo $uid; ?> .ik-tabs-home-inner {
+    overflow-x: hidden;
+}
+
 
 
             /* -----------------------------------------------------------------
@@ -821,6 +828,45 @@ $tab_button_icon_default  = ik_upload_url('2025/12/System-Icons-1.svg');
                     justify-content: center;
                 }
             }
+			
+			@media (max-width: 480px) {
+    #<?php echo $uid; ?> .ik-tabs-home-image-wrap {
+        max-width: 100%;
+    }
+
+    #<?php echo $uid; ?> .ik-tabs-home-image-wrap img {
+        width: 100%;
+        height: auto;
+    }
+}
+			
+			/* ===============================
+   MOBILE OVERFLOW FIX
+=============================== */
+
+#<?php echo $uid; ?> .ik-tabs-home-root,
+#<?php echo $uid; ?> .ik-tabs-home-inner {
+    overflow-x: hidden;
+}
+
+@media (max-width: 480px) {
+
+    #<?php echo $uid; ?> .ik-tabs-home-panel-button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #<?php echo $uid; ?> .ik-tabs-home-image-wrap {
+        max-width: 100%;
+    }
+
+    #<?php echo $uid; ?> .ik-tabs-home-image-wrap img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
         </style>
 
         <script>

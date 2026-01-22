@@ -168,20 +168,29 @@
                         </div>
                     </div>
 
-                    <?php if ( $button_text_first_tab && $button_link_first_tab ): ?>
-                        <div class="incentives-button-wrapper">
-                            <a class="incentives-cta-button" href="<?php echo esc_url( $button_link_first_tab ); ?>">
-                                <span class="incentives-cta-text">
-                                    <?php echo esc_html( $button_text_first_tab ); ?>
-                                </span>
-								<?php if ( $button_icon_url ): ?>
-                                    <span class="incentives-cta-icon">
-                                        <img src="<?php echo esc_url( $button_icon_url ); ?>" alt="" />
-                                    </span>
-                                <?php endif; ?>
-                            </a>
-                        </div>
-                    <?php endif; ?>
+<div class="incentives-bottom-row">
+    <?php if ( $bottom_text_first_tab ): ?>
+        <div class="incentives-bottom-text">
+            <?php echo esc_html( $bottom_text_first_tab ); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( $button_text_first_tab && $button_link_first_tab ): ?>
+        <div class="incentives-button-wrapper">
+            <a class="incentives-cta-button" href="<?php echo esc_url( home_url( $button_link_first_tab ) ); ?>">
+                <span class="incentives-cta-text">
+                    <?php echo esc_html( $button_text_first_tab ); ?>
+                </span>
+                <?php if ( $button_icon_url ): ?>
+                    <span class="incentives-cta-icon">
+                        <img src="<?php echo esc_url( $button_icon_url ); ?>" alt="" />
+                    </span>
+                <?php endif; ?>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>
+
                 </div>
             </div>
 
@@ -310,21 +319,29 @@
                         </div>
                     </div>
 
-                    <?php if ( $button_text_second_tab && $button_link_second_tab ): ?>
-                        <div class="incentives-button-wrapper">
-                            <a class="incentives-cta-button" href="<?php echo esc_url( home_url( $button_link_second_tab ) ); ?>">
+<div class="incentives-bottom-row">
+    <?php if ( $bottom_text_second_tab ): ?>
+        <div class="incentives-bottom-text">
+            <?php echo esc_html( $bottom_text_second_tab ); ?>
+        </div>
+    <?php endif; ?>
 
-                                <span class="incentives-cta-text">
-                                    <?php echo esc_html( $button_text_second_tab ); ?>
-                                </span>
-								 <?php if ( $button_icon_url ): ?>
-                                    <span class="incentives-cta-icon">
-                                        <img src="<?php echo esc_url( $button_icon_url ); ?>" alt="" />
-                                    </span>
-                                <?php endif; ?>
-                            </a>
-                        </div>
-                    <?php endif; ?>
+    <?php if ( $button_text_second_tab && $button_link_second_tab ): ?>
+        <div class="incentives-button-wrapper">
+            <a class="incentives-cta-button" href="<?php echo esc_url( home_url( $button_link_second_tab ) ); ?>">
+                <span class="incentives-cta-text">
+                    <?php echo esc_html( $button_text_second_tab ); ?>
+                </span>
+                <?php if ( $button_icon_url ): ?>
+                    <span class="incentives-cta-icon">
+                        <img src="<?php echo esc_url( $button_icon_url ); ?>" alt="" />
+                    </span>
+                <?php endif; ?>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>
+
                 </div>
             </div>
 
@@ -453,20 +470,29 @@
                         </div>
                     </div>
 
-                    <?php if ( $button_text_third_tab && $button_link_third_tab ): ?>
-                        <div class="incentives-button-wrapper">
-                            <a class="incentives-cta-button" href="<?php echo esc_url( home_url( $button_link_third_tab ) ); ?>">
-                                <span class="incentives-cta-text">
-                                    <?php echo esc_html( $button_text_third_tab ); ?>
-                                </span>
-								<?php if ( $button_icon_url ): ?>
-                                    <span class="incentives-cta-icon">
-                                        <img src="<?php echo esc_url( $button_icon_url ); ?>" alt="" />
-                                    </span>
-                                <?php endif; ?>
-                            </a>
-                        </div>
-                    <?php endif; ?>
+<div class="incentives-bottom-row">
+    <?php if ( $bottom_text_third_tab ): ?>
+        <div class="incentives-bottom-text">
+            <?php echo esc_html( $bottom_text_third_tab ); ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if ( $button_text_third_tab && $button_link_third_tab ): ?>
+        <div class="incentives-button-wrapper">
+            <a class="incentives-cta-button" href="<?php echo esc_url( home_url( $button_link_third_tab ) ); ?>">
+                <span class="incentives-cta-text">
+                    <?php echo esc_html( $button_text_third_tab ); ?>
+                </span>
+                <?php if ( $button_icon_url ): ?>
+                    <span class="incentives-cta-icon">
+                        <img src="<?php echo esc_url( $button_icon_url ); ?>" alt="" />
+                    </span>
+                <?php endif; ?>
+            </a>
+        </div>
+    <?php endif; ?>
+</div>
+
                 </div>
             </div>
 

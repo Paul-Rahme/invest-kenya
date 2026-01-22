@@ -194,7 +194,7 @@ function shortcode_ict_bpo_overview() {
 .ike2-snapshot-row {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
 }
 

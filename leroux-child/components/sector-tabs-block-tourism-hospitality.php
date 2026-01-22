@@ -78,8 +78,16 @@ function shortcode_sector_tabs_tourism_hospitality() {
     gap: 40px;
     border-bottom: 1px solid #E5E7EB;
     margin-bottom: 32px;
+
     overflow-x: auto;
+    overflow-y: hidden;        /* 🔥 kill vertical scrollbar */
+    scrollbar-width: none;     /* Firefox */
 }
+
+#<?php echo $uid; ?> .sector-tabs-nav::-webkit-scrollbar {
+    display: none;             /* Chrome / Safari */
+}
+
 
 #<?php echo $uid; ?> .sector-tab-trigger {
     position: relative;

@@ -103,19 +103,40 @@ function shortcode_page_banner_block() {
                     </div>
 
                     <div class="ik-banner-buttons">
-                        <?php if ( $slide['btn1_text'] ) : ?>
-                            <a href="<?php echo esc_url( $slide['btn1_link'] ? home_url( $slide['btn1_link'] ) : '#' ); ?>" class="ik-btn ik-btn-red">
-                                <span><?php echo esc_html( $slide['btn1_text'] ); ?></span>
-                                <img class="ik-btn-icon" src="<?php echo esc_url( ik_upload_url('2025/12/System-Icons-1.svg') ); ?>" alt="" />
-                            </a>
-                        <?php endif; ?>
+<?php
+$btn1_raw = $slide['btn1_link'];
 
-                        <?php if ( $slide['btn2_text'] ) : ?>
-                            <a href="<?php echo esc_url( $slide['btn2_link'] ? home_url( $slide['btn2_link'] ) : '#' ); ?>" class="ik-btn ik-btn-white">
-                                <span><?php echo esc_html( $slide['btn2_text'] ); ?></span>
-                                <img class="ik-btn-icon" src="<?php echo esc_url( ik_upload_url('2025/11/System-Icons-2.svg') ); ?>" alt="" />
-                            </a>
-                        <?php endif; ?>
+if ($btn1_raw) {
+    $btn1_final = (strpos($btn1_raw, 'http') === 0) ? $btn1_raw : home_url($btn1_raw);
+} else {
+    $btn1_final = '#';
+}
+?>
+
+<?php if ( $slide['btn1_text'] ) : ?>
+    <a href="<?php echo esc_url($btn1_final); ?>" class="ik-btn ik-btn-red">
+        <span><?php echo esc_html( $slide['btn1_text'] ); ?></span>
+        <img class="ik-btn-icon" src="<?php echo esc_url( ik_upload_url('2025/12/System-Icons-1.svg') ); ?>" alt="" />
+    </a>
+<?php endif; ?>
+
+<?php
+$btn2_raw = $slide['btn2_link'];
+
+if ($btn2_raw) {
+    $btn2_final = (strpos($btn2_raw, 'http') === 0) ? $btn2_raw : home_url($btn2_raw);
+} else {
+    $btn2_final = '#';
+}
+?>
+
+<?php if ( $slide['btn2_text'] ) : ?>
+    <a href="<?php echo esc_url($btn2_final); ?>" class="ik-btn ik-btn-white">
+        <span><?php echo esc_html( $slide['btn2_text'] ); ?></span>
+        <img class="ik-btn-icon" src="<?php echo esc_url( ik_upload_url('2025/11/System-Icons-2.svg') ); ?>" alt="" />
+    </a>
+<?php endif; ?>
+
                     </div>
                 </div>
 

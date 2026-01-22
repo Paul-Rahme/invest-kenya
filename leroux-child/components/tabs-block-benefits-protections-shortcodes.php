@@ -66,6 +66,9 @@ function shortcode_incentives_tabs_block() {
     $first_step_text_first_tab           = get_field('first_step_text_first_tab');
     $second_step_text_first_tab          = get_field('second_step_text_first_tab');
 
+	$bottom_text_first_tab = get_field('bottom_text_first_tab');
+
+	
     $button_text_first_tab               = get_field('button_text_first_tab');
     $button_link_first_tab               = get_field('button_link_first_tab');
 
@@ -98,6 +101,8 @@ function shortcode_incentives_tabs_block() {
 
     $first_step_text_second_tab          = get_field('first_step_text_second_tab');
     $second_step_text_second_tab         = get_field('second_step_text_second_tab');
+	
+	$bottom_text_second_tab = get_field('bottom_text_second_tab');
 
     $button_text_second_tab              = get_field('button_text_second_tab');
     $button_link_second_tab              = get_field('button_link_second_tab');
@@ -131,6 +136,8 @@ function shortcode_incentives_tabs_block() {
 
     $first_step_text_third_tab           = get_field('first_step_text_third_tab');
     $second_step_text_third_tab          = get_field('second_step_text_third_tab');
+	
+	$bottom_text_third_tab = get_field('bottom_text_third_tab');
 
     $button_text_third_tab               = get_field('button_text_third_tab');
     $button_link_third_tab               = get_field('button_link_third_tab');

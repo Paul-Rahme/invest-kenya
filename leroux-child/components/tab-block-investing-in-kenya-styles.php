@@ -427,6 +427,20 @@ function kn_render_investing_tabs_styles() {
     flex-wrap: wrap;
     gap: 8px;
 }
+	
+	
+	.ik-invest-img-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.ik-invest-img-card:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: 0.2s ease;
+}
+
 </style>
 
 <?php

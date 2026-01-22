@@ -101,13 +101,21 @@ $logo_4_4 = get_field('fourth_logo_fourth_tab');
     /* ============================================================
        TAB HEADERS
     ============================================================ */
-    #<?php echo $uid; ?> .sector-tabs-nav {
-        display: flex;
-        gap: 40px;
-        border-bottom: 1px solid #E5E7EB;
-        margin-bottom: 32px;
-        overflow-x: auto;
-    }
+#<?php echo $uid; ?> .sector-tabs-nav {
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid #E5E7EB;
+    margin-bottom: 32px;
+
+    overflow-x: auto;
+    overflow-y: hidden;        /* 🔥 removes vertical scroll */
+    scrollbar-width: none;     /* Firefox */
+}
+
+#<?php echo $uid; ?> .sector-tabs-nav::-webkit-scrollbar {
+    display: none;             /* Chrome / Safari */
+}
+
 
     #<?php echo $uid; ?> .sector-tab-trigger {
         position: relative;
