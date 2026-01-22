@@ -18,6 +18,13 @@ This site was built so that you can update content safely and consistently. Most
 
 ---
 
+## 🏠 Homepage (Important)
+The **homepage** is the most visible entry point to the site. It contains the primary brand messaging and typically uses the **banner slider**. This slider is **primarily used on the homepage only**, not on every page.【F:leroux-child/components/page-banner-block.php†L8-L52】
+
+Because this page carries the main narrative, any updates here should be carefully reviewed for tone, clarity, and consistency with the rest of the site.
+
+---
+
 ## ✅ Editing Any Page (Simple Step‑by‑Step)
 1. Log in to WordPress.
 2. Go to **Pages** and open the page you want to edit.
