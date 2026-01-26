@@ -55,6 +55,23 @@ This method ensures:
 
 ---
 
+## 🧩 Known Layout Fix (Leroux Theme Padding Issue)
+Some pages can look “broken” because the Leroux theme adds extra left/right padding when many meta fields are present. The fix is to add a small **page‑specific CSS snippet** in **Elementor → Page Settings → Custom CSS**.
+
+Use the page’s actual ID in the selector (example below uses `13407`):
+```
+.page-id-13407 .qodef-grid,
+.page-id-13407 #qodef-page-content.qodef-grid,
+.page-id-13407 #qodef-page-inner.qodef-content-grid,
+.page-id-13407 .qodef-grid-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+```
+Repeat this per page by replacing the ID to match the page you are editing.
+
+---
+
 ## 🗺️ Page‑by‑Page Content Guide
 Below is a detailed checklist of what each page needs. This is your “preparation list.”
 

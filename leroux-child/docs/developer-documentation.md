@@ -77,7 +77,24 @@ This workflow applies especially to:
 
 ---
 
-## 5) Page Map (Which shortcodes build which pages)
+## 5) Elementor Page Settings CSS Fix (Leroux Theme)
+The Leroux theme has a known issue: when multiple meta fields are present, it injects extra left/right padding that can break full‑width layouts. The workaround is to add **page‑specific CSS** in **Elementor → Page Settings → Custom CSS** using the page ID.
+
+Use the page’s actual ID in the selector (example below uses `13407`):
+```
+.page-id-13407 .qodef-grid,
+.page-id-13407 #qodef-page-content.qodef-grid,
+.page-id-13407 #qodef-page-inner.qodef-content-grid,
+.page-id-13407 .qodef-grid-inner {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+```
+Repeat this per page by replacing the ID to match the current page you are editing.
+
+---
+
+## 6) Page Map (Which shortcodes build which pages)
 
 ### Why Kenya
 - **`[first_section_why_kenya]`** → title split + 6 icon/subtitle/text rows.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】
@@ -170,7 +187,7 @@ Each sector uses two blocks:
 
 ---
 
-## 6) Active Plugins (Operational Dependencies — Detailed)
+## 7) Active Plugins (Operational Dependencies — Detailed)
 These plugins are active and used in production. Removing or disabling them may break site functionality.
 
 ### Core content engine
@@ -215,7 +232,7 @@ These plugins are active and used in production. Removing or disabling them may 
 
 ---
 
-## 7) Maintenance & Best Practices
+## 8) Maintenance & Best Practices
 - **Prefer ACF fields over hardcoded values** in templates.
 - **Document new meta fields** when adding filters or list‑based features.
 - **Register new components in `functions.php`** so they load correctly in production.【F:leroux-child/functions.php†L285-L339】
