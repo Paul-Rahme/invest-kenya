@@ -123,7 +123,52 @@ This is the official, **hands‑on authoring guide** for editors. It follows the
 
 ---
 
-## 9) Final Quality Checklist (Before Publishing)
+## 9) Special Characters and Formatting Rules (Use as‑is)
+Some authoring fields **only work correctly when specific characters are included**. Below is the exact list of places where these rules apply.
+
+### A) `//` split titles (keep the double slash)
+These fields split the title into two styled parts, so **leave the `//` in the text**:
+- **Homepage → Tabs section:** `main_title_tabs_section` (tabs home block).
+- **Get Started page:** `main_title_get_started_section`.
+- **How We Support Investors (first section):** `main_title_first_section`.
+- **Investing in Kenya tabs block:** `main_title`.
+- **Investment Trends tabs:** `main_title_first_tab`, `main_title_second_tab`, `main_title_third_tab`.
+- **Incentives → Eligible Investments block:** `title_second_section`.
+- **Incentives tabs:** `raw_title_first_section` (benefits/protections tabs).
+- **Laws & Regulations tabs:** `raw_title_first_section`.
+- **Careers page (first section):** `main_title_first_section`.
+- **About Us → Vision/Mission/Values:** `main_title`, `first_big_text`, `second_big_text`.
+- **Newsletter subscribe block:** `title_newsletter`.
+
+### B) `{}` for bold callouts (Why Kenya second section)
+In the **Why Kenya** second section value descriptions, wrap the words you want bold **inside curly braces**:
+- `first_value_description_second_section`
+- `second_value_description_second_section`
+- `third_value_description_second_section`
+
+Example:
+```
+Some text {bold line} more text.
+```
+
+### C) Laws & Regulations authoring (exact link format)
+The **Laws & Regulations tabs** have two types of links:
+1) **Inline links inside the info text fields** — use this exact pattern:
+   - `{Link Label|https://full-url.com}`
+   - Example: `Read the Act {Kenya Investment Act|https://example.com}`
+   - Works inside these fields:
+     - `first_information_text_first_tab` → `sixth_information_text_first_tab`
+     - `first_information_text_second_tab` → `sixth_information_text_second_tab`
+2) **Bottom CTA button** — fill the button fields normally:
+   - `button_text_first_tab` + `button_link_first_tab`
+   - `button_text_second_tab` + `button_link_second_tab`
+   - The button link is treated as a **site path**, so use something like `/laws-regulations/` (no HTML).
+
+If a section ever feels inconsistent, note it for a future cleanup pass when time allows.
+
+---
+
+## 10) Final Quality Checklist (Before Publishing)
 ✅ Title is clear and matches the slug
 ✅ Featured image is set
 ✅ Required custom fields are filled
