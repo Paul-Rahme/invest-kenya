@@ -1,441 +1,539 @@
 %PDF-1.4
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
-endobj
-2 0 obj
-<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R] /Count 4 >>
-endobj
-3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
 4 0 obj
-<< /Length 2635 >>
+<< /Length 3124 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(# Invest Kenya Website — Authoring Guide) Tj
-T*
-() Tj
-T*
-(This is the official, **hands‑on authoring guide** for editors. It follows the exact workflows used on the Invest Kenya site and is intentionally detailed so it can be followed step‑by‑step without technical knowledge.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 1\) How To Login To WordPress Dashboard) Tj
-T*
+/F2 20 Tf
+1 0 0 1 60.00 772.00 Tm
+(Invest Kenya Website -- Authoring Guide) Tj
+/F1 11 Tf
+1 0 0 1 60.00 727.70 Tm
+(This is the official, hands?on authoring guide for editors. It follows the exact) Tj
+/F1 11 Tf
+1 0 0 1 60.00 713.40 Tm
+(workflows used on the Invest Kenya site and is intentionally detailed so it can be) Tj
+/F1 11 Tf
+1 0 0 1 60.00 699.10 Tm
+(followed step?by?step without technical knowledge.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 633.90 Tm
+(1\) How To Login To WordPress Dashboard) Tj
+/F1 11 Tf
+1 0 0 1 74.00 609.10 Tm
 (1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
+/F1 11 Tf
+1 0 0 1 86.00 594.80 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 580.50 Tm
 (2. Use your credentials and log in.) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 566.20 Tm
 (3. You will be redirected to the WordPress dashboard.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 2\) How To Preview Any Page or Post) Tj
-T*
+/F2 16 Tf
+1 0 0 1 60.00 501.00 Tm
+(2\) How To Preview Any Page or Post) Tj
+/F1 11 Tf
+1 0 0 1 74.00 476.20 Tm
 (1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. On the left menu, you will see **Pages** and **Posts**.) Tj
-T*
-(   - **Pages** = main website pages \(home, about, why kenya, etc.\).) Tj
-T*
-(   - **Posts** = articles like News, Events, Publications, Governance.) Tj
-T*
-(3. Open **Pages** or **Posts**, then search for the item you want.) Tj
-T*
-(4. Hover over the item and click **View** to preview it.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 3\) News Authoring \(Step‑by‑Step\)) Tj
-T*
+/F1 11 Tf
+1 0 0 1 86.00 461.90 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 447.60 Tm
+(2. On the left menu, you will see Pages and Posts.) Tj
+/F1 11 Tf
+1 0 0 1 86.00 433.30 Tm
+(- Pages = main website pages \(home, about, why kenya, etc.\).) Tj
+/F1 11 Tf
+1 0 0 1 86.00 419.00 Tm
+(- Posts = articles like News, Events, Publications, Governance.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 404.70 Tm
+(3. Open Pages or Posts, then search for the item you want.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 390.40 Tm
+(4. Hover over the item and click View to preview it.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 325.20 Tm
+(3\) News Authoring \(Step?by?Step\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 300.40 Tm
 (1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. Click **Posts** on the left.) Tj
-T*
-(3. Search for the post: **“News Sample -> duplicate this”**.) Tj
-T*
-(4. Hover over it and click **Duplicate** \(this creates a clean template copy\).) Tj
-T*
-(5. Hover over the new duplicate and click **Quick Edit**.) Tj
-T*
-(6. Fill the **Title**, then copy it and paste it into the **Slug** \(exact same text\).) Tj
-T*
-(7. If you want tags, update the **Tags** field \(example: `Danger, Critical`\).) Tj
-T*
-(8. **Do not change anything else.** Click **Update**.) Tj
-T*
-(9. Hover over the new post again and click **Edit** \(not Elementor\).) Tj
-T*
-(10. On the right under **Post** you’ll see the **Featured Image**.) Tj
-T*
-(    - Hover → **Replace**.) Tj
-T*
-(    - Upload or select from media.) Tj
-T*
+/F1 11 Tf
+1 0 0 1 86.00 286.10 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 271.80 Tm
+(2. Click Posts on the left.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 257.50 Tm
+(3. Search for the post: "News Sample -> duplicate this".) Tj
+/F1 11 Tf
+1 0 0 1 74.00 243.20 Tm
+(4. Hover over it and click Duplicate \(this creates a clean template copy\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 228.90 Tm
+(5. Hover over the new duplicate and click Quick Edit.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 214.60 Tm
+(6. Fill the Title, then copy it and paste it into the Slug \(exact same text\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 200.30 Tm
+(7. If you want tags, update the Tags field \(example: Danger, Critical\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 186.00 Tm
+(8. Do not change anything else. Click Update.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 171.70 Tm
+(9. Hover over the new post again and click Edit \(not Elementor\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 157.40 Tm
+(10. On the right under Post you'll see the Featured Image.) Tj
+/F1 11 Tf
+1 0 0 1 90.00 143.10 Tm
+(- Hover ? Replace.) Tj
+/F1 11 Tf
+1 0 0 1 90.00 128.80 Tm
+(- Upload or select from media.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 114.50 Tm
 (11. Scroll down in the editor. You must adjust:) Tj
-T*
-(    - **Display In Slider:** Yes / No \(controls if it appears in the news slider\).) Tj
-T*
-(    - **Blog List Image:** select the same image you used as featured image.) Tj
-T*
-(12. Click **Save Draft** \(top right\).) Tj
-T*
-(13. Go back to **Posts**, find your draft.) Tj
-T*
-(14. Hover and click **Edit with Elementor**.) Tj
-T*
-(15. If the Elementor panel is not visible, click the small icon between **Search** and the **Eye** \(near the Publish button\).) Tj
-T*
+/F1 11 Tf
+1 0 0 1 90.00 100.20 Tm
+(- Display In Slider: Yes / No \(controls if it appears in the news slider\).) Tj
+/F1 11 Tf
+1 0 0 1 90.00 85.90 Tm
+(- Blog List Image: select the same image you used as featured image.) Tj
 ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-6 0 obj
-<< /Length 2351 >>
+<< /Length 3192 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(16. In Elementor you are responsible **only for the first two sections**.) Tj
-T*
-(    - Expand the first section → column → update the image and two text editors.) Tj
-T*
-(17. You can **Publish** immediately, or click the arrow next to **Publish** and choose **Save Draft**.) Tj
-T*
-(18. If saved as draft: go back to Posts → Quick Edit → change status to **Published** → Update.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 4\) Events Authoring \(Step‑by‑Step\)) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 782.00 Tm
+(12. Click Save Draft \(top right\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 767.70 Tm
+(13. Go back to Posts, find your draft.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 753.40 Tm
+(14. Hover and click Edit with Elementor.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 739.10 Tm
+(15. If the Elementor panel is not visible, click the small icon between Search and) Tj
+/F1 11 Tf
+1 0 0 1 74.00 724.80 Tm
+(the Eye \(near the Publish button\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 710.50 Tm
+(16. In Elementor you are responsible only for the first two sections.) Tj
+/F1 11 Tf
+1 0 0 1 90.00 696.20 Tm
+(- Expand the first section ? column ? update the image and two text editors.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 681.90 Tm
+(17. You can Publish immediately, or click the arrow next to Publish and choose Save) Tj
+/F1 11 Tf
+1 0 0 1 74.00 667.60 Tm
+(Draft.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 653.30 Tm
+(18. If saved as draft: go back to Posts ? Quick Edit ? change status to Published ?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 639.00 Tm
+(Update.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 573.80 Tm
+(4\) Events Authoring \(Step?by?Step\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 549.00 Tm
 (1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. Click **Posts** on the left.) Tj
-T*
-(3. Search for: **“Event Sample -> duplicate this”**.) Tj
-T*
-(4. Follow the same steps as News \(duplicate → quick edit → update title/slug → save\).) Tj
-T*
-(5. **Extra fields you must fill:**) Tj
-T*
-(   - **Start Date**) Tj
-T*
-(   - **End Date**) Tj
-T*
-(   - **Location**) Tj
-T*
-(6. If the event is one day only: fill **Start Date** only.) Tj
-T*
-(7. In Elementor you only update the **first section**.) Tj
-T*
-(   - You will see **three text editors**, **one image**, and an **HTML widget**.) Tj
-T*
-(   - **Do not touch the HTML widget.**) Tj
-T*
+/F1 11 Tf
+1 0 0 1 86.00 534.70 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 520.40 Tm
+(2. Click Posts on the left.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 506.10 Tm
+(3. Search for: "Event Sample -> duplicate this".) Tj
+/F1 11 Tf
+1 0 0 1 74.00 491.80 Tm
+(4. Follow the same steps as News \(duplicate ? quick edit ? update title/slug ?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 477.50 Tm
+(save\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 463.20 Tm
+(5. Extra fields you must fill:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 448.90 Tm
+(- Start Date) Tj
+/F1 11 Tf
+1 0 0 1 86.00 434.60 Tm
+(- End Date) Tj
+/F1 11 Tf
+1 0 0 1 86.00 420.30 Tm
+(- Location) Tj
+/F1 11 Tf
+1 0 0 1 74.00 406.00 Tm
+(6. If the event is one day only: fill Start Date only.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 391.70 Tm
+(7. In Elementor you only update the first section.) Tj
+/F1 11 Tf
+1 0 0 1 86.00 377.40 Tm
+(- You will see three text editors, one image, and an HTML widget.) Tj
+/F1 11 Tf
+1 0 0 1 86.00 363.10 Tm
+(- Do not touch the HTML widget.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 348.80 Tm
 (8. Publish or save draft, same as News.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 5\) Publication Authoring \(Resources\)) Tj
-T*
+/F2 16 Tf
+1 0 0 1 60.00 283.60 Tm
+(5\) Publication Authoring \(Resources\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 258.80 Tm
 (1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. Click **Posts** on the left.) Tj
-T*
-(3. Search for: **“Publication Sample -> duplicate this”**.) Tj
-T*
+/F1 11 Tf
+1 0 0 1 86.00 244.50 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 230.20 Tm
+(2. Click Posts on the left.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 215.90 Tm
+(3. Search for: "Publication Sample -> duplicate this".) Tj
+/F1 11 Tf
+1 0 0 1 74.00 201.60 Tm
 (4. Follow the same steps as News.) Tj
-T*
-(5. **Extra field:** **Download Link** \(paste the file URL\).) Tj
-T*
-(6. In Elementor you only update the **first container** \(it contains two inner containers\).) Tj
-T*
-(   - You will see **two text editors**, **one image**, and a **Button**.) Tj
-T*
-(   - **Do not touch the Button widget.**) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 187.30 Tm
+(5. Extra field: Download Link \(paste the file URL\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 173.00 Tm
+(6. In Elementor you only update the first container \(it contains two inner) Tj
+/F1 11 Tf
+1 0 0 1 74.00 158.70 Tm
+(containers\).) Tj
+/F1 11 Tf
+1 0 0 1 86.00 144.40 Tm
+(- You will see two text editors, one image, and a Button.) Tj
+/F1 11 Tf
+1 0 0 1 86.00 130.10 Tm
+(- Do not touch the Button widget.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 115.80 Tm
 (7. Save or publish.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 6\) Governance Authoring \(Board / Senior Management\)) Tj
-T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 2829 >>
+stream
+BT
+/F2 16 Tf
+1 0 0 1 60.00 759.70 Tm
+(6\) Governance Authoring \(Board / Senior Management\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 734.90 Tm
 (1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. Click **Posts** on the left.) Tj
-T*
-(3. Search for: **“Governance Sample -> duplicate this”**.) Tj
-T*
+/F1 11 Tf
+1 0 0 1 86.00 720.60 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 706.30 Tm
+(2. Click Posts on the left.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 692.00 Tm
+(3. Search for: "Governance Sample -> duplicate this".) Tj
+/F1 11 Tf
+1 0 0 1 74.00 677.70 Tm
 (4. Follow the same steps as News.) Tj
-T*
-(5. In **Quick Edit**, change the **Category**:) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 663.40 Tm
+(5. In Quick Edit, change the Category:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 649.10 Tm
+(- For Senior Management: check Senior Management and uncheck Board Members.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 634.80 Tm
+(6. Extra field: Job Position \(fill it\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 620.50 Tm
+(7. In Elementor:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 606.20 Tm
+(- Update the first main container \(two inner containers\).) Tj
+/F1 11 Tf
+1 0 0 1 86.00 591.90 Tm
+(- Update the extra container inside the second container for job position.) Tj
+/F1 11 Tf
+1 0 0 1 86.00 577.60 Tm
+(- You will see three text editors, one image, and an Icon.) Tj
+/F1 11 Tf
+1 0 0 1 86.00 563.30 Tm
+(- Do not touch the Icon widget.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 549.00 Tm
+(8. Save or publish.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 483.80 Tm
+(7\) How To Add a New Tag) Tj
+/F1 11 Tf
+1 0 0 1 74.00 459.00 Tm
+(1. Visit the WordPress dashboard:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 444.70 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 430.40 Tm
+(2. Hover over Posts and click Tags.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 416.10 Tm
+(3. Enter the Tag Name.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 401.80 Tm
+(4. Click Add New Tag.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 387.50 Tm
+(5. To edit or delete existing tags: hover the tag ? Quick Edit or Delete.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 322.30 Tm
+(8\) How To Add a Media Element) Tj
+/F1 11 Tf
+1 0 0 1 74.00 297.50 Tm
+(1. Visit the WordPress dashboard:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 283.20 Tm
+(- https://beta.investkenya.go.ke/wordpress/wp-admin/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 268.90 Tm
+(2. Click Media on the left.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 254.60 Tm
+(3. You can:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 240.30 Tm
+(- Upload new media) Tj
+/F1 11 Tf
+1 0 0 1 86.00 226.00 Tm
+(- Edit existing images \(alt text, title, delete\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 211.70 Tm
+(4. Click Add New Media to upload new files.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 197.40 Tm
+(5. To edit an existing image, click it in the media library and update its details.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 132.20 Tm
+(9\) Special Characters and Formatting Rules \(Use as?is\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 107.40 Tm
+(Some authoring fields only work correctly when specific characters are included. Below) Tj
+/F1 11 Tf
+1 0 0 1 60.00 93.10 Tm
+(is the exact list of places where these rules apply.) Tj
 ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-8 0 obj
-<< /Length 2456 >>
+<< /Length 3556 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(   - For Senior Management: check **Senior Management** and uncheck **Board Members**.) Tj
-T*
-(6. **Extra field:** **Job Position** \(fill it\).) Tj
-T*
-(7. In Elementor:) Tj
-T*
-(   - Update the first main container \(two inner containers\).) Tj
-T*
-(   - Update the extra container inside the second container for job position.) Tj
-T*
-(   - You will see **three text editors**, **one image**, and an **Icon**.) Tj
-T*
-(   - **Do not touch the Icon widget.**) Tj
-T*
-(8. Save or publish.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 7\) How To Add a New Tag) Tj
-T*
-(1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. Hover over **Posts** and click **Tags**.) Tj
-T*
-(3. Enter the **Tag Name**.) Tj
-T*
-(4. Click **Add New Tag**.) Tj
-T*
-(5. To edit or delete existing tags: hover the tag → **Quick Edit** or **Delete**.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 8\) How To Add a Media Element) Tj
-T*
-(1. Visit the WordPress dashboard:) Tj
-T*
-(   - **https://beta.investkenya.go.ke/wordpress/wp-admin/**) Tj
-T*
-(2. Click **Media** on the left.) Tj
-T*
-(3. You can:) Tj
-T*
-(   - Upload new media) Tj
-T*
-(   - Edit existing images \(alt text, title, delete\)) Tj
-T*
-(4. Click **Add New Media** to upload new files.) Tj
-T*
-(5. To edit an existing image, click it in the media library and update its details.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 9\) Special Characters and Formatting Rules \(Use as‑is\)) Tj
-T*
-(Some authoring fields **only work correctly when specific characters are included**. Below is the exact list of places where these rules apply.) Tj
-T*
-() Tj
-T*
-(### A\) `//` split titles \(keep the double slash\)) Tj
-T*
-(These fields split the title into two styled parts, so **leave the `//` in the text**:) Tj
-T*
-(- **Homepage → Tabs section:** `main_title_tabs_section` \(tabs home block\).) Tj
-T*
-(- **Get Started page:** `main_title_get_started_section`.) Tj
-T*
-(- **How We Support Investors \(first section\):** `main_title_first_section`.) Tj
-T*
-(- **Investing in Kenya tabs block:** `main_title`.) Tj
-T*
-(- **Investment Trends tabs:** `main_title_first_tab`, `main_title_second_tab`, `main_title_third_tab`.) Tj
-T*
-(- **Incentives → Eligible Investments block:** `title_second_section`.) Tj
-T*
-(- **Incentives tabs:** `raw_title_first_section` \(benefits/protections tabs\).) Tj
-T*
-(- **Laws & Regulations tabs:** `raw_title_first_section`.) Tj
-T*
+/F2 13 Tf
+1 0 0 1 60.00 774.00 Tm
+(A\) // split titles \(keep the double slash\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 753.10 Tm
+(These fields split the title into two styled parts, so leave the // in the text:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 738.80 Tm
+(- Homepage ? Tabs section: maintitletabs_section \(tabs home block\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 724.50 Tm
+(- Get Started page: maintitlegetstartedsection.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 710.20 Tm
+(- How We Support Investors \(first section\): maintitlefirst_section.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 695.90 Tm
+(- Investing in Kenya tabs block: main_title.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 681.60 Tm
+(- Investment Trends tabs: maintitlefirsttab, maintitlesecondtab,) Tj
+/F1 11 Tf
+1 0 0 1 74.00 667.30 Tm
+(maintitlethird_tab.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 653.00 Tm
+(- Incentives ? Eligible Investments block: titlesecondsection.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 638.70 Tm
+(- Incentives tabs: rawtitlefirst_section \(benefits/protections tabs\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 624.40 Tm
+(- Laws & Regulations tabs: rawtitlefirst_section.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 610.10 Tm
+(- Careers page \(first section\): maintitlefirst_section.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 595.80 Tm
+(- About Us ? Vision/Mission/Values: maintitle, firstbigtext, secondbig_text.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 581.50 Tm
+(- Newsletter subscribe block: title_newsletter.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 544.90 Tm
+(B\) {} for bold callouts \(Why Kenya second section\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 524.00 Tm
+(In the Why Kenya second section value descriptions, wrap the words you want bold) Tj
+/F1 11 Tf
+1 0 0 1 60.00 509.70 Tm
+(inside curly braces:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 495.40 Tm
+(- firstvaluedescriptionsecondsection) Tj
+/F1 11 Tf
+1 0 0 1 74.00 481.10 Tm
+(- secondvaluedescriptionsecondsection) Tj
+/F1 11 Tf
+1 0 0 1 74.00 466.80 Tm
+(- thirdvaluedescriptionsecondsection) Tj
+/F1 11 Tf
+1 0 0 1 60.00 438.20 Tm
+(Example:) Tj
+/F3 9 Tf
+1 0 0 1 72.00 423.90 Tm
+(Some text {bold line} more text.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 389.90 Tm
+(C\) Laws & Regulations authoring \(exact link format\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 369.00 Tm
+(The Laws & Regulations tabs have two types of links:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 354.70 Tm
+(1\) Inline links inside the info text fields -- use this exact pattern:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 340.40 Tm
+(- {Link Label|https://full-url.com}) Tj
+/F1 11 Tf
+1 0 0 1 86.00 326.10 Tm
+(- Example: Read the Act {Kenya Investment Act|https://example.com}) Tj
+/F1 11 Tf
+1 0 0 1 86.00 311.80 Tm
+(- Works inside these fields:) Tj
+/F1 11 Tf
+1 0 0 1 94.00 297.50 Tm
+(- firstinformationtextfirsttab ? sixthinformationtextfirsttab) Tj
+/F1 11 Tf
+1 0 0 1 94.00 283.20 Tm
+(- firstinformationtextsecondtab ? sixthinformationtextsecondtab) Tj
+/F1 11 Tf
+1 0 0 1 74.00 268.90 Tm
+(2\) Bottom CTA button -- fill the button fields normally:) Tj
+/F1 11 Tf
+1 0 0 1 86.00 254.60 Tm
+(- buttontextfirsttab + buttonlinkfirsttab) Tj
+/F1 11 Tf
+1 0 0 1 86.00 240.30 Tm
+(- buttontextsecondtab + buttonlinksecondtab) Tj
+/F1 11 Tf
+1 0 0 1 86.00 226.00 Tm
+(- The button link is treated as a site path, so use something like) Tj
+/F1 11 Tf
+1 0 0 1 86.00 211.70 Tm
+(/laws-regulations/ \(no HTML\).) Tj
+/F1 11 Tf
+1 0 0 1 60.00 183.10 Tm
+(If a section ever feels inconsistent, note it for a future cleanup pass when time) Tj
+/F1 11 Tf
+1 0 0 1 60.00 168.80 Tm
+(allows.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 103.60 Tm
+(10\) Final Quality Checklist \(Before Publishing\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 78.80 Tm
+(? Title is clear and matches the slug ? Featured image is set ? Required custom fields) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 382 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 60.00 782.00 Tm
+(are filled ? Elementor sections updated \(only where instructed\) ? Draft or Publish) Tj
+/F1 11 Tf
+1 0 0 1 60.00 767.70 Tm
+(status set correctly) Tj
+/F1 11 Tf
+1 0 0 1 60.00 710.50 Tm
+(If you want, we can also add page?specific checklists for each main section \(Why) Tj
+/F1 11 Tf
+1 0 0 1 60.00 696.20 Tm
+(Kenya, Incentives, Laws, etc.\).) Tj
 ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+<< /Type /Pages /Kids [10 0 R 11 0 R 12 0 R 13 0 R 14 0 R] /Count 5 >>
 endobj
 10 0 obj
-<< /Length 2195 >>
-stream
-BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(- **Careers page \(first section\):** `main_title_first_section`.) Tj
-T*
-(- **About Us → Vision/Mission/Values:** `main_title`, `first_big_text`, `second_big_text`.) Tj
-T*
-(- **Newsletter subscribe block:** `title_newsletter`.) Tj
-T*
-() Tj
-T*
-(### B\) `{}` for bold callouts \(Why Kenya second section\)) Tj
-T*
-(In the **Why Kenya** second section value descriptions, wrap the words you want bold **inside curly braces**:) Tj
-T*
-(- `first_value_description_second_section`) Tj
-T*
-(- `second_value_description_second_section`) Tj
-T*
-(- `third_value_description_second_section`) Tj
-T*
-() Tj
-T*
-(Example:) Tj
-T*
-(```) Tj
-T*
-(Some text {bold line} more text.) Tj
-T*
-(```) Tj
-T*
-() Tj
-T*
-(### C\) Laws & Regulations authoring \(exact link format\)) Tj
-T*
-(The **Laws & Regulations tabs** have two types of links:) Tj
-T*
-(1\) **Inline links inside the info text fields** — use this exact pattern:) Tj
-T*
-(   - `{Link Label|https://full-url.com}`) Tj
-T*
-(   - Example: `Read the Act {Kenya Investment Act|https://example.com}`) Tj
-T*
-(   - Works inside these fields:) Tj
-T*
-(     - `first_information_text_first_tab` → `sixth_information_text_first_tab`) Tj
-T*
-(     - `first_information_text_second_tab` → `sixth_information_text_second_tab`) Tj
-T*
-(2\) **Bottom CTA button** — fill the button fields normally:) Tj
-T*
-(   - `button_text_first_tab` + `button_link_first_tab`) Tj
-T*
-(   - `button_text_second_tab` + `button_link_second_tab`) Tj
-T*
-(   - The button link is treated as a **site path**, so use something like `/laws-regulations/` \(no HTML\).) Tj
-T*
-() Tj
-T*
-(If a section ever feels inconsistent, note it for a future cleanup pass when time allows.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 10\) Final Quality Checklist \(Before Publishing\)) Tj
-T*
-(✅ Title is clear and matches the slug) Tj
-T*
-(✅ Featured image is set) Tj
-T*
-(✅ Required custom fields are filled) Tj
-T*
-(✅ Elementor sections updated \(only where instructed\)) Tj
-T*
-(✅ Draft or Publish status set correctly) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(If you want, we can also add page‑specific checklists for each main section \(Why Kenya, Incentives, Laws, etc.\).) Tj
-T*
-ET
-endstream
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
 endobj
 11 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 5 0 R >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 7 0 R >>
+endobj
+14 0 obj
+<< /Type /Page /Parent 9 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+endobj
+15 0 obj
+<< /Type /Catalog /Pages 9 0 R >>
 endobj
 xref
-0 12
+0 16
 0000000000 65535 f 
 0000000009 00000 n 
-0000000058 00000 n 
-0000000134 00000 n 
-0000000204 00000 n 
-0000002891 00000 n 
-0000003017 00000 n 
-0000005420 00000 n 
-0000005546 00000 n 
-0000008054 00000 n 
-0000008180 00000 n 
-0000010428 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000000222 00000 n 
+0000003398 00000 n 
+0000006642 00000 n 
+0000009523 00000 n 
+0000013131 00000 n 
+0000013564 00000 n 
+0000013650 00000 n 
+0000013798 00000 n 
+0000013946 00000 n 
+0000014094 00000 n 
+0000014242 00000 n 
+0000014390 00000 n 
 trailer
-<< /Size 12 /Root 1 0 R >>
+<< /Size 16 /Root 15 0 R >>
 startxref
-10556
+14440
 %%EOF
