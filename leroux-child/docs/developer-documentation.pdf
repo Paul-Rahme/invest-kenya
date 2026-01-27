@@ -1,603 +1,767 @@
 %PDF-1.4
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
-endobj
-2 0 obj
-<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R] /Count 6 >>
-endobj
-3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
 4 0 obj
-<< /Length 2837 >>
+<< /Length 2899 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(# Invest Kenya WordPress Site — Developer Documentation) Tj
-T*
-() Tj
-T*
-(This is a **deep, practical reference** for developers maintaining the Invest Kenya WordPress child theme. It is intentionally verbose and explanatory so new developers can onboard quickly without guessing how things are wired.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 1\) How the Theme is Organized) Tj
-T*
-() Tj
-T*
-(### ✅ Folder structure \(what matters most\)) Tj
-T*
-(- **Child theme root:** `leroux-child/`) Tj
-T*
-(- **Custom components:** `leroux-child/components/`) Tj
-T*
-(- **Helper utilities:** `leroux-child/helpers/`) Tj
-T*
-(- **Primary entry point:** `leroux-child/functions.php`) Tj
-T*
-() Tj
-T*
-(### ✅ What `functions.php` does \(important\)) Tj
-T*
-(`functions.php` is the **central loader** for the theme. It:) Tj
-T*
+/F2 20 Tf
+1 0 0 1 60.00 772.00 Tm
+(Invest Kenya WordPress Site -- Developer) Tj
+/F2 20 Tf
+1 0 0 1 60.00 746.00 Tm
+(Documentation) Tj
+/F1 11 Tf
+1 0 0 1 60.00 701.70 Tm
+(This is a deep, practical reference for developers maintaining the Invest Kenya) Tj
+/F1 11 Tf
+1 0 0 1 60.00 687.40 Tm
+(WordPress child theme. It is intentionally verbose and explanatory so new developers) Tj
+/F1 11 Tf
+1 0 0 1 60.00 673.10 Tm
+(can onboard quickly without guessing how things are wired.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 607.90 Tm
+(1\) How the Theme is Organized) Tj
+/F2 13 Tf
+1 0 0 1 60.00 560.80 Tm
+(? Folder structure \(what matters most\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 539.90 Tm
+(- Child theme root: leroux-child/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 525.60 Tm
+(- Custom components: leroux-child/components/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 511.30 Tm
+(- Helper utilities: leroux-child/helpers/) Tj
+/F1 11 Tf
+1 0 0 1 74.00 497.00 Tm
+(- Primary entry point: leroux-child/functions.php) Tj
+/F2 13 Tf
+1 0 0 1 60.00 460.40 Tm
+(? What functions.php does \(important\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 439.50 Tm
+(functions.php is the central loader for the theme. It:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 425.20 Tm
 (- Enqueues the child theme stylesheet.) Tj
-T*
-(- Adds multiple **shortcodes** that are used inside Elementor sections.) Tj
-T*
-(- Defines custom helper behavior \(e.g., related news placement, post meta display helpers\).) Tj
-T*
-(- Loads all component files from `components/` using `require_once` so shortcodes are available site‑wide.) Tj
-T*
-(- Adds a redirect for 404 pages to a custom not‑found page.) Tj
-T*
-() Tj
-T*
-(If a new component is added and **not required in `functions.php`**, it will not load in production.【F:leroux-child/functions.php†L1-L23】【F:leroux-child/functions.php†L285-L339】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 2\) Content Philosophy \(Why the site works this way\)) Tj
-T*
-() Tj
-T*
-(This website is mostly **custom coded**, but intentionally avoids hardcoded text. Instead:) Tj
-T*
-(- **ACF fields** power nearly all text, images, icons, buttons, and statistics.) Tj
-T*
-(- **Post meta fields** power filters and special post‑type details.) Tj
-T*
-(- **Elementor** is primarily used for layout, spacing, and placement of shortcodes.) Tj
-T*
-() Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 410.90 Tm
+(- Adds multiple shortcodes that are used inside Elementor sections.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 396.60 Tm
+(- Defines custom helper behavior \(e.g., related news placement, post meta display) Tj
+/F1 11 Tf
+1 0 0 1 74.00 382.30 Tm
+(helpers\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 368.00 Tm
+(- Loads all component files from components/ using require_once so shortcodes are) Tj
+/F1 11 Tf
+1 0 0 1 74.00 353.70 Tm
+(available site?wide.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 339.40 Tm
+(- Adds a redirect for 404 pages to a custom not?found page.) Tj
+/F1 11 Tf
+1 0 0 1 60.00 310.80 Tm
+(If a new component is added and not required in functions.php, it will not load in) Tj
+/F1 11 Tf
+1 0 0 1 60.00 296.50 Tm
+(production.?F:leroux-child/functions.php?L1-L23??F:leroux-child/functions.php?L285-L339?) Tj
+/F2 16 Tf
+1 0 0 1 60.00 231.30 Tm
+(2\) Content Philosophy \(Why the site works this way\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 192.20 Tm
+(This website is mostly custom coded, but intentionally avoids hardcoded text. Instead:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 177.90 Tm
+(- ACF fields power nearly all text, images, icons, buttons, and statistics.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 163.60 Tm
+(- Post meta fields power filters and special post?type details.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 149.30 Tm
+(- Elementor is primarily used for layout, spacing, and placement of shortcodes.) Tj
+/F1 11 Tf
+1 0 0 1 60.00 120.70 Tm
 (This approach allows:) Tj
-T*
-(- Non‑technical editors to update content.) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 106.40 Tm
+(- Non?technical editors to update content.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 92.10 Tm
 (- Designers to preserve consistent layouts.) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 77.80 Tm
 (- Developers to add new sections without rewriting templates.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 3\) Data Sources \(ACF + Post Meta\)) Tj
-T*
-() Tj
-T*
-(### A\) ACF fields \(page‑level content\)) Tj
-T*
-(ACF fields drive almost every landing page section. Examples:) Tj
-T*
-(- **Page banner slider** \(primarily used on the homepage\) uses ACF for slide images, title parts, and buttons.【F:leroux-child/components/page-banner-block.php†L8-L52】) Tj
-T*
-(- **Why Kenya** sections use ACF for icons, stats, and tabbed image grids.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】) Tj
-T*
 ET
 endstream
 endobj
 5 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-6 0 obj
-<< /Length 2873 >>
+<< /Length 3499 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(- **Get Started** and **How we support investors** are ACF‑driven, including icons and button links.【F:leroux-child/components/get-started-home-page.php†L8-L64】【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】) Tj
-T*
-() Tj
-T*
-(### B\) Post meta \(dynamic lists and details\)) Tj
-T*
+/F2 16 Tf
+1 0 0 1 60.00 731.10 Tm
+(3\) Data Sources \(ACF + Post Meta\)) Tj
+/F2 13 Tf
+1 0 0 1 60.00 684.00 Tm
+(A\) ACF fields \(page?level content\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 663.10 Tm
+(ACF fields drive almost every landing page section. Examples:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 648.80 Tm
+(- Page banner slider \(primarily used on the homepage\) uses ACF for slide images,) Tj
+/F1 11 Tf
+1 0 0 1 74.00 634.50 Tm
+(title parts, and buttons.?F:leroux-child/components/page-banner-block.php?L8-L52?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 620.20 Tm
+(- Why Kenya sections use ACF for icons, stats, and tabbed image) Tj
+/F1 11 Tf
+1 0 0 1 74.00 605.90 Tm
+(grids.?F:leroux-child/components/first-section-block-why-kenya.php?L8-L54??F:leroux-child/components/second-section-block-why-kenya.php?L9-L77??F:leroux-child/components/fifth-section-block-why-kenya.php?L8-L80?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 591.60 Tm
+(- Get Started and How we support investors are ACF?driven, including icons and) Tj
+/F1 11 Tf
+1 0 0 1 74.00 577.30 Tm
+(button) Tj
+/F1 11 Tf
+1 0 0 1 74.00 563.00 Tm
+(links.?F:leroux-child/components/get-started-home-page.php?L8-L64??F:leroux-child/components/first-section-block-how-we-support-investors.php?L7-L40?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 526.40 Tm
+(B\) Post meta \(dynamic lists and details\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 505.50 Tm
 (Custom meta keys are required for filters and detail pages:) Tj
-T*
-(- **Events:** `location`, `start_date`, `end_date` \(filters + display\).【F:leroux-child/functions.php†L236-L260】) Tj
-T*
-(- **Careers:** `job_classification`, `location` \(detail metadata\).【F:leroux-child/functions.php†L186-L203】) Tj
-T*
-(- **Opportunities:** `investment_ammount`, `project_stage`, `county` \(filters + cards\).【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】) Tj
-T*
-(- **Resources / Tenders:** `download_url` for download actions.【F:leroux-child/components/resources-filters-shortcodes.php†L84-L85】【F:leroux-child/components/tenders-posts-component.php†L21-L22】) Tj
-T*
-(- **Governance:** `job_position` required for leadership listings.【F:leroux-child/components/governance-posts-component.php†L43-L44】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 4\) Elementor Workflow \(Especially for News, Events, Resources, Governance\)) Tj
-T*
-() Tj
-T*
-(Many post types rely on a **consistent template layout**. The most reliable method is:) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 491.20 Tm
+(- Events: location, startdate, enddate \(filters +) Tj
+/F1 11 Tf
+1 0 0 1 74.00 476.90 Tm
+(display\).?F:leroux-child/functions.php?L236-L260?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 462.60 Tm
+(- Careers: job_classification, location \(detail) Tj
+/F1 11 Tf
+1 0 0 1 74.00 448.30 Tm
+(metadata\).?F:leroux-child/functions.php?L186-L203?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 434.00 Tm
+(- Opportunities: investmentammount, projectstage, county \(filters +) Tj
+/F1 11 Tf
+1 0 0 1 74.00 419.70 Tm
+(cards\).?F:leroux-child/components/opportunities-filters-shortcodes.php?L94-L137?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 405.40 Tm
+(- Resources / Tenders: download_url for download) Tj
+/F1 11 Tf
+1 0 0 1 74.00 391.10 Tm
+(actions.?F:leroux-child/components/resources-filters-shortcodes.php?L84-L85??F:leroux-child/components/tenders-posts-component.php?L21-L22?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 376.80 Tm
+(- Governance: job_position required for leadership) Tj
+/F1 11 Tf
+1 0 0 1 74.00 362.50 Tm
+(listings.?F:leroux-child/components/governance-posts-component.php?L43-L44?) Tj
+/F2 16 Tf
+1 0 0 1 60.00 297.30 Tm
+(4\) Elementor Workflow \(Especially for News, Events,) Tj
+/F2 16 Tf
+1 0 0 1 60.00 276.50 Tm
+(Resources, Governance\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 237.40 Tm
+(Many post types rely on a consistent template layout. The most reliable method is:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 223.10 Tm
 (1. Duplicate an existing post \(so the layout and styling are preserved\).) Tj
-T*
-(2. Open the duplicate in **Elementor**.) Tj
-T*
-(3. Update only the content sections or blocks if needed \(most layouts stay the same\).) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 208.80 Tm
+(2. Open the duplicate in Elementor.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 194.50 Tm
+(3. Update only the content sections or blocks if needed \(most layouts stay the) Tj
+/F1 11 Tf
+1 0 0 1 74.00 180.20 Tm
+(same\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 165.90 Tm
 (4. Edit the post fields \(title, content, custom fields\) in the WordPress editor.) Tj
-T*
-() Tj
-T*
+/F1 11 Tf
+1 0 0 1 60.00 137.30 Tm
 (This ensures:) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 123.00 Tm
 (- Layout consistency across posts) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 108.70 Tm
 (- Filters and listing views continue working) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 94.40 Tm
 (- Custom field sections stay wired correctly) Tj
-T*
-() Tj
-T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 3163 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 60.00 782.00 Tm
 (This workflow applies especially to:) Tj
-T*
-(- **News posts**) Tj
-T*
-(- **Event posts**) Tj
-T*
-(- **Resource posts**) Tj
-T*
-(- **Governance profiles**) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 5\) Elementor Page Settings CSS Fix \(Leroux Theme\)) Tj
-T*
-(The Leroux theme has a known issue: when multiple meta fields are present, it injects extra left/right padding that can break full‑width layouts. The workaround is to add **page‑specific CSS** in **Elementor → Page Settings → Custom CSS** using the page ID.) Tj
-T*
-() Tj
-T*
-(Use the page’s actual ID in the selector \(example below uses `13407`\):) Tj
-T*
-(```) Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 767.70 Tm
+(- News posts) Tj
+/F1 11 Tf
+1 0 0 1 74.00 753.40 Tm
+(- Event posts) Tj
+/F1 11 Tf
+1 0 0 1 74.00 739.10 Tm
+(- Resource posts) Tj
+/F1 11 Tf
+1 0 0 1 74.00 724.80 Tm
+(- Governance profiles) Tj
+/F2 16 Tf
+1 0 0 1 60.00 659.60 Tm
+(5\) Elementor Page Settings CSS Fix \(Leroux Theme\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 634.80 Tm
+(The Leroux theme has a known issue: when multiple meta fields are present, it injects) Tj
+/F1 11 Tf
+1 0 0 1 60.00 620.50 Tm
+(extra left/right padding that can break full?width layouts. The workaround is to add) Tj
+/F1 11 Tf
+1 0 0 1 60.00 606.20 Tm
+(page?specific CSS in Elementor ? Page Settings ? Custom CSS using the page ID.) Tj
+/F1 11 Tf
+1 0 0 1 60.00 577.60 Tm
+(Use the page's actual ID in the selector \(example below uses 13407\):) Tj
+/F3 9 Tf
+1 0 0 1 72.00 563.30 Tm
 (.page-id-13407 .qodef-grid,) Tj
-T*
+/F3 9 Tf
+1 0 0 1 72.00 551.60 Tm
 (.page-id-13407 #qodef-page-content.qodef-grid,) Tj
-T*
+/F3 9 Tf
+1 0 0 1 72.00 539.90 Tm
 (.page-id-13407 #qodef-page-inner.qodef-content-grid,) Tj
-T*
+/F3 9 Tf
+1 0 0 1 72.00 528.20 Tm
 (.page-id-13407 .qodef-grid-inner {) Tj
-T*
-(    max-width: 100% !important;) Tj
-T*
-(    width: 100% !important;) Tj
-T*
+/F3 9 Tf
+1 0 0 1 72.00 516.50 Tm
+(max-width: 100% !important;) Tj
+/F3 9 Tf
+1 0 0 1 72.00 504.80 Tm
+(width: 100% !important;) Tj
+/F3 9 Tf
+1 0 0 1 72.00 493.10 Tm
 (}) Tj
-T*
-(```) Tj
-T*
+/F1 11 Tf
+1 0 0 1 60.00 481.40 Tm
+(Repeat this per page by replacing the ID to match the current page you are editing.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 416.20 Tm
+(6\) Page Map \(Which shortcodes build which pages\)) Tj
+/F2 13 Tf
+1 0 0 1 60.00 369.10 Tm
+(Why Kenya) Tj
+/F1 11 Tf
+1 0 0 1 74.00 348.20 Tm
+(- [firstsectionwhy_kenya] ? title split + 6 icon/subtitle/text) Tj
+/F1 11 Tf
+1 0 0 1 74.00 333.90 Tm
+(rows.?F:leroux-child/components/first-section-block-why-kenya.php?L8-L54?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 319.60 Tm
+(- [secondsectionblockwhykenya] ? 3 values, mid?text, and 5 icon) Tj
+/F1 11 Tf
+1 0 0 1 74.00 305.30 Tm
+(cards.?F:leroux-child/components/second-section-block-why-kenya.php?L9-L77?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 291.00 Tm
+(- [thirdsectionblockwhykenya] ? up to 13 stat cards with) Tj
+/F1 11 Tf
+1 0 0 1 74.00 276.70 Tm
+(icons/labels/descriptions.?F:leroux-child/components/third-section-block-why-kenya.php?L8-L112?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 262.40 Tm
+(- [fourthsectionblockwhykenya] ? title + 2 subtitles + 3) Tj
+/F1 11 Tf
+1 0 0 1 74.00 248.10 Tm
+(values/labels.?F:leroux-child/components/fourth-section-block-why-kenya.php?L8-L26?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 233.80 Tm
+(- [fifthsectionblockwhykenya] ? tabbed image gallery \(up to 8) Tj
+/F1 11 Tf
+1 0 0 1 74.00 219.50 Tm
+(tabs\).?F:leroux-child/components/fifth-section-block-why-kenya.php?L8-L80?) Tj
+/F1 11 Tf
+1 0 0 1 76.00 190.90 Tm
+(?? The page banner slider \([pagebannerblock]\) is primarily used on the homepage and) Tj
+/F1 11 Tf
+1 0 0 1 76.00 176.60 Tm
+(is not default for every) Tj
+/F1 11 Tf
+1 0 0 1 76.00 162.30 Tm
+(page.?F:leroux-child/components/page-banner-block.php?L8-L52?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 97.10 Tm
+(Incentives) Tj
+/F1 11 Tf
+1 0 0 1 74.00 76.20 Tm
+(- [incentivestabsblock] ? tabbed incentive content with steps + CTA) Tj
 ET
 endstream
 endobj
 7 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-8 0 obj
-<< /Length 3162 >>
+<< /Length 2735 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(Repeat this per page by replacing the ID to match the current page you are editing.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 6\) Page Map \(Which shortcodes build which pages\)) Tj
-T*
-() Tj
-T*
-(### Why Kenya) Tj
-T*
-(- **`[first_section_why_kenya]`** → title split + 6 icon/subtitle/text rows.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】) Tj
-T*
-(- **`[second_section_block_why_kenya]`** → 3 values, mid‑text, and 5 icon cards.【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】) Tj
-T*
-(- **`[third_section_block_why_kenya]`** → up to 13 stat cards with icons/labels/descriptions.【F:leroux-child/components/third-section-block-why-kenya.php†L8-L112】) Tj
-T*
-(- **`[fourth_section_block_why_kenya]`** → title + 2 subtitles + 3 values/labels.【F:leroux-child/components/fourth-section-block-why-kenya.php†L8-L26】) Tj
-T*
-(- **`[fifth_section_block_why_kenya]`** → tabbed image gallery \(up to 8 tabs\).【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】) Tj
-T*
-() Tj
-T*
-(> ⚠️ The **page banner slider** \(`[page_banner_block]`\) is primarily used on the **homepage** and is not default for every page.【F:leroux-child/components/page-banner-block.php†L8-L52】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Incentives) Tj
-T*
-(- **`[incentives_tabs_block]`** → tabbed incentive content with steps + CTA buttons.【F:leroux-child/components/tabs-block-benefits-protections-shortcodes.php†L6-L118】) Tj
-T*
-(- **`[eligible_investments_block]`** → two‑column list of eligible investment types.【F:leroux-child/components/second-section-block-benefits-protections.php†L7-L78】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Laws and Regulations) Tj
-T*
-(- **`[laws_regulations_tabs_block]`** → tabbed legal content + CTA buttons.【F:leroux-child/components/tabs-block-laws-regulations-shortcodes.php†L18-L84】) Tj
-T*
-(- **`[second_section_laws_regulations]`** → secondary supporting section.【F:leroux-child/components/second-section-block-laws-regulations.php†L7-L26】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Investment Trends) Tj
-T*
-(- **`[tabs_block_investment_trends]`** → tabbed statistics + descriptions.【F:leroux-child/components/tabs-block-investment-trends.php†L7-L28】) Tj
-T*
-(- **`[second_section_investment_trends]`** → supporting trend content block.【F:leroux-child/components/second-section-investment-trends.php†L9-L31】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Opportunities \(Overview\)) Tj
-T*
-(- **`[sector_overview_opportunities]`** → intro + contact + CTA link/button.【F:leroux-child/components/sector-overview-block-opportunities.php†L7-L21】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Investment Opportunities \(Listing\)) Tj
-T*
-(- **`[kenya_opportunities_filters]`** → filters \(amount, stage, county\).【F:leroux-child/components/opportunities-filters-shortcodes.php†L19-L137】) Tj
-T*
-(- **`[kenya_opportunities_posts]`** → grid/list output.【F:leroux-child/components/opportunities-posts-component-shortcodes.php†L11-L39】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
+/F1 11 Tf
+1 0 0 1 74.00 782.00 Tm
+(buttons.?F:leroux-child/components/tabs-block-benefits-protections-shortcodes.php?L6-L118?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 767.70 Tm
+(- [eligibleinvestmentsblock] ? two?column list of eligible investment) Tj
+/F1 11 Tf
+1 0 0 1 74.00 753.40 Tm
+(types.?F:leroux-child/components/second-section-block-benefits-protections.php?L7-L78?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 688.20 Tm
+(Laws and Regulations) Tj
+/F1 11 Tf
+1 0 0 1 74.00 667.30 Tm
+(- [lawsregulationstabs_block] ? tabbed legal content + CTA) Tj
+/F1 11 Tf
+1 0 0 1 74.00 653.00 Tm
+(buttons.?F:leroux-child/components/tabs-block-laws-regulations-shortcodes.php?L18-L84?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 638.70 Tm
+(- [secondsectionlaws_regulations] ? secondary supporting) Tj
+/F1 11 Tf
+1 0 0 1 74.00 624.40 Tm
+(section.?F:leroux-child/components/second-section-block-laws-regulations.php?L7-L26?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 559.20 Tm
+(Investment Trends) Tj
+/F1 11 Tf
+1 0 0 1 74.00 538.30 Tm
+(- [tabsblockinvestment_trends] ? tabbed statistics +) Tj
+/F1 11 Tf
+1 0 0 1 74.00 524.00 Tm
+(descriptions.?F:leroux-child/components/tabs-block-investment-trends.php?L7-L28?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 509.70 Tm
+(- [secondsectioninvestment_trends] ? supporting trend content) Tj
+/F1 11 Tf
+1 0 0 1 74.00 495.40 Tm
+(block.?F:leroux-child/components/second-section-investment-trends.php?L9-L31?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 430.20 Tm
+(Opportunities \(Overview\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 409.30 Tm
+(- [sectoroverviewopportunities] ? intro + contact + CTA) Tj
+/F1 11 Tf
+1 0 0 1 74.00 395.00 Tm
+(link/button.?F:leroux-child/components/sector-overview-block-opportunities.php?L7-L21?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 329.80 Tm
+(Investment Opportunities \(Listing\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 308.90 Tm
+(- [kenyaopportunitiesfilters] ? filters \(amount, stage,) Tj
+/F1 11 Tf
+1 0 0 1 74.00 294.60 Tm
+(county\).?F:leroux-child/components/opportunities-filters-shortcodes.php?L19-L137?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 280.30 Tm
+(- [kenyaopportunitiesposts] ? grid/list) Tj
+/F1 11 Tf
+1 0 0 1 74.00 266.00 Tm
+(output.?F:leroux-child/components/opportunities-posts-component-shortcodes.php?L11-L39?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 200.80 Tm
+(Sector Pages \(Agriculture, ICT, Tourism, etc.\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 179.90 Tm
+(Each sector uses two blocks:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 165.60 Tm
+(- Overview block -- sector description, snapshot values, contact) Tj
+/F1 11 Tf
+1 0 0 1 74.00 151.30 Tm
+(details.?F:leroux-child/components/sector-overview-block-agriculture.php?L7-L35?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 137.00 Tm
+(- Tabs block -- deeper statistics, checklists, logos by) Tj
+/F1 11 Tf
+1 0 0 1 74.00 122.70 Tm
+(tab.?F:leroux-child/components/sector-tabs-block-agriculture.php?L7-L40?) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 3307 >>
+stream
+BT
+/F2 13 Tf
+1 0 0 1 60.00 774.00 Tm
+(Get Started) Tj
+/F1 11 Tf
+1 0 0 1 74.00 753.10 Tm
+(- [getstartedhome_page] ? 2?column step layout + icon grid +) Tj
+/F1 11 Tf
+1 0 0 1 74.00 738.80 Tm
+(buttons.?F:leroux-child/components/get-started-home-page.php?L8-L64?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 724.50 Tm
+(- [howwesupportinvestors] + [howwesupportinvestorssecondsection] ? support content) Tj
+/F1 11 Tf
+1 0 0 1 74.00 710.20 Tm
+(blocks.?F:leroux-child/components/first-section-block-how-we-support-investors.php?L7-L40??F:leroux-child/components/second-section-block-how-we-support-investors.php?L7-L20?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 695.90 Tm
+(- [tabblockinvestinginkenya] ? step?by?step multi?tab guide) Tj
+/F1 11 Tf
+1 0 0 1 74.00 681.60 Tm
+(content.?F:leroux-child/components/tab-block-investing-in-kenya.php?L8-L90?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 616.40 Tm
+(About Us) Tj
+/F1 11 Tf
+1 0 0 1 74.00 595.50 Tm
+(- [visionmissionvalues_block] ? vision/mission/values and) Tj
+/F1 11 Tf
+1 0 0 1 74.00 581.20 Tm
+(icons.?F:leroux-child/components/vision-mission-values-block-about-invest-kenya.php?L7-L34?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 566.90 Tm
+(- [partnersshowcaseblock] ? partner logos) Tj
+/F1 11 Tf
+1 0 0 1 74.00 552.60 Tm
+(grid.?F:leroux-child/components/partners-showcase-block-about-invest-kenya.php?L7-L28?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 538.30 Tm
+(- [kenyainvestmenthistory] ? history/timeline) Tj
+/F1 11 Tf
+1 0 0 1 74.00 524.00 Tm
+(section.?F:leroux-child/components/history-block-about-invest-kenya.php?L7-L27?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 509.70 Tm
+(- [kenyagovernanceblock] ? governance overview text +) Tj
+/F1 11 Tf
+1 0 0 1 74.00 495.40 Tm
+(links.?F:leroux-child/components/governance-block-about-invest-kenya.php?L7-L33?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 430.20 Tm
+(Governance) Tj
+/F1 11 Tf
+1 0 0 1 74.00 409.30 Tm
+(- [governanceboardgrid] / [governanceseniorgrid] ? leadership) Tj
+/F1 11 Tf
+1 0 0 1 74.00 395.00 Tm
+(listings.?F:leroux-child/components/governance-posts-component-shortcodes.php?L35-L69?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 380.70 Tm
+(- Requires job_position meta on) Tj
+/F1 11 Tf
+1 0 0 1 74.00 366.40 Tm
+(posts.?F:leroux-child/components/governance-posts-component.php?L43-L44?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 301.20 Tm
+(News) Tj
+/F1 11 Tf
+1 0 0 1 74.00 280.30 Tm
+(- [kenyanewsfilters] + [kenyanewsposts] for archives.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 266.00 Tm
+(- [kenyanewsslider] for featured slider) Tj
+/F1 11 Tf
+1 0 0 1 74.00 251.70 Tm
+(content.?F:leroux-child/components/news-filters-shortcodes.php?L47-L63??F:leroux-child/components/news-posts-component-shortcodes.php?L19-L25??F:leroux-child/components/news-slider.php?L4-L12?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 186.50 Tm
+(Events) Tj
+/F1 11 Tf
+1 0 0 1 74.00 165.60 Tm
+(- [kenyaeventsfilters], [kenyaeventsposts], [kenyaeventsupcoming],) Tj
+/F1 11 Tf
+1 0 0 1 74.00 151.30 Tm
+([kenyaeventsexpired], [kenyaeventsslider] for events lists and) Tj
+/F1 11 Tf
+1 0 0 1 74.00 137.00 Tm
+(filters.?F:leroux-child/components/events-filters-shortcodes.php?L18-L35??F:leroux-child/components/events-posts-component-shortcodes.php?L10-L99??F:leroux-child/components/events-slider-shortcodes.php?L4-L24?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 122.70 Tm
+(- kenyaeventmeta outputs location + date range on detail) Tj
+/F1 11 Tf
+1 0 0 1 74.00 108.40 Tm
+(pages.?F:leroux-child/functions.php?L226-L260?) Tj
 ET
 endstream
 endobj
 9 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 3 0 R >> >> >>
-endobj
-10 0 obj
-<< /Length 3534 >>
+<< /Length 2941 >>
 stream
 BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(### Sector Pages \(Agriculture, ICT, Tourism, etc.\)) Tj
-T*
-(Each sector uses two blocks:) Tj
-T*
-(- **Overview block** — sector description, snapshot values, contact details.【F:leroux-child/components/sector-overview-block-agriculture.php†L7-L35】) Tj
-T*
-(- **Tabs block** — deeper statistics, checklists, logos by tab.【F:leroux-child/components/sector-tabs-block-agriculture.php†L7-L40】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Get Started) Tj
-T*
-(- **`[get_started_home_page]`** → 2‑column step layout + icon grid + buttons.【F:leroux-child/components/get-started-home-page.php†L8-L64】) Tj
-T*
-(- **`[how_we_support_investors]`** + **`[how_we_support_investors_second_section]`** → support content blocks.【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】【F:leroux-child/components/second-section-block-how-we-support-investors.php†L7-L20】) Tj
-T*
-(- **`[tab_block_investing_in_kenya]`** → step‑by‑step multi‑tab guide content.【F:leroux-child/components/tab-block-investing-in-kenya.php†L8-L90】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### About Us) Tj
-T*
-(- **`[vision_mission_values_block]`** → vision/mission/values and icons.【F:leroux-child/components/vision-mission-values-block-about-invest-kenya.php†L7-L34】) Tj
-T*
-(- **`[partners_showcase_block]`** → partner logos grid.【F:leroux-child/components/partners-showcase-block-about-invest-kenya.php†L7-L28】) Tj
-T*
-(- **`[kenya_investment_history]`** → history/timeline section.【F:leroux-child/components/history-block-about-invest-kenya.php†L7-L27】) Tj
-T*
-(- **`[kenya_governance_block]`** → governance overview text + links.【F:leroux-child/components/governance-block-about-invest-kenya.php†L7-L33】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Governance) Tj
-T*
-(- **`[governance_board_grid]`** / **`[governance_senior_grid]`** → leadership listings.【F:leroux-child/components/governance-posts-component-shortcodes.php†L35-L69】) Tj
-T*
-(- Requires `job_position` meta on posts.【F:leroux-child/components/governance-posts-component.php†L43-L44】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### News) Tj
-T*
-(- **`[kenya_news_filters]`** + **`[kenya_news_posts]`** for archives.) Tj
-T*
-(- **`[kenya_news_slider]`** for featured slider content.【F:leroux-child/components/news-filters-shortcodes.php†L47-L63】【F:leroux-child/components/news-posts-component-shortcodes.php†L19-L25】【F:leroux-child/components/news-slider.php†L4-L12】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Events) Tj
-T*
-(- **`[kenya_events_filters]`**, **`[kenya_events_posts]`**, **`[kenya_events_upcoming]`**, **`[kenya_events_expired]`**, **`[kenya_events_slider]`** for events lists and filters.【F:leroux-child/components/events-filters-shortcodes.php†L18-L35】【F:leroux-child/components/events-posts-component-shortcodes.php†L10-L99】【F:leroux-child/components/events-slider-shortcodes.php†L4-L24】) Tj
-T*
-(- `kenya_event_meta` outputs location + date range on detail pages.【F:leroux-child/functions.php†L226-L260】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Resources) Tj
-T*
-(- **`[kenya_resources_filters]`**, **`[kenya_resources_posts]`**, **`[kenya_resource_download_btn]`** for resource lists and downloads.【F:leroux-child/components/resources-filters-shortcodes.php†L15-L25】【F:leroux-child/components/resources-posts-component-shortcodes.php†L50-L136】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(### Careers) Tj
-T*
+/F2 13 Tf
+1 0 0 1 60.00 759.70 Tm
+(Resources) Tj
+/F1 11 Tf
+1 0 0 1 74.00 738.80 Tm
+(- [kenyaresourcesfilters], [kenyaresourcesposts], [kenyaresourcedownload_btn] for) Tj
+/F1 11 Tf
+1 0 0 1 74.00 724.50 Tm
+(resource lists and) Tj
+/F1 11 Tf
+1 0 0 1 74.00 710.20 Tm
+(downloads.?F:leroux-child/components/resources-filters-shortcodes.php?L15-L25??F:leroux-child/components/resources-posts-component-shortcodes.php?L50-L136?) Tj
+/F2 13 Tf
+1 0 0 1 60.00 645.00 Tm
+(Careers) Tj
+/F1 11 Tf
+1 0 0 1 74.00 624.10 Tm
+(- [careersfirstsection] + [careerssecondsection] for page content.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 609.80 Tm
+(- kenyacareermeta outputs job classification + location on detail) Tj
+/F1 11 Tf
+1 0 0 1 74.00 595.50 Tm
+(pages.?F:leroux-child/components/careers-first-section.php?L9-L25??F:leroux-child/components/careers-second-section.php?L8-L17??F:leroux-child/functions.php?L176-L213?) Tj
+/F2 16 Tf
+1 0 0 1 60.00 530.30 Tm
+(7\) Active Plugins \(Operational Dependencies -- Detailed\)) Tj
+/F1 11 Tf
+1 0 0 1 60.00 505.50 Tm
+(These plugins are active and used in production. Removing or disabling them may break) Tj
+/F1 11 Tf
+1 0 0 1 60.00 491.20 Tm
+(site functionality.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 454.60 Tm
+(Core content engine) Tj
+/F1 11 Tf
+1 0 0 1 74.00 433.70 Tm
+(- Advanced Custom Fields \(ACF\) -- the foundation of this site's content system. ACF) Tj
+/F1 11 Tf
+1 0 0 1 74.00 419.40 Tm
+(defines almost every field used by shortcodes \(headlines, numbers, icons, links,) Tj
+/F1 11 Tf
+1 0 0 1 74.00 405.10 Tm
+(statistics\). If ACF is disabled, most custom sections will stop rendering. Keep) Tj
+/F1 11 Tf
+1 0 0 1 74.00 390.80 Tm
+(field groups organized and use consistent naming conventions to avoid breaking) Tj
+/F1 11 Tf
+1 0 0 1 74.00 376.50 Tm
+(template output.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 339.90 Tm
+(Page building & layout) Tj
+/F1 11 Tf
+1 0 0 1 74.00 319.00 Tm
+(- Elementor -- primary layout tool; shortcodes are usually placed inside Elementor) Tj
+/F1 11 Tf
+1 0 0 1 74.00 304.70 Tm
+(sections for spacing and design control.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 290.40 Tm
+(- Elementor Pro -- provides advanced widgets, theme builder, and dynamic data) Tj
+/F1 11 Tf
+1 0 0 1 74.00 276.10 Tm
+(features used by editors.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 239.50 Tm
+(Backups & migration) Tj
+/F1 11 Tf
+1 0 0 1 74.00 218.60 Tm
+(- All?in?One WP Migration -- full site export/import for backups.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 204.30 Tm
+(- All?in?One WP Migration Unlimited Extension -- removes import/export size limits.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 190.00 Tm
+(- Migrate Guru -- alternate site migration tool for large sites.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 153.40 Tm
+(Performance & optimization) Tj
+/F1 11 Tf
+1 0 0 1 74.00 132.50 Tm
+(- LiteSpeed Cache -- page caching, minification, and performance tuning.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 118.20 Tm
+(- QODE Optimizer -- image compression and optimization.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 81.60 Tm
+(Forms & marketing) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Length 2806 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 74.00 782.00 Tm
+(- Contact Form 7 -- contact forms and inquiry forms.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 767.70 Tm
+(- MC4WP \(Mailchimp for WordPress\) -- newsletter and signup integration.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 731.10 Tm
+(Translation & accessibility) Tj
+/F1 11 Tf
+1 0 0 1 74.00 710.20 Tm
+(- GTranslate -- multilingual translation support.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 695.90 Tm
+(- Ally - Web Accessibility & Usability -- accessibility features \(contrast, text) Tj
+/F1 11 Tf
+1 0 0 1 74.00 681.60 Tm
+(resizing, etc.\).) Tj
+/F2 13 Tf
+1 0 0 1 60.00 645.00 Tm
+(Theme & design utilities) Tj
+/F1 11 Tf
+1 0 0 1 74.00 624.10 Tm
+(- Leroux Core -- required plugin providing theme?specific features.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 609.80 Tm
+(- Qode Framework -- base framework for the Qode theme ecosystem.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 595.50 Tm
+(- Qi Addons for Elementor -- extra Elementor widgets used in layouts.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 581.20 Tm
+(- Qi Blocks -- Gutenberg block library \(kept active for compatibility\).) Tj
+/F2 13 Tf
+1 0 0 1 60.00 544.60 Tm
+(Editorial workflow utilities) Tj
+/F1 11 Tf
+1 0 0 1 74.00 523.70 Tm
+(- Duplicate Page -- efficient duplication of pages/posts for consistent layout.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 509.40 Tm
+(- Classic Widgets -- legacy widget management support.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 495.10 Tm
+(- WP File Manager -- direct file access \(admin?only; use carefully\).) Tj
+/F1 11 Tf
+1 0 0 1 74.00 480.80 Tm
+(- Envato Market -- update management for theme and plugins via Envato.) Tj
+/F2 13 Tf
+1 0 0 1 60.00 444.20 Tm
+(WooCommerce compatibility \(kept active\)) Tj
+/F1 11 Tf
+1 0 0 1 74.00 423.30 Tm
+(- QODE Quick View for WooCommerce -- quick product previews.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 409.00 Tm
+(- QODE Wishlist for WooCommerce -- wishlist functionality.) Tj
+/F2 16 Tf
+1 0 0 1 60.00 343.80 Tm
+(8\) Maintenance & Best Practices) Tj
+/F1 11 Tf
+1 0 0 1 74.00 319.00 Tm
+(- Prefer ACF fields over hardcoded values in templates.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 304.70 Tm
+(- Document new meta fields when adding filters or list?based features.) Tj
+/F1 11 Tf
+1 0 0 1 74.00 290.40 Tm
+(- Register new components in functions.php so they load correctly in) Tj
+/F1 11 Tf
+1 0 0 1 74.00 276.10 Tm
+(production.?F:leroux-child/functions.php?L285-L339?) Tj
+/F1 11 Tf
+1 0 0 1 74.00 261.80 Tm
+(- Keep Elementor templates consistent by duplicating existing posts rather than) Tj
+/F1 11 Tf
+1 0 0 1 74.00 247.50 Tm
+(starting from scratch.) Tj
+/F1 11 Tf
+1 0 0 1 60.00 190.30 Tm
+(If needed, we can also produce:) Tj
+/F1 11 Tf
+1 0 0 1 74.00 176.00 Tm
+(- A diagram of page ? shortcode ? data flow) Tj
+/F1 11 Tf
+1 0 0 1 74.00 161.70 Tm
+(- A field inventory spreadsheet for content editors) Tj
+/F1 11 Tf
+1 0 0 1 74.00 147.40 Tm
+(- A short training video for internal staff) Tj
 ET
 endstream
 endobj
 11 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+<< /Type /Pages /Kids [12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R] /Count 7 >>
 endobj
 12 0 obj
-<< /Length 3125 >>
-stream
-BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(- **`[careers_first_section]`** + **`[careers_second_section]`** for page content.) Tj
-T*
-(- **`kenya_career_meta`** outputs job classification + location on detail pages.【F:leroux-child/components/careers-first-section.php†L9-L25】【F:leroux-child/components/careers-second-section.php†L8-L17】【F:leroux-child/functions.php†L176-L213】) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 7\) Active Plugins \(Operational Dependencies — Detailed\)) Tj
-T*
-(These plugins are active and used in production. Removing or disabling them may break site functionality.) Tj
-T*
-() Tj
-T*
-(### Core content engine) Tj
-T*
-(- **Advanced Custom Fields \(ACF\)** — the foundation of this site’s content system. ACF defines almost every field used by shortcodes \(headlines, numbers, icons, links, statistics\). If ACF is disabled, most custom sections will stop rendering. Keep field groups organized and use consistent naming conventions to avoid breaking template output.) Tj
-T*
-() Tj
-T*
-(### Page building & layout) Tj
-T*
-(- **Elementor** — primary layout tool; shortcodes are usually placed inside Elementor sections for spacing and design control.) Tj
-T*
-(- **Elementor Pro** — provides advanced widgets, theme builder, and dynamic data features used by editors.) Tj
-T*
-() Tj
-T*
-(### Backups & migration) Tj
-T*
-(- **All‑in‑One WP Migration** — full site export/import for backups.) Tj
-T*
-(- **All‑in‑One WP Migration Unlimited Extension** — removes import/export size limits.) Tj
-T*
-(- **Migrate Guru** — alternate site migration tool for large sites.) Tj
-T*
-() Tj
-T*
-(### Performance & optimization) Tj
-T*
-(- **LiteSpeed Cache** — page caching, minification, and performance tuning.) Tj
-T*
-(- **QODE Optimizer** — image compression and optimization.) Tj
-T*
-() Tj
-T*
-(### Forms & marketing) Tj
-T*
-(- **Contact Form 7** — contact forms and inquiry forms.) Tj
-T*
-(- **MC4WP \(Mailchimp for WordPress\)** — newsletter and signup integration.) Tj
-T*
-() Tj
-T*
-(### Translation & accessibility) Tj
-T*
-(- **GTranslate** — multilingual translation support.) Tj
-T*
-(- **Ally – Web Accessibility & Usability** — accessibility features \(contrast, text resizing, etc.\).) Tj
-T*
-() Tj
-T*
-(### Theme & design utilities) Tj
-T*
-(- **Leroux Core** — required plugin providing theme‑specific features.) Tj
-T*
-(- **Qode Framework** — base framework for the Qode theme ecosystem.) Tj
-T*
-(- **Qi Addons for Elementor** — extra Elementor widgets used in layouts.) Tj
-T*
-(- **Qi Blocks** — Gutenberg block library \(kept active for compatibility\).) Tj
-T*
-() Tj
-T*
-(### Editorial workflow utilities) Tj
-T*
-(- **Duplicate Page** — efficient duplication of pages/posts for consistent layout.) Tj
-T*
-(- **Classic Widgets** — legacy widget management support.) Tj
-T*
-(- **WP File Manager** — direct file access \(admin‑only; use carefully\).) Tj
-T*
-(- **Envato Market** — update management for theme and plugins via Envato.) Tj
-T*
-() Tj
-T*
-(### WooCommerce compatibility \(kept active\)) Tj
-T*
-(- **QODE Quick View for WooCommerce** — quick product previews.) Tj
-T*
-ET
-endstream
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 4 0 R >>
 endobj
 13 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 5 0 R >>
 endobj
 14 0 obj
-<< /Length 836 >>
-stream
-BT
-/F1 12 Tf
-72 708 Td
-14 TL
-(- **QODE Wishlist for WooCommerce** — wishlist functionality.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(## 8\) Maintenance & Best Practices) Tj
-T*
-(- **Prefer ACF fields over hardcoded values** in templates.) Tj
-T*
-(- **Document new meta fields** when adding filters or list‑based features.) Tj
-T*
-(- **Register new components in `functions.php`** so they load correctly in production.【F:leroux-child/functions.php†L285-L339】) Tj
-T*
-(- **Keep Elementor templates consistent** by duplicating existing posts rather than starting from scratch.) Tj
-T*
-() Tj
-T*
-(---) Tj
-T*
-() Tj
-T*
-(If needed, we can also produce:) Tj
-T*
-(- A **diagram** of page → shortcode → data flow) Tj
-T*
-(- A **field inventory spreadsheet** for content editors) Tj
-T*
-(- A **short training video** for internal staff) Tj
-T*
-ET
-endstream
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 6 0 R >>
 endobj
 15 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 7 0 R >>
+endobj
+16 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 8 0 R >>
+endobj
+17 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 9 0 R >>
+endobj
+18 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842]  /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R >> >> /Contents 10 0 R >>
+endobj
+19 0 obj
+<< /Type /Catalog /Pages 11 0 R >>
 endobj
 xref
-0 16
+0 20
 0000000000 65535 f 
 0000000009 00000 n 
-0000000058 00000 n 
-0000000148 00000 n 
-0000000218 00000 n 
-0000003107 00000 n 
-0000003233 00000 n 
-0000006158 00000 n 
-0000006284 00000 n 
-0000009498 00000 n 
-0000009624 00000 n 
-0000013211 00000 n 
-0000013339 00000 n 
-0000016517 00000 n 
-0000016645 00000 n 
-0000017533 00000 n 
+0000000079 00000 n 
+0000000154 00000 n 
+0000000222 00000 n 
+0000003173 00000 n 
+0000006724 00000 n 
+0000009939 00000 n 
+0000012726 00000 n 
+0000016085 00000 n 
+0000019078 00000 n 
+0000021937 00000 n 
+0000022038 00000 n 
+0000022187 00000 n 
+0000022336 00000 n 
+0000022485 00000 n 
+0000022634 00000 n 
+0000022783 00000 n 
+0000022932 00000 n 
+0000023082 00000 n 
 trailer
-<< /Size 16 /Root 1 0 R >>
+<< /Size 20 /Root 19 0 R >>
 startxref
-17661
+23133
 %%EOF
