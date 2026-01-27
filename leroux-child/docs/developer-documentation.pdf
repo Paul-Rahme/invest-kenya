@@ -1,0 +1,603 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2837 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(# Invest Kenya WordPress Site — Developer Documentation) Tj
+T*
+() Tj
+T*
+(This is a **deep, practical reference** for developers maintaining the Invest Kenya WordPress child theme. It is intentionally verbose and explanatory so new developers can onboard quickly without guessing how things are wired.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 1\) How the Theme is Organized) Tj
+T*
+() Tj
+T*
+(### ✅ Folder structure \(what matters most\)) Tj
+T*
+(- **Child theme root:** `leroux-child/`) Tj
+T*
+(- **Custom components:** `leroux-child/components/`) Tj
+T*
+(- **Helper utilities:** `leroux-child/helpers/`) Tj
+T*
+(- **Primary entry point:** `leroux-child/functions.php`) Tj
+T*
+() Tj
+T*
+(### ✅ What `functions.php` does \(important\)) Tj
+T*
+(`functions.php` is the **central loader** for the theme. It:) Tj
+T*
+(- Enqueues the child theme stylesheet.) Tj
+T*
+(- Adds multiple **shortcodes** that are used inside Elementor sections.) Tj
+T*
+(- Defines custom helper behavior \(e.g., related news placement, post meta display helpers\).) Tj
+T*
+(- Loads all component files from `components/` using `require_once` so shortcodes are available site‑wide.) Tj
+T*
+(- Adds a redirect for 404 pages to a custom not‑found page.) Tj
+T*
+() Tj
+T*
+(If a new component is added and **not required in `functions.php`**, it will not load in production.【F:leroux-child/functions.php†L1-L23】【F:leroux-child/functions.php†L285-L339】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 2\) Content Philosophy \(Why the site works this way\)) Tj
+T*
+() Tj
+T*
+(This website is mostly **custom coded**, but intentionally avoids hardcoded text. Instead:) Tj
+T*
+(- **ACF fields** power nearly all text, images, icons, buttons, and statistics.) Tj
+T*
+(- **Post meta fields** power filters and special post‑type details.) Tj
+T*
+(- **Elementor** is primarily used for layout, spacing, and placement of shortcodes.) Tj
+T*
+() Tj
+T*
+(This approach allows:) Tj
+T*
+(- Non‑technical editors to update content.) Tj
+T*
+(- Designers to preserve consistent layouts.) Tj
+T*
+(- Developers to add new sections without rewriting templates.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 3\) Data Sources \(ACF + Post Meta\)) Tj
+T*
+() Tj
+T*
+(### A\) ACF fields \(page‑level content\)) Tj
+T*
+(ACF fields drive almost every landing page section. Examples:) Tj
+T*
+(- **Page banner slider** \(primarily used on the homepage\) uses ACF for slide images, title parts, and buttons.【F:leroux-child/components/page-banner-block.php†L8-L52】) Tj
+T*
+(- **Why Kenya** sections use ACF for icons, stats, and tabbed image grids.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 2873 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(- **Get Started** and **How we support investors** are ACF‑driven, including icons and button links.【F:leroux-child/components/get-started-home-page.php†L8-L64】【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】) Tj
+T*
+() Tj
+T*
+(### B\) Post meta \(dynamic lists and details\)) Tj
+T*
+(Custom meta keys are required for filters and detail pages:) Tj
+T*
+(- **Events:** `location`, `start_date`, `end_date` \(filters + display\).【F:leroux-child/functions.php†L236-L260】) Tj
+T*
+(- **Careers:** `job_classification`, `location` \(detail metadata\).【F:leroux-child/functions.php†L186-L203】) Tj
+T*
+(- **Opportunities:** `investment_ammount`, `project_stage`, `county` \(filters + cards\).【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】) Tj
+T*
+(- **Resources / Tenders:** `download_url` for download actions.【F:leroux-child/components/resources-filters-shortcodes.php†L84-L85】【F:leroux-child/components/tenders-posts-component.php†L21-L22】) Tj
+T*
+(- **Governance:** `job_position` required for leadership listings.【F:leroux-child/components/governance-posts-component.php†L43-L44】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 4\) Elementor Workflow \(Especially for News, Events, Resources, Governance\)) Tj
+T*
+() Tj
+T*
+(Many post types rely on a **consistent template layout**. The most reliable method is:) Tj
+T*
+(1. Duplicate an existing post \(so the layout and styling are preserved\).) Tj
+T*
+(2. Open the duplicate in **Elementor**.) Tj
+T*
+(3. Update only the content sections or blocks if needed \(most layouts stay the same\).) Tj
+T*
+(4. Edit the post fields \(title, content, custom fields\) in the WordPress editor.) Tj
+T*
+() Tj
+T*
+(This ensures:) Tj
+T*
+(- Layout consistency across posts) Tj
+T*
+(- Filters and listing views continue working) Tj
+T*
+(- Custom field sections stay wired correctly) Tj
+T*
+() Tj
+T*
+(This workflow applies especially to:) Tj
+T*
+(- **News posts**) Tj
+T*
+(- **Event posts**) Tj
+T*
+(- **Resource posts**) Tj
+T*
+(- **Governance profiles**) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 5\) Elementor Page Settings CSS Fix \(Leroux Theme\)) Tj
+T*
+(The Leroux theme has a known issue: when multiple meta fields are present, it injects extra left/right padding that can break full‑width layouts. The workaround is to add **page‑specific CSS** in **Elementor → Page Settings → Custom CSS** using the page ID.) Tj
+T*
+() Tj
+T*
+(Use the page’s actual ID in the selector \(example below uses `13407`\):) Tj
+T*
+(```) Tj
+T*
+(.page-id-13407 .qodef-grid,) Tj
+T*
+(.page-id-13407 #qodef-page-content.qodef-grid,) Tj
+T*
+(.page-id-13407 #qodef-page-inner.qodef-content-grid,) Tj
+T*
+(.page-id-13407 .qodef-grid-inner {) Tj
+T*
+(    max-width: 100% !important;) Tj
+T*
+(    width: 100% !important;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 3162 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(Repeat this per page by replacing the ID to match the current page you are editing.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 6\) Page Map \(Which shortcodes build which pages\)) Tj
+T*
+() Tj
+T*
+(### Why Kenya) Tj
+T*
+(- **`[first_section_why_kenya]`** → title split + 6 icon/subtitle/text rows.【F:leroux-child/components/first-section-block-why-kenya.php†L8-L54】) Tj
+T*
+(- **`[second_section_block_why_kenya]`** → 3 values, mid‑text, and 5 icon cards.【F:leroux-child/components/second-section-block-why-kenya.php†L9-L77】) Tj
+T*
+(- **`[third_section_block_why_kenya]`** → up to 13 stat cards with icons/labels/descriptions.【F:leroux-child/components/third-section-block-why-kenya.php†L8-L112】) Tj
+T*
+(- **`[fourth_section_block_why_kenya]`** → title + 2 subtitles + 3 values/labels.【F:leroux-child/components/fourth-section-block-why-kenya.php†L8-L26】) Tj
+T*
+(- **`[fifth_section_block_why_kenya]`** → tabbed image gallery \(up to 8 tabs\).【F:leroux-child/components/fifth-section-block-why-kenya.php†L8-L80】) Tj
+T*
+() Tj
+T*
+(> ⚠️ The **page banner slider** \(`[page_banner_block]`\) is primarily used on the **homepage** and is not default for every page.【F:leroux-child/components/page-banner-block.php†L8-L52】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Incentives) Tj
+T*
+(- **`[incentives_tabs_block]`** → tabbed incentive content with steps + CTA buttons.【F:leroux-child/components/tabs-block-benefits-protections-shortcodes.php†L6-L118】) Tj
+T*
+(- **`[eligible_investments_block]`** → two‑column list of eligible investment types.【F:leroux-child/components/second-section-block-benefits-protections.php†L7-L78】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Laws and Regulations) Tj
+T*
+(- **`[laws_regulations_tabs_block]`** → tabbed legal content + CTA buttons.【F:leroux-child/components/tabs-block-laws-regulations-shortcodes.php†L18-L84】) Tj
+T*
+(- **`[second_section_laws_regulations]`** → secondary supporting section.【F:leroux-child/components/second-section-block-laws-regulations.php†L7-L26】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Investment Trends) Tj
+T*
+(- **`[tabs_block_investment_trends]`** → tabbed statistics + descriptions.【F:leroux-child/components/tabs-block-investment-trends.php†L7-L28】) Tj
+T*
+(- **`[second_section_investment_trends]`** → supporting trend content block.【F:leroux-child/components/second-section-investment-trends.php†L9-L31】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Opportunities \(Overview\)) Tj
+T*
+(- **`[sector_overview_opportunities]`** → intro + contact + CTA link/button.【F:leroux-child/components/sector-overview-block-opportunities.php†L7-L21】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Investment Opportunities \(Listing\)) Tj
+T*
+(- **`[kenya_opportunities_filters]`** → filters \(amount, stage, county\).【F:leroux-child/components/opportunities-filters-shortcodes.php†L19-L137】) Tj
+T*
+(- **`[kenya_opportunities_posts]`** → grid/list output.【F:leroux-child/components/opportunities-posts-component-shortcodes.php†L11-L39】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+10 0 obj
+<< /Length 3534 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(### Sector Pages \(Agriculture, ICT, Tourism, etc.\)) Tj
+T*
+(Each sector uses two blocks:) Tj
+T*
+(- **Overview block** — sector description, snapshot values, contact details.【F:leroux-child/components/sector-overview-block-agriculture.php†L7-L35】) Tj
+T*
+(- **Tabs block** — deeper statistics, checklists, logos by tab.【F:leroux-child/components/sector-tabs-block-agriculture.php†L7-L40】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Get Started) Tj
+T*
+(- **`[get_started_home_page]`** → 2‑column step layout + icon grid + buttons.【F:leroux-child/components/get-started-home-page.php†L8-L64】) Tj
+T*
+(- **`[how_we_support_investors]`** + **`[how_we_support_investors_second_section]`** → support content blocks.【F:leroux-child/components/first-section-block-how-we-support-investors.php†L7-L40】【F:leroux-child/components/second-section-block-how-we-support-investors.php†L7-L20】) Tj
+T*
+(- **`[tab_block_investing_in_kenya]`** → step‑by‑step multi‑tab guide content.【F:leroux-child/components/tab-block-investing-in-kenya.php†L8-L90】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### About Us) Tj
+T*
+(- **`[vision_mission_values_block]`** → vision/mission/values and icons.【F:leroux-child/components/vision-mission-values-block-about-invest-kenya.php†L7-L34】) Tj
+T*
+(- **`[partners_showcase_block]`** → partner logos grid.【F:leroux-child/components/partners-showcase-block-about-invest-kenya.php†L7-L28】) Tj
+T*
+(- **`[kenya_investment_history]`** → history/timeline section.【F:leroux-child/components/history-block-about-invest-kenya.php†L7-L27】) Tj
+T*
+(- **`[kenya_governance_block]`** → governance overview text + links.【F:leroux-child/components/governance-block-about-invest-kenya.php†L7-L33】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Governance) Tj
+T*
+(- **`[governance_board_grid]`** / **`[governance_senior_grid]`** → leadership listings.【F:leroux-child/components/governance-posts-component-shortcodes.php†L35-L69】) Tj
+T*
+(- Requires `job_position` meta on posts.【F:leroux-child/components/governance-posts-component.php†L43-L44】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### News) Tj
+T*
+(- **`[kenya_news_filters]`** + **`[kenya_news_posts]`** for archives.) Tj
+T*
+(- **`[kenya_news_slider]`** for featured slider content.【F:leroux-child/components/news-filters-shortcodes.php†L47-L63】【F:leroux-child/components/news-posts-component-shortcodes.php†L19-L25】【F:leroux-child/components/news-slider.php†L4-L12】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Events) Tj
+T*
+(- **`[kenya_events_filters]`**, **`[kenya_events_posts]`**, **`[kenya_events_upcoming]`**, **`[kenya_events_expired]`**, **`[kenya_events_slider]`** for events lists and filters.【F:leroux-child/components/events-filters-shortcodes.php†L18-L35】【F:leroux-child/components/events-posts-component-shortcodes.php†L10-L99】【F:leroux-child/components/events-slider-shortcodes.php†L4-L24】) Tj
+T*
+(- `kenya_event_meta` outputs location + date range on detail pages.【F:leroux-child/functions.php†L226-L260】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Resources) Tj
+T*
+(- **`[kenya_resources_filters]`**, **`[kenya_resources_posts]`**, **`[kenya_resource_download_btn]`** for resource lists and downloads.【F:leroux-child/components/resources-filters-shortcodes.php†L15-L25】【F:leroux-child/components/resources-posts-component-shortcodes.php†L50-L136】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### Careers) Tj
+T*
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+12 0 obj
+<< /Length 3125 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(- **`[careers_first_section]`** + **`[careers_second_section]`** for page content.) Tj
+T*
+(- **`kenya_career_meta`** outputs job classification + location on detail pages.【F:leroux-child/components/careers-first-section.php†L9-L25】【F:leroux-child/components/careers-second-section.php†L8-L17】【F:leroux-child/functions.php†L176-L213】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 7\) Active Plugins \(Operational Dependencies — Detailed\)) Tj
+T*
+(These plugins are active and used in production. Removing or disabling them may break site functionality.) Tj
+T*
+() Tj
+T*
+(### Core content engine) Tj
+T*
+(- **Advanced Custom Fields \(ACF\)** — the foundation of this site’s content system. ACF defines almost every field used by shortcodes \(headlines, numbers, icons, links, statistics\). If ACF is disabled, most custom sections will stop rendering. Keep field groups organized and use consistent naming conventions to avoid breaking template output.) Tj
+T*
+() Tj
+T*
+(### Page building & layout) Tj
+T*
+(- **Elementor** — primary layout tool; shortcodes are usually placed inside Elementor sections for spacing and design control.) Tj
+T*
+(- **Elementor Pro** — provides advanced widgets, theme builder, and dynamic data features used by editors.) Tj
+T*
+() Tj
+T*
+(### Backups & migration) Tj
+T*
+(- **All‑in‑One WP Migration** — full site export/import for backups.) Tj
+T*
+(- **All‑in‑One WP Migration Unlimited Extension** — removes import/export size limits.) Tj
+T*
+(- **Migrate Guru** — alternate site migration tool for large sites.) Tj
+T*
+() Tj
+T*
+(### Performance & optimization) Tj
+T*
+(- **LiteSpeed Cache** — page caching, minification, and performance tuning.) Tj
+T*
+(- **QODE Optimizer** — image compression and optimization.) Tj
+T*
+() Tj
+T*
+(### Forms & marketing) Tj
+T*
+(- **Contact Form 7** — contact forms and inquiry forms.) Tj
+T*
+(- **MC4WP \(Mailchimp for WordPress\)** — newsletter and signup integration.) Tj
+T*
+() Tj
+T*
+(### Translation & accessibility) Tj
+T*
+(- **GTranslate** — multilingual translation support.) Tj
+T*
+(- **Ally – Web Accessibility & Usability** — accessibility features \(contrast, text resizing, etc.\).) Tj
+T*
+() Tj
+T*
+(### Theme & design utilities) Tj
+T*
+(- **Leroux Core** — required plugin providing theme‑specific features.) Tj
+T*
+(- **Qode Framework** — base framework for the Qode theme ecosystem.) Tj
+T*
+(- **Qi Addons for Elementor** — extra Elementor widgets used in layouts.) Tj
+T*
+(- **Qi Blocks** — Gutenberg block library \(kept active for compatibility\).) Tj
+T*
+() Tj
+T*
+(### Editorial workflow utilities) Tj
+T*
+(- **Duplicate Page** — efficient duplication of pages/posts for consistent layout.) Tj
+T*
+(- **Classic Widgets** — legacy widget management support.) Tj
+T*
+(- **WP File Manager** — direct file access \(admin‑only; use carefully\).) Tj
+T*
+(- **Envato Market** — update management for theme and plugins via Envato.) Tj
+T*
+() Tj
+T*
+(### WooCommerce compatibility \(kept active\)) Tj
+T*
+(- **QODE Quick View for WooCommerce** — quick product previews.) Tj
+T*
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+14 0 obj
+<< /Length 836 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(- **QODE Wishlist for WooCommerce** — wishlist functionality.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 8\) Maintenance & Best Practices) Tj
+T*
+(- **Prefer ACF fields over hardcoded values** in templates.) Tj
+T*
+(- **Document new meta fields** when adding filters or list‑based features.) Tj
+T*
+(- **Register new components in `functions.php`** so they load correctly in production.【F:leroux-child/functions.php†L285-L339】) Tj
+T*
+(- **Keep Elementor templates consistent** by duplicating existing posts rather than starting from scratch.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(If needed, we can also produce:) Tj
+T*
+(- A **diagram** of page → shortcode → data flow) Tj
+T*
+(- A **field inventory spreadsheet** for content editors) Tj
+T*
+(- A **short training video** for internal staff) Tj
+T*
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000148 00000 n 
+0000000218 00000 n 
+0000003107 00000 n 
+0000003233 00000 n 
+0000006158 00000 n 
+0000006284 00000 n 
+0000009498 00000 n 
+0000009624 00000 n 
+0000013211 00000 n 
+0000013339 00000 n 
+0000016517 00000 n 
+0000016645 00000 n 
+0000017533 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R >>
+startxref
+17661
+%%EOF

@@ -1,0 +1,748 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R] /Count 7 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 2645 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(# Invest Kenya Website — Client Documentation) Tj
+T*
+() Tj
+T*
+(Welcome! This document is written for **non‑technical editors and clients**. It is intentionally detailed and step‑by‑step, so anyone in the team can update the website confidently without touching code.) Tj
+T*
+() Tj
+T*
+(If you read nothing else, remember this:) Tj
+T*
+(> ✅ **Almost everything you see on the site comes from WordPress custom fields.**) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🌍 Quick Overview \(What this site is\)) Tj
+T*
+(- **Platform:** WordPress) Tj
+T*
+(- **Editing approach:** Mostly **custom fields**, with a small amount of **Elementor**) Tj
+T*
+(- **Design philosophy:** No hardcoded text; content is controlled from the editor) Tj
+T*
+() Tj
+T*
+(This site was built so that you can update content safely and consistently. Most sections are “smart blocks” that only appear if their fields are filled. That means:) Tj
+T*
+(- If you leave a field empty, the section simply won’t show.) Tj
+T*
+(- You don’t need a developer for normal updates.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🏠 Homepage \(Important\)) Tj
+T*
+(The **homepage** is the most visible entry point to the site. It contains the primary brand messaging and typically uses the **banner slider**. This slider is **primarily used on the homepage only**, not on every page.【F:leroux-child/components/page-banner-block.php†L8-L52】) Tj
+T*
+() Tj
+T*
+(Because this page carries the main narrative, any updates here should be carefully reviewed for tone, clarity, and consistency with the rest of the site.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## ✅ Editing Any Page \(Simple Step‑by‑Step\)) Tj
+T*
+(1. Log in to WordPress.) Tj
+T*
+(2. Go to **Pages** and open the page you want to edit.) Tj
+T*
+(3. Scroll down to the **custom fields** section.) Tj
+T*
+(4. Fill in the text, numbers, or upload images.) Tj
+T*
+(5. Click **Update**.) Tj
+T*
+() Tj
+T*
+(✅ Done. The website updates immediately.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🎛️ Elementor Guidance \(Important for News, Resources, Events, Governance\)) Tj
+T*
+(Many pages look similar and reuse the same layout. To keep the design consistent:) Tj
+T*
+() Tj
+T*
+(### When adding a *new post page* \(News / Events / Resources / Governance\)) Tj
+T*
+(1. **Duplicate** an existing post page \(so the design stays consistent\).) Tj
+T*
+(2. Open the duplicated page **with Elementor**.) Tj
+T*
+(3. Update the layout blocks **only if necessary** \(usually you don’t need to change layout\).) Tj
+T*
+(4. Edit the post itself \(title, content, featured image, and required custom fields\).) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 1922 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(5. Save and update.) Tj
+T*
+() Tj
+T*
+(This method ensures:) Tj
+T*
+(- The layout matches the current style) Tj
+T*
+(- Custom field sections work properly) Tj
+T*
+(- The new post looks the same as other posts in that section) Tj
+T*
+() Tj
+T*
+(✅ **Tip:** Use the **Duplicate Page** plugin for fast duplication.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🧩 Known Layout Fix \(Leroux Theme Padding Issue\)) Tj
+T*
+(Some pages can look “broken” because the Leroux theme adds extra left/right padding when many meta fields are present. The fix is to add a small **page‑specific CSS snippet** in **Elementor → Page Settings → Custom CSS**.) Tj
+T*
+() Tj
+T*
+(Use the page’s actual ID in the selector \(example below uses `13407`\):) Tj
+T*
+(```) Tj
+T*
+(.page-id-13407 .qodef-grid,) Tj
+T*
+(.page-id-13407 #qodef-page-content.qodef-grid,) Tj
+T*
+(.page-id-13407 #qodef-page-inner.qodef-content-grid,) Tj
+T*
+(.page-id-13407 .qodef-grid-inner {) Tj
+T*
+(    max-width: 100% !important;) Tj
+T*
+(    width: 100% !important;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+(Repeat this per page by replacing the ID to match the page you are editing.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🗺️ Page‑by‑Page Content Guide) Tj
+T*
+(Below is a detailed checklist of what each page needs. This is your “preparation list.”) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 1\) Why Kenya \(Main Page\)) Tj
+T*
+(A multi‑section landing page that highlights why investors should consider Kenya.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Strong headlines \(often split into 2 parts\)) Tj
+T*
+(- Key statistics and highlights) Tj
+T*
+(- Short explanatory text for each block) Tj
+T*
+(- Icons and supporting images) Tj
+T*
+(- Images for tabbed sections) Tj
+T*
+() Tj
+T*
+(**Main content areas:**) Tj
+T*
+(- **Hero reasons section** \(icons + short text\)) Tj
+T*
+(- **Statistics section** \(big numbers + explanations\)) Tj
+T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 1674 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(- **Cards section** \(icons with short supporting text\)) Tj
+T*
+(- **Tabbed image gallery** \(visual showcase\)) Tj
+T*
+() Tj
+T*
+(**Important note:** The large banner slider is **primarily used on the homepage**, not on every page.【F:leroux-child/components/page-banner-block.php†L8-L52】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 2\) Incentives) Tj
+T*
+(A structured page for incentives and investment benefits.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Three tab titles) Tj
+T*
+(- Detailed text for each tab \(info blocks + steps\)) Tj
+T*
+(- Two‑column content for eligible investments) Tj
+T*
+() Tj
+T*
+(**Why it matters:**) Tj
+T*
+(- Tabs allow lots of information without overwhelming the page) Tj
+T*
+(- The two‑column block makes long text easier to read) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 3\) Laws and Regulations) Tj
+T*
+(A formal and informative page focused on legal guidance.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Tab titles and tab text \(policies, regulations, guidance\)) Tj
+T*
+(- Supporting links or calls‑to‑action) Tj
+T*
+(- Secondary explanatory content below the tabs) Tj
+T*
+() Tj
+T*
+(**Tip:** Keep this page well‑structured and skimmable.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 4\) Investment Trends) Tj
+T*
+(A data‑driven page that shows growth, patterns, and opportunities.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Strong statistical highlights) Tj
+T*
+(- Trend descriptions) Tj
+T*
+(- Supporting text blocks) Tj
+T*
+() Tj
+T*
+(**Tip:** Readers scan this page, so keep text concise and data clear.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 5\) Opportunities \(Overview Page\)) Tj
+T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+10 0 obj
+<< /Length 1488 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(This page introduces opportunities before visitors dive into sector details.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Two short paragraphs) Tj
+T*
+(- Contact or CTA text) Tj
+T*
+(- Button label + link) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 6\) Investment Opportunities \(Listing Page\)) Tj
+T*
+(Shows individual opportunity posts with filters.) Tj
+T*
+() Tj
+T*
+(**For each Opportunity post, prepare:**) Tj
+T*
+(- Investment Amount) Tj
+T*
+(- Project Stage) Tj
+T*
+(- County / Region) Tj
+T*
+() Tj
+T*
+(These fields power the filters and help users find what they need.【F:leroux-child/components/opportunities-filters-shortcodes.php†L94-L137】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 7\) Sector Pages \(Agriculture, ICT, Tourism, etc.\)) Tj
+T*
+(Every sector page has two big sections:) Tj
+T*
+() Tj
+T*
+(1. **Overview Block** — short intro + key numbers) Tj
+T*
+(2. **Tabs Block** — deeper details, checklists, logos) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Strong overview text) Tj
+T*
+(- Snapshot numbers + labels) Tj
+T*
+(- Tab titles and descriptions) Tj
+T*
+(- Logos/images inside each tab) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 8\) Get Started) Tj
+T*
+(A step‑by‑step guide for investors.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Main title + intro paragraph) Tj
+T*
+(- Two step blocks \(numbers + text\)) Tj
+T*
+(- Button labels + links) Tj
+T*
+(- Icon grid \(title + short text for each\)) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+12 0 obj
+<< /Length 1352 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(### 9\) About Us) Tj
+T*
+(This page tells the story of the organization.) Tj
+T*
+() Tj
+T*
+(**What to prepare:**) Tj
+T*
+(- Vision / Mission / Values statements) Tj
+T*
+(- History highlights) Tj
+T*
+(- Partner logos) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 10\) Governance) Tj
+T*
+(Leadership listing page.) Tj
+T*
+() Tj
+T*
+(**What to prepare for each Governance post:**) Tj
+T*
+(- Full name) Tj
+T*
+(- Job position / title) Tj
+T*
+(- Photo) Tj
+T*
+() Tj
+T*
+(**Important:** The job position/title is required to display correctly.【F:leroux-child/components/governance-posts-component.php†L43-L44】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 11\) News) Tj
+T*
+(Populated from News posts.) Tj
+T*
+() Tj
+T*
+(**What to prepare for each News post:**) Tj
+T*
+(- Title) Tj
+T*
+(- Featured image) Tj
+T*
+(- Short excerpt or intro paragraph) Tj
+T*
+() Tj
+T*
+(**Best practice:** Duplicate a previous news post layout to keep styling consistent \(see Elementor guidance above\).) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 12\) Events) Tj
+T*
+(Populated from Events posts.) Tj
+T*
+() Tj
+T*
+(**What to prepare for each Event:**) Tj
+T*
+(- Location) Tj
+T*
+(- Start date) Tj
+T*
+(- End date) Tj
+T*
+() Tj
+T*
+(These fields allow filters and date display to work properly.【F:leroux-child/functions.php†L236-L260】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+14 0 obj
+<< /Length 2193 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+(### 13\) Resources) Tj
+T*
+(Resources are downloadable documents.) Tj
+T*
+() Tj
+T*
+(**What to prepare for each Resource:**) Tj
+T*
+(- Title) Tj
+T*
+(- Download link \(URL\)) Tj
+T*
+(- Optional category or type) Tj
+T*
+() Tj
+T*
+(Download links are required so users can access files.【F:leroux-child/components/resources-filters-shortcodes.php†L84-L85】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(### 14\) Careers) Tj
+T*
+(Managed as posts.) Tj
+T*
+() Tj
+T*
+(**What to prepare for each Career post:**) Tj
+T*
+(- Job classification) Tj
+T*
+(- Location) Tj
+T*
+(- Description) Tj
+T*
+() Tj
+T*
+(These fields appear on the job detail page.【F:leroux-child/functions.php†L186-L203】) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🧩 Plugins in Use \(Active — Explained\)) Tj
+T*
+(Below is a plain‑language explanation of each active plugin and why it matters.) Tj
+T*
+() Tj
+T*
+(### ⭐ Core content system) Tj
+T*
+(- **Advanced Custom Fields \(ACF\)** — the most important plugin on the site. It creates the extra fields you see below the editor \(titles, numbers, icons, links, etc.\). If ACF is disabled, most page sections will stop working. Always keep it active and updated.) Tj
+T*
+() Tj
+T*
+(### ⭐ Page building & layout) Tj
+T*
+(- **Elementor** — the visual page builder used for layouts and section placement.) Tj
+T*
+(- **Elementor Pro** — adds advanced widgets, theme builder tools, and dynamic capabilities.) Tj
+T*
+() Tj
+T*
+(### ⭐ Backups & migration) Tj
+T*
+(- **All‑in‑One WP Migration** — export/import full site backups.) Tj
+T*
+(- **All‑in‑One WP Migration Unlimited Extension** — removes size limits during migration.) Tj
+T*
+(- **Migrate Guru** — alternative migration tool for moving the site.) Tj
+T*
+() Tj
+T*
+(### ⭐ Performance & optimization) Tj
+T*
+(- **LiteSpeed Cache** — speeds up the site with caching and optimization tools.) Tj
+T*
+(- **QODE Optimizer** — compresses and optimizes images across the site.) Tj
+T*
+() Tj
+T*
+(### ⭐ Forms & marketing) Tj
+T*
+(- **Contact Form 7** — powers contact and enquiry forms.) Tj
+T*
+(- **MC4WP \(Mailchimp for WordPress\)** — connects the site to Mailchimp for newsletter signups.) Tj
+T*
+ET
+endstream
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+16 0 obj
+<< /Length 1801 >>
+stream
+BT
+/F1 12 Tf
+72 708 Td
+14 TL
+() Tj
+T*
+(### ⭐ Translation & accessibility) Tj
+T*
+(- **GTranslate** — adds multilingual translation support.) Tj
+T*
+(- **Ally – Web Accessibility & Usability** — provides accessibility tools \(contrast, resizing, etc.\).) Tj
+T*
+() Tj
+T*
+(### ⭐ Theme & design utilities) Tj
+T*
+(- **Leroux Core** — required for theme‑specific features \(shortcodes, custom blocks\).) Tj
+T*
+(- **Qode Framework** — the foundation framework for the theme.) Tj
+T*
+(- **Qi Addons for Elementor** — extra Elementor widgets.) Tj
+T*
+(- **Qi Blocks** — additional Gutenberg blocks.) Tj
+T*
+() Tj
+T*
+(### ⭐ Editorial workflow) Tj
+T*
+(- **Duplicate Page** — duplicating pages/posts quickly \(very useful for consistent layout\).) Tj
+T*
+(- **Classic Widgets** — keeps the classic widget screen.) Tj
+T*
+(- **WP File Manager** — direct file access \(use carefully; only for admins\).) Tj
+T*
+(- **Envato Market** — used for theme and plugin updates from Envato.) Tj
+T*
+() Tj
+T*
+(### ⭐ WooCommerce compatibility \(kept active\)) Tj
+T*
+(- **QODE Quick View for WooCommerce** — quick product preview.) Tj
+T*
+(- **QODE Wishlist for WooCommerce** — wishlist feature.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(## 🌟 Extra Tips for Editors) Tj
+T*
+(- **Empty field = hidden section.** If something disappears, check the custom fields.) Tj
+T*
+(- **Keep image sizes consistent.** It improves layouts in grids and tabs.) Tj
+T*
+(- **Keep paragraphs short.** The website is designed for scanning.) Tj
+T*
+(- **When in doubt, duplicate a similar page/post** and replace content.) Tj
+T*
+() Tj
+T*
+(---) Tj
+T*
+() Tj
+T*
+(If you want, we can also create:) Tj
+T*
+(- A **visual PDF checklist**) Tj
+T*
+(- A **field inventory** for each page) Tj
+T*
+(- A **training walkthrough video**) Tj
+T*
+ET
+endstream
+endobj
+17 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 16 0 R /Resources << /Font << /F1 3 0 R >> >> >>
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000155 00000 n 
+0000000225 00000 n 
+0000002922 00000 n 
+0000003048 00000 n 
+0000005022 00000 n 
+0000005148 00000 n 
+0000006874 00000 n 
+0000007000 00000 n 
+0000008541 00000 n 
+0000008669 00000 n 
+0000010074 00000 n 
+0000010202 00000 n 
+0000012448 00000 n 
+0000012576 00000 n 
+0000014430 00000 n 
+trailer
+<< /Size 18 /Root 1 0 R >>
+startxref
+14558
+%%EOF
